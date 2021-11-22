@@ -3,6 +3,7 @@ import { Navbar, Nav, FormControl, Container, NavDropdown } from 'react-bootstra
 import { Link } from 'react-router-dom'
 import { BsLinkedin } from 'react-icons/bs'
 import NavIconLink from './NavIconLink';
+import MyButton from './MyButton';
 
 const MyNavbar = () => {
 
@@ -49,7 +50,7 @@ const MyNavbar = () => {
                 <img src={data?.image} className='nav-image pl-0 ml-0' alt="" />
                 <NavDropdown title='Me' id="basic-nav-dropdown" className='pt-0'>
                     <Container>
-                        <Link to='/profile' className="btn btn-outline-primary w-100 text-center">View Profile</Link>
+                        <Link to='/profile'> <MyButton type='button main-btn-outline' text='View Profile' /> </Link>
                     </Container>
                     <NavDropdown.Divider />
                     <p className='pl-2 mb-1 font-weight-bold'>Account</p>

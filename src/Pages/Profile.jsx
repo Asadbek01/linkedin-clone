@@ -51,11 +51,11 @@ const Profile = () => {
     return (
         <Container>
             <Row>
-                <Col xs='12' md='9'>
+                <Col xs='12' md='8'>
                     <ProfileJumbo data={data} handleShowModal={handleShowModal}/>
                     <Dashboard />
                 </Col>
-                <Col xs='12' md='3'>
+                <Col xs='12' md='4'>
                     <Sidebar />
                 </Col>
             </Row>

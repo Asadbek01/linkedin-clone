@@ -1,3 +1,7 @@
+:root {
+  --primary-blue: #2d50ec
+}
+
 body {
   background: #f3f3f3;
   margin: 0;
@@ -25,6 +29,52 @@ body {
   margin-top: .5rem;
 }
 
+
+/* BUTTONS */
+
+button.button {
+  outline: none;
+  border: none;
+  padding: .25rem 1.25rem;
+  border-radius: 500px;
+  background-color: #fff;
+  font-weight: bold;
+}
+
+button.button {
+  cursor: pointer;
+}
+
+button.main-btn {
+  color: white;
+  background-color: var(--primary-blue);
+}
+
+button.main-btn:hover {
+  background-color: #1c39be;
+}
+
+button.main-btn-outline {
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+}
+
+button.main-btn-outline:hover {
+  background-color: #b5bfeeaf;
+}
+
+button.second-btn-outline {
+  color: #838383;
+  border: 1px solid #838383;
+}
+
+button.second-btn-outline:hover {
+  background-color: #e6e4e4e8;
+  border: 2px solid #838383;
+}
+
+
+/* PROFILE JUMBOTRON */
 
 .profile-jumbo {
   background: rgb(98,150,198);
@@ -57,7 +107,7 @@ body {
   border-radius: 50%;
   height: 25px;
   width: 25px;
-  color: #0130ff;
+  color: var(--primary-blue);
 }
 
 .bi-pencil {
@@ -72,7 +122,7 @@ body {
 }
 
 .text-link {
-  color: #0130ff;
+  color: var(--primary-blue);
   font-weight: 500;
 }
 
@@ -81,8 +131,10 @@ body {
   cursor: pointer;
 }
 
+/* PROFILE DASHBOARD */
+
 .dashboard {
-  margin-top: 200px;
+  margin-top: 250px;
   background-color: #d1dfeb;
   font-weight: 400;
 }
@@ -92,7 +144,7 @@ body {
 }
 
 .dashboard-number {
-  color: #0130ff;
+  color: var(--primary-blue);
   font-size: 2rem;
   font-weight: 300;
   border-radius: .5rem;
