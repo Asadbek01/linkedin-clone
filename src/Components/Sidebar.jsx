@@ -49,9 +49,9 @@ useEffect(()=>{
         <>
         <h5>People you could know</h5>
         {
-        singleProfile.map(e=> (
-          <Card key={e._id}>
-            <Card.Img variant="top" src={e.image} />
+        singleProfile.slice(0,7).map(e=> (
+          <Card key={e._id} style={{marginBottom:'5%', border:'none'}}>
+            <Card.Img variant="top" src={e.image} style={{borderRadius:'50%', maxWidth:'19%'}}/>
                 <Card.Body>
                     <Card.Title>{e.name}{e.surname}</Card.Title>
                     <Card.Text>
