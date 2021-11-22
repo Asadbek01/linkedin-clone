@@ -50,6 +50,12 @@ const MyNavbar = () => {
                 <img src={data?.image} className='nav-image pl-0 ml-0' alt="" />
                 <NavDropdown title='Me' id="basic-nav-dropdown" className='pt-0'>
                     <Container>
+                        <div className="d-flex mb-2 align-items-center">
+                            <img src={data?.image} alt="" className='dropdown-image'/>
+                            <div className="d-flex flex-column pl-2">
+                                <h6 className='mb-0'>{data?.name} {data?.surname}</h6>
+                            </div>
+                        </div>
                         <Link to='/profile'> <MyButton type='button main-btn-outline' text='View Profile' /> </Link>
                     </Container>
                     <NavDropdown.Divider />

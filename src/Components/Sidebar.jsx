@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
+import ProfileOptions from "./ProfileOptions";
 
 
 const Sidebar = () => {
@@ -42,32 +43,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div
-        style={{
-          backgroundColor: "#ffff",
-          border: "solid 1px lightgray",
-          paddingLeft: "5%",
-          paddingRight: "5%",
-          paddingTop: "5%",
-          borderRadius: "15px",
-          marginBottom: "10px",
-        }}
-      >
-        <Link to="/">
-          <div className="py-4 text-dark">
-            Update your public profile and URL{" "}
-            <i class="bi bi-question-circle-fill"></i>
-          </div>
-        </Link>
-        <div style={{ border: "solid 1px gray" }}></div>
-
-        <Link to="/">
-          <div className="py-4 text-dark">
-            Add your profile in another language{" "}
-            <i class="bi bi-question-circle-fill"></i>
-          </div>
-        </Link>
-      </div>
+      <ProfileOptions />
 
       <div
         style={{
