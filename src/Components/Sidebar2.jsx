@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import OtherProfiles from "./OtherProfiles";
-import ProfileOptions from "./ProfileOptions";
+import { useEffect, useState } from "react"
+import OtherProfiles from "./OtherProfiles"
+import ProfileOptions from "./ProfileOptions"
 
 const Sidebar2 = () => {
   
-  const [profiles, setProfiles] = useState([]);
+  const [profiles, setProfiles] = useState([])
 
   const fetchingData = async () => {
     try {
@@ -19,16 +19,16 @@ const Sidebar2 = () => {
         setProfiles(data);
         console.log(profiles);
       } else {
-        console.log("Something goes wrong while fetching the data");
+        console.log("Something goes wrong while fetching the data")
       }
     } catch (err) {
-      console.log("error connecting to the server");
+      console.log("error connecting to the server")
     }
-  };
+  }
 
   useEffect(() => {
-    fetchingData();
-  }, []);
+    fetchingData()
+  }, [])
 
 
   return (

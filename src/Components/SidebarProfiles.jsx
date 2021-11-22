@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const SidebarProfiles = ({ _id, image, name, surname, title}) => {
     return (
       <Link to={`/profile/${_id}`}>
-        <Card key={_id} className='mb-3' >
+        <Card key={_id} className='mb-3 profile-cards' >
             <div className="d-flex align-items-center">
               <Card.Img src={image} className='sidebar-profile-images ml-2' />
               <Card.Body className='p-2'>

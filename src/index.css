@@ -186,8 +186,15 @@ a:hover button.second-btn-outline {
   border-radius: 50%;
 }
 
-.sidebar-wrapper .card {
+.card.profile-cards {
   border: none;
+}
+
+/* PROFILE SECTIONS */
+
+.profile-sub-section {
+  background-color: #fff;
+  border-radius: .5rem;
 }
 
 /* FOOTER */
