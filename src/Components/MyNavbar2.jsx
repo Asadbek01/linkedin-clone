@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Navbar, Nav, FormControl, Container, NavDropdown, Button } from 'react-bootstrap'
+import { Navbar, Nav, FormControl, Container, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { BsLinkedin } from 'react-icons/bs'
 import NavIconLink from './NavIconLink';
@@ -32,12 +32,12 @@ const MyNavbar = () => {
  
   return (
 	<Navbar bg="light" className='mb-3 p-0'>
-	<Container>
+	<Container className='px-3'>
         <Link to="/" className='navbar-brand pb-2 font-weight-bold'>
             <BsLinkedin size='30px' color='blue'/>
         </Link>
 		{/* <BsSearch /> */}
-        <FormControl type="text" placeholder="Search" className="mr-sm-2 w-25" />
+        <FormControl type="text" placeholder="Search" className="mr-sm-2 w-25 d-none d-md-block" />
 		<Nav className="ml-auto icons">
             <NavIconLink path='/' icon='bi bi-house-door-fill text-center' text='Home' />
             <NavIconLink path='/' icon='bi bi-people-fill text-center' text='Network' />
