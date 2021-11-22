@@ -1,4 +1,4 @@
-const ProfileJumbo = () => {
+const ProfileJumbo = ({ data }) => {
     return (
         <h2>ProfileJumbo</h2>
     )
