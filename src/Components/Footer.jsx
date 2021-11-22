@@ -9,7 +9,7 @@ const Footer = () => {
         
         <footer className="sticky-bottom">
         <Row className="text-center mt-5">
-          <Col xs={{ span: 6, offset:3  }}>
+          <Col xs={{ span: 5, offset:2  }}>
           <Row>
           <Col xs={12} className="text-left mb-2">
           <img
