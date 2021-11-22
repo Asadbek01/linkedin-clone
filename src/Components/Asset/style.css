@@ -1,3 +1,51 @@
+.icons{
+  padding-left:100px;
+  margin: auto;
+
+}
+.Home{
+position: absolute;
+top:63%
+}
+.mynetwork{
+  position: absolute;
+  top:63%
+  }
+  .Jobs{
+    position: absolute;
+    top:63%
+    }
+    .messaging{
+      position: absolute;
+      top:63%
+      }
+      .notification{
+        position: absolute;
+        top:63%
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 
   .w-100 {
     position: sticky;
