@@ -17,7 +17,7 @@ const Profile = () => {
             })
             if (response.ok) {
                 const data = await response.json()
-                console.log(data)
+                setData(data)
             } else {
                 console.error('fetch failed')
             }
