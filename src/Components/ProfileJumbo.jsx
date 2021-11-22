@@ -1,7 +1,12 @@
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import { useLocation } from "react-router-dom"
 
 const ProfileJumbo = ({ data, handleShowModal }) => {
+
+    const location = useLocation()
+    const path = location.pathname
+    console.log(path)
 
     return (
         <>
@@ -22,7 +27,7 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
                         </Col>
                         <Col xs='12' md='6' className='d-flex justify-content-end'>
                             <h6 className='pr-5 mr-5 d-none d-md-flex'>Google</h6>
-                            <i className='bi bi-pencil p-2' onClick={handleShowModal}></i>
+                            { path === '/profile' && <i className='bi bi-pencil p-2' onClick={handleShowModal}></i> }
                         </Col>
                     </Row>
                 </div>
