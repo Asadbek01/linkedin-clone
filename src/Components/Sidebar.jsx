@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 
 
 const Sidebar = () => {
@@ -42,35 +42,78 @@ const Sidebar = () => {
 
   return (
     <>
-      <h5 style={{paddingBottom:'15%'}}>People you could know</h5>
-      {singleProfile.slice(0, 7).map((e) => (
-        <Card key={e._id} style={{ marginBottom: "5%", border: "none", textAlign:'center' }}>
-          
-              <Card.Img
-                variant="top"
-                src={e.image}
-                style={{ borderRadius: "50%", maxWidth: "19%" }}
-              />
-            
-              <Card.Body style={{paddingLeft:'10%', marginLeft:'5%', marginTop:'-25%'}}>
-                <Card.Title>
-                  {e.name}
-                  {e.surname}
-                </Card.Title>
-                <Card.Text>{e.title} </Card.Text>
-                
-                <Button 
-                variant="primary" 
-                onClick={
-                  ()=>navigate(`/profile/${e._id}`)}>
-                  Connect
-                </Button>
+      <div
+        style={{
+          backgroundColor: "#ffff",
+          border: "solid 1px lightgray",
+          paddingLeft: "5%",
+          paddingRight: "5%",
+          paddingTop: "5%",
+          borderRadius: "15px",
+          marginBottom: "10px",
+        }}
+      >
+        <Link to="/">
+          <div className="py-4 text-dark">
+            Update your public profile and URL{" "}
+            <i class="bi bi-question-circle-fill"></i>
+          </div>
+        </Link>
+        <div style={{ border: "solid 1px gray" }}></div>
 
+        <Link to="/">
+          <div className="py-4 text-dark">
+            Add your profile in another language{" "}
+            <i class="bi bi-question-circle-fill"></i>
+          </div>
+        </Link>
+      </div>
 
-              </Card.Body>
-            
-        </Card>
-      ))}
+      <div
+        style={{
+          backgroundColor: "#ffff",
+          border: "solid 1px lightgray",
+          paddingLeft: "5%",
+          paddingTop: "5%",
+          borderRadius: "15px",
+        }}
+      >
+        <h5 style={{ paddingBottom: "15%" }}>People you could know</h5>
+
+        {singleProfile.slice(0, 7).map((e) => (
+          <Card
+            key={e._id}
+            style={{ marginBottom: "5%", border: "none", textAlign: "center" }}
+          >
+            <Card.Img
+              variant="top"
+              src={e.image}
+              style={{ borderRadius: "50%", maxWidth: "19%" }}
+            />
+            <Card.Body
+              style={{
+                paddingLeft: "10%",
+                marginLeft: "5%",
+                marginTop: "-25%",
+              }}
+            >
+              <Card.Title>
+                {e.name}
+                {e.surname}
+              </Card.Title>
+              <Card.Text>{e.title} </Card.Text>
+              <div style={{borderRadius:'50%'}}>
+              <Button className='btn'
+                variant="outline-secondary"
+                onClick={() => navigate(`/profile/${e._id}`)}
+              >
+                Connect
+              </Button>
+              </div>
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
     </>
   );
 };
