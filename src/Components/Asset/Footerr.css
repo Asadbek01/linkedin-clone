@@ -1,3 +1,10 @@
+footer {
+  position: fixed;
+
+  width: 100%;
+  bottom: 0px;
+  z-index: 1;
+}
 .footer-links {
   text-align: left;
   font-size: 0.8em;
