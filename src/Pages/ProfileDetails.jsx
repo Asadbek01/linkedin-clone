@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row, Modal, Button, Form } from "react-bootstrap"
 import ProfileJumbo from "../Components/ProfileJumbo"
-import Sidebar from "../Components/Sidebar"
+import Sidebar2 from "../Components/Sidebar2"
 import { useParams } from 'react-router-dom'
 
 
@@ -44,7 +44,7 @@ const ProfileDetails = () => {
                     <ProfileJumbo data={data}/>
                 </Col>
                 <Col xs='12' md='3'>
-                    <Sidebar />
+                    <Sidebar2 />
                 </Col>
             </Row>
         </Container>
