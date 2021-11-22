@@ -9,7 +9,8 @@ body {
 }
 
 .profile-jumbo {
-  background-color: #b2c6d8;
+  background: rgb(98,150,198);
+  background: linear-gradient(83deg, rgba(98,150,198,1) 0%, rgba(87,137,184,1) 39%, rgba(178,198,216,1) 73%);
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
   max-height: 150px;
@@ -30,7 +31,7 @@ body {
 }
 
 .details-row {
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 
 
@@ -38,5 +39,26 @@ body {
   border-radius: 50%;
   height: 25px;
   width: 25px;
-  color: rgb(1, 48, 255);
+  color: #0130ff;
+}
+
+.bi-pencil {
+  margin-top: -40px;
+}
+
+.bi-pencil:hover {
+  background-color: #ecebeb;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.text-link {
+  color: #0130ff;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }

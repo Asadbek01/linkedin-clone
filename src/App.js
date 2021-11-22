@@ -8,6 +8,7 @@ import Profile from "./Pages/Profile"
 import ProfileDetails from "./Pages/ProfileDetails"
 import "./Components/Asset/Footerr.css"
 
+
 function App() {
   return (
     <BrowserRouter>
