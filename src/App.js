@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Footer2 from "./Components/Footer2"
-import MyNavbar from "./Components/MyNavbar"
+import MyNavbar2 from "./Components/MyNavbar2"
 import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
 import Profile from "./Pages/Profile"
@@ -16,7 +16,7 @@ import './style.css'
 function App() {
   return (
     <BrowserRouter>
-      <MyNavbar />
+      <MyNavbar2 />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
