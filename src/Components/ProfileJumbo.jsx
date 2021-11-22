@@ -17,7 +17,8 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
                         <Col xs='12' md='6'>
                             <h3 className='mb-1'>{data.name} {data.surname}</h3>
                             <p className='mb-1'>{data.bio}</p>
-                            <p className='text-muted'>{data.area}</p>
+                            <p className='text-muted mb-1'>{data.area} &#8226; <span className='text-link'>Contact Info</span> </p>
+                            <p className='text-link'>500+ connections</p>
                         </Col>
                         <Col xs='12' md='6' className='d-flex justify-content-end'>
                             <h6 className='pr-5 mr-5 d-none d-md-flex'>Google</h6>
