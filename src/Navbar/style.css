@@ -1,0 +1,99 @@
+/* 
+  .w-100 {
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+  }
+  .header {
+    max-width: 1400px;
+    z-index: 999;
+    background: #ffffff;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .header_left {
+    margin-left: 0px;
+    display: flex;
+  }
+  .header_left > a {
+    width: 35px !important;
+    margin-right: 10px !important;
+  }
+  .header_left> a> svg {
+    margin-top: 10px;
+    width: 35px !important;
+    height: 35 !important;
+    
+  }
+  
+  .header_search {
+    margin-top: 11px;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    background-color: #eef3f8;
+    border-radius: 6px;
+  }
+  .notif_text {
+    margin-right: 10px;
+    margin-top: -3px;
+    padding-bottom: -25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    color: #835e30;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .header_search > input {
+    margin-left: 5px;
+    outline: none;
+    background: none;
+    border: none;
+    color: #c8d8e7;
+    width: 250px;
+  }
+  
+  .user_name_hunted {
+    font-size: medium;
+    color: black;
+  }
+  .h3user_name_hunted {
+    font-size: x-large;
+    color: black;
+  }
+  
+  .header_search > input:focus {
+    width: 400px;
+  }
+  
+  .header_search_icon {
+    margin: 10px;
+  }
+  .header_right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .headericons {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  @media (max-width: 985px) {
+    .header_search {
+      background-color: #ffffff;
+    }
+  }
+  .line-between-profile-img-nav {
+    width: 1px;
+    height: 50px;
+    background-color: #ebebeb;
+    margin-left: 15px;
+    margin-right: 20px;
+  } */
+  
