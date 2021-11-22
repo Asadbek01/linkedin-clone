@@ -10,7 +10,7 @@ body {
 
 .profile-jumbo {
   background: rgb(98,150,198);
-  background: linear-gradient(83deg, rgba(98,150,198,1) 0%, rgba(87,137,184,1) 39%, rgba(178,198,216,1) 73%);
+  background: linear-gradient(83deg, rgba(98,150,198,1) 0%, rgba(87,137,184,1) 39%, #b2c6d8 73%);
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
   max-height: 150px;
@@ -61,4 +61,20 @@ body {
 .text-link:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.dashboard {
+  margin-top: 200px;
+  background-color: #d1dfeb;
+  font-weight: 400;
+}
+
+.list-group-item {
+  width: 33%;
+}
+
+.dashboard-number {
+  color: #0130ff;
+  font-size: 2rem;
+  font-weight: 300;
 }
