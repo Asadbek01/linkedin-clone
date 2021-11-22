@@ -9,7 +9,7 @@ const Footer2 = () => {
         <footer>
             <Container>
                 <Row>
-                    <Col xs='12' className='mb-3 mt-2'>
+                    <Col xs='12' className='mb-3 mt-4'>
                     <img className='footer-logo' 
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png"/>
                     </Col>
