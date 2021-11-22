@@ -6,7 +6,6 @@ import NotFound from './Pages/NotFound'
 import Profile from './Pages/Profile'
 import ProfileDetails from './Pages/ProfileDetails'
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,3 +22,4 @@ function App() {
 }
 
 export default App
+
