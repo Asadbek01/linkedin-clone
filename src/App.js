@@ -5,7 +5,7 @@ import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
 import Profile from "./Pages/Profile"
 import ProfileDetails from "./Pages/ProfileDetails"
-
+import "./Components/Asset/Footerr.css"
 function App() {
   return (
     <BrowserRouter>

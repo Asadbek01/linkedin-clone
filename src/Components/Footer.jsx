@@ -1,13 +1,12 @@
 import { Container } from 'react-bootstrap';
 import React from 'react';
-import {Footerr} from "./Asset/Footerr.css"
-
+// import {Footerr} from "./Asset/Footerr.css"
 
 
 
 const Footer = () => {
     return (
-        <>
+        
             <Container className="profile_page footer_Big">
                 <div className="d-none d-sm-inline footer_box_1">
                     <img height="25px"
@@ -34,7 +33,7 @@ const Footer = () => {
 
             </Container>
 
-        </>
+    
 
 
     )

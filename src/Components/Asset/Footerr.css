@@ -7,3 +7,21 @@
   list-style-type: none;
   color: gray;
 }
+.footer_box_1 > img {
+  margin-bottom: 15px;
+}
+
+.footer_box_2,
+.footer_box_3,
+.footer_box_4,
+.footer_box_5 {
+  margin-top: 40px;
+}
+
+.footer_box_1 > ui > li {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.footer_box_1 > p {
+  margin-top: 20px;
+}
