@@ -35,7 +35,7 @@ const MyNavbar = () => {
 	<Navbar bg="light" className='mb-3 p-0'>
 	<Container className='px-3'>
         <Link to="/" className='navbar-brand pb-2 font-weight-bold'>
-            <BsLinkedin size='30px' color='blue'/>
+            <BsLinkedin size='30px' color='#2d50ec'/>
         </Link>
 		{/* <BsSearch /> */}
         <FormControl type="text" placeholder="Search" className="mr-sm-2 w-25 d-none d-md-block" />

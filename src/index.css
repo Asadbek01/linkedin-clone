@@ -76,7 +76,12 @@ button.second-btn-outline {
 
 button.second-btn-outline:hover {
   background-color: #e6e4e4e8;
-  border: 2px solid #838383;
+  border: 1px solid #838383;
+  text-decoration: none;
+}
+
+a:hover button.second-btn-outline {
+  text-decoration: none;
 }
 
 
@@ -173,6 +178,16 @@ button.second-btn-outline:hover {
 
 .sidebar-wrapper a:hover {
   color: #838383;
+}
+
+.sidebar-profile-images {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.sidebar-wrapper .card {
+  border: none;
 }
 
 /* FOOTER */

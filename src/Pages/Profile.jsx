@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row, Modal, Button, Form } from "react-bootstrap"
 import ProfileJumbo from "../Components/ProfileJumbo"
-import Sidebar from "../Components/Sidebar"
+import Sidebar2 from "../Components/Sidebar2"
 import Dashboard from "../Components/Dashboard"
 
 
@@ -56,7 +56,7 @@ const Profile = () => {
                     <Dashboard />
                 </Col>
                 <Col xs='12' md='4'>
-                    <Sidebar />
+                    <Sidebar2 />
                 </Col>
             </Row>
 
