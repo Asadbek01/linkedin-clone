@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
+
 const Sidebar = () => {
+  
   let navigate = useNavigate();
   function handleClick() {
     navigate("/profile");
@@ -38,8 +40,6 @@ const Sidebar = () => {
   }, []);
 
 
-
-
   return (
     <>
       <h5 style={{paddingBottom:'15%'}}>People you could know</h5>
@@ -57,13 +57,16 @@ const Sidebar = () => {
                   {e.name}
                   {e.surname}
                 </Card.Title>
-                <Card.Text>{e.title}</Card.Text>
+                <Card.Text>{e.title} </Card.Text>
+                
                 <Button 
                 variant="primary" 
                 onClick={
-                    e=>console.log(e)}>
+                  ()=>navigate(`/profile/${e._id}`)}>
                   Connect
                 </Button>
+
+
               </Card.Body>
             
         </Card>
