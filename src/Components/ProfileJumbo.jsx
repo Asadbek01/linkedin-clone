@@ -1,7 +1,7 @@
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
-const ProfileJumbo = ({ data }) => {
+const ProfileJumbo = ({ data, handleShowModal }) => {
 
     return (
         <>
@@ -20,7 +20,8 @@ const ProfileJumbo = ({ data }) => {
                             <p className='text-muted'>{data.area}</p>
                         </Col>
                         <Col xs='12' md='6' className='d-flex justify-content-end'>
-                            <i className='bi bi-pencil'></i>
+                            <h6 className='pr-5 mr-5 d-none d-md-flex'>Google</h6>
+                            <i className='bi bi-pencil p-2' onClick={handleShowModal}></i>
                         </Col>
                     </Row>
                 </div>

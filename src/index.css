@@ -30,7 +30,7 @@ body {
 }
 
 .details-row {
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 
 
@@ -39,4 +39,15 @@ body {
   height: 25px;
   width: 25px;
   color: rgb(1, 48, 255);
+}
+
+.bi-pencil {
+  margin-top: -40px;
+}
+
+.bi-pencil:hover {
+  background-color: #ecebeb;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 50%;
 }
