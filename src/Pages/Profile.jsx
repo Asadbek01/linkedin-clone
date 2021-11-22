@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Col, Container, Row, Modal, Button, Form } from "react-bootstrap"
 import ProfileJumbo from "../Components/ProfileJumbo"
 import Sidebar from "../Components/Sidebar"
+import Dashboard from "../Components/Dashboard"
 
 
 const Profile = () => {
@@ -52,6 +53,7 @@ const Profile = () => {
             <Row>
                 <Col xs='12' md='9'>
                     <ProfileJumbo data={data} handleShowModal={handleShowModal}/>
+                    <Dashboard />
                 </Col>
                 <Col xs='12' md='3'>
                     <Sidebar />
