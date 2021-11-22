@@ -42,9 +42,9 @@ const Sidebar = () => {
 
   return (
     <>
-      <h5>People you could know</h5>
+      <h5 style={{paddingBottom:'15%'}}>People you could know</h5>
       {singleProfile.slice(0, 7).map((e) => (
-        <Card key={e._id} style={{ marginBottom: "5%", border: "none" }}>
+        <Card key={e._id} style={{ marginBottom: "5%", border: "none", textAlign:'center' }}>
           
               <Card.Img
                 variant="top"
@@ -52,7 +52,7 @@ const Sidebar = () => {
                 style={{ borderRadius: "50%", maxWidth: "19%" }}
               />
             
-              <Card.Body>
+              <Card.Body style={{paddingLeft:'10%', marginLeft:'5%', marginTop:'-25%'}}>
                 <Card.Title>
                   {e.name}
                   {e.surname}
