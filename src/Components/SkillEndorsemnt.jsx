@@ -6,24 +6,6 @@ import { Button } from "react-bootstrap"
 
 const SkillEndorsemnt = () => {
   return (
-    // <div className="profile-sub-section mt-4 ">
-    //   <h4 className="pt-4 pl-3">Skill and Endorsment</h4>
-
-    //   <ListGroup className="w-100 mt-4 profile-sub-section ">
-    //     <DashboardItem
-    //       title="Team Work .6"
-    //       subtitle="Diego Torres and 5 connections have given endorsments for this skill"
-    //     />
-    //     <DashboardItem
-    //       title="Managment .4"
-    //       subtitle="Diego Torres and 3 connections, has given endorsments for this skill "
-    //     />
-    //     <DashboardItem
-    //       title="Leadership .4"
-    //       subtitle="Diego Torres and 3 connections, has given endorsments for this skill"
-    //     />
-    //   </ListGroup>
-    // </div>
     <div className="profile-sub-section mt-4">
       <Row className="align-items-center">
         <Col xs="8">
