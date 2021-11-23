@@ -125,3 +125,15 @@
   border-radius: .5rem;
   border: 1px solid lightgray
 }
+
+.card-profile-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.modalImage {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}

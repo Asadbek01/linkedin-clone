@@ -15,8 +15,9 @@ const Profile = () => {
   const [surname, setSurname] = useState(null)
   const [bio, setBio] = useState(null)
   const [area, setArea] = useState(null)
+  const [detailsChanged, setDetailsChanged] = useState(0)
+  
   const [showModal, setShowModal] = useState(false)
-
   const handleCloseModal = () => setShowModal(false)
   const handleShowModal = () => setShowModal(true)
 
@@ -48,11 +49,34 @@ const Profile = () => {
   useEffect(() => {
     fetchMyDetails()
     // eslint-disable-next-line
-  }, [])
+  }, [detailsChanged])
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault()
         handleCloseModal()
+        const newDetails = {
+          'name': name,
+          'surname': surname,
+          'bio': bio,
+          'area': area
+        }
+        try {
+          const response = await fetch('https://striveschool-api.herokuapp.com/api/profile', {
+            method: 'PUT',
+            body: JSON.stringify(newDetails),
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': process.env.REACT_APP_TOKEN
+            }
+          })
+          if (response.ok) {
+            setDetailsChanged(count => count + 1)
+          } else {
+            console.error('Fetch Failed')
+          }
+        } catch (error) {
+          console.error(error)
+        }
     }
     
     return (
@@ -71,55 +95,6 @@ const Profile = () => {
                     <Sidebar />
                 </Col>
             </Row>
-      <Modal>
-        <Modal.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group>
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="First Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Last Name"
-                value={surname}
-                onChange={(e) => setSurname(e.target.value)}
-              />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label>Bio</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Bio"
-                value={bio}
-                onChange={(e) => setBio(e.target.value)}
-              />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label>Location</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Location"
-                value={area}
-                onChange={(e) => setArea(e.target.value)}
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Save
-            </Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
     </Container>
   )
 }
