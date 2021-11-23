@@ -29,16 +29,16 @@ const SkillEndorsemnt = () => {
         <Col xs="8">
           <h4 className="pt-4 pl-3 text-muted">Skills &#38; endorsment </h4>
         </Col>
-        <Col xs="3" className="mt-4 mr-auto ">
+        <Col xs="3" className="mt-4  ">
           <p>Add a new Skill</p>
         </Col>
-        <Col xs="1" className="mt-4 ">
+        <Col xs="1" className="mt-4  ">
           <i className="bi bi-pencil p-2  mt-3"></i>
         </Col>
       </Row>
       <Row className="p-3">
         <Col>
-          <Button variant="outline-primary button second-btn-outline mr-2">
+          <Button variant="outline button third-btn-outline mr-2">
             Take Skill Quiz
           </Button>{" "}
         </Col>
