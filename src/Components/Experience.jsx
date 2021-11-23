@@ -8,7 +8,9 @@ import ExperienceRow from './ExperienceRow'
 const Experience = ({ heading }) => {
 
     const [experiences, setExperiences] = useState(null)
+    const [experienceChanged, setExperienceChanged] = useState(0)
     const [addExperience, setAddExperience] = useState(false)
+    
 
     const closeAddExperience = () => setAddExperience(false)
     const showAddExperience = () => setAddExperience(true)
@@ -45,6 +47,7 @@ const Experience = ({ heading }) => {
                 const data = await response.json()
                 console.log(data)
                 setExperiences(data)
+                setExperienceChanged(count => count + 1)
             } else {
                 console.error('fetch failed')
             }
@@ -74,7 +77,7 @@ const Experience = ({ heading }) => {
 
     useEffect(() => {
         fetchExperiences()
-    }, [experiences])
+    }, [experienceChanged])
 
     return (
         <div className='profile-sub-section mt-4'>
@@ -85,43 +88,44 @@ const Experience = ({ heading }) => {
                     onClick={showAddExperience}
                 ></i>
             </Row>
+            
             <Row className='p-3'>
                 { experiences && 
                     experiences.map(({company, _id: id, role, area, startDate, endDate}) => (
-                        <ExperienceRow key={id} company={company} id={id} role={role} area={area} startDate={startDate} endDate={endDate}/>
+                        <ExperienceRow key={id} company={company} id={id} role={role} area={area} description={description} startDate={startDate} endDate={endDate} experienceChanged={experienceChanged} setExperienceChanged={() => setExperienceChanged(count => count + 1)}/>
                     ))
                 }
             </Row>
 
             <Modal show={addExperience} onHide={closeAddExperience}>
             <Modal.Header closeButton>
-                <Modal.Title>Edit Info</Modal.Title>
+                <Modal.Title>Add Experience</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
                         <Form.Label>Company</Form.Label>
-                        <Form.Control type="text" placeholder="Company" value={company} onChange={e => setCompany(e.target.value)} />
+                        <Form.Control type="text" placeholder="Company" value={company} onChange={e => setCompany(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Role</Form.Label>
-                        <Form.Control type="text" placeholder="Role" value={role} onChange={e => setRole(e.target.value)} />
+                        <Form.Control type="text" placeholder="Role" value={role} onChange={e => setRole(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
+                        <Form.Control type="text" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Location</Form.Label>
-                        <Form.Control type="text" placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} />
+                        <Form.Control type="text" placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Start Date</Form.Label>
-                        <Form.Control type="date" value={startDate} onChange={e => setStartDate(e.target.value)} />
+                        <Form.Control type="date" value={startDate} onChange={e => setStartDate(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
