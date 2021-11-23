@@ -4,17 +4,17 @@ const Licence =()=>{
 
 return (
   <div className="profile-sub-section mt-4">
-    <Row>
-      <Col xs={8}>
+    <Row className="justify-content-between">
+      <Col xs={10}>
         <h4 className="py-4 pl-3">Licenses & certifications</h4>
       </Col>
-      <Col xs={4}>
-        <i className="bi bi-plus mt-3 mr-4"></i>
+      <Col xs={2} className="py-4 pl-5">
+        <i className="bi bi-plus mt-3 mr-4 "></i>
       </Col>
     </Row>
 
     <Row className="p-3">
-      <Col xs={8}>
+      <Col xs={10}>
         <Card className="mb-3 profile-cards">
           <div className="d-flex align-items-center">
             {/* <Card.Img src={image} className="sidebar-profile-images ml-2" /> */}
@@ -32,7 +32,7 @@ return (
           </div>
         </Card>{" "}
       </Col>
-      <Col xs={4}>
+      <Col xs={2} className="py-4 pl-5">
         <i
           className="bi bi-pencil p-2"
           onClick={(e) => console.log(e)}
@@ -41,7 +41,7 @@ return (
       </Col>
     </Row>
     <Row className="p-3">
-      <Col xs={8}>
+      <Col xs={10}>
         <Card className="mb-3 profile-cards">
           <div className="d-flex align-items-center">
             {/* <Card.Img src={image} className="sidebar-profile-images ml-2" /> */}
@@ -59,7 +59,7 @@ return (
           </div>
         </Card>{" "}
       </Col>
-      <Col xs={4}>
+      <Col xs={2} className="py-4 pl-5">
         <i
           className="bi bi-pencil p-2"
           onClick={(e) => console.log(e)}
@@ -68,7 +68,7 @@ return (
       </Col>
     </Row>
     <Row className="p-3">
-      <Col xs={8}>
+      <Col xs={10}>
         <Card className="mb-3 profile-cards">
           <div className="d-flex align-items-center">
             {/* <Card.Img src={image} className="sidebar-profile-images ml-2" /> */}
@@ -86,7 +86,7 @@ return (
           </div>
         </Card>{" "}
       </Col>
-      <Col xs={4}>
+      <Col xs={2} className="py-4 pl-5">
         <i
           className="bi bi-pencil p-2"
           onClick={(e) => console.log(e)}
