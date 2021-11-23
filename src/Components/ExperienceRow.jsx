@@ -1,11 +1,11 @@
 import { parseISO, format, differenceInCalendarMonths  } from "date-fns"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Col from 'react-bootstrap/Col'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const ExperienceRow = ({company, id, role, area, startDate, endDate}) => {
+const ExperienceRow = ({company, id, role, area, startDate, endDate, description, setExperienceChanged}) => {
 
     const [experiences, setExperiences] = useState(null)
     const [editExperience, setEditExperience] = useState(false)
@@ -45,6 +45,15 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate}) => {
         
     }
 
+    useEffect(() => {
+        setNewCompany(company)
+        setNewRole(role)
+        setNewDescription(description)
+        setNewLocation(area)
+        setNewStartDate(startDate)
+        setNewEndDate(endDate)
+    }, [])
+
     const handleSubmit = async e => {
         e.preventDefault()
 
@@ -58,8 +67,8 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate}) => {
         }
 
         try {
-            const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/619b5603bdf6a10015e98bb8/experiences`, {
-                method: 'POST',
+            const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/619b5603bdf6a10015e98bb8/experiences/${selectedExperience}`, {
+                method: 'PUT',
                 body: JSON.stringify(experience),
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,6 +79,8 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate}) => {
                 const data = await response.json()
                 console.log(data)
                 setExperiences(data)
+                setExperienceChanged()
+                closeEditExperience()
             } else {
                 console.error('fetch failed')
             }
@@ -87,6 +98,7 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate}) => {
                 }
             })
             if (response.ok) {
+                setExperienceChanged()
                 closeEditExperience()
             } else {
                 console.error('fetch failed')
@@ -100,7 +112,7 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate}) => {
     return (
         <>
         <Col xs='11' className='pl-3 mb-2'>
-            <h3>{company}</h3>
+            <h4>{company}</h4>
             <h6>{role}</h6>
             <p className='text-muted mb-1'>{format(parseISO(startDate), 'MMM. yyyy')} - {endDate ? format(parseISO(endDate), 'MMM. yyyy') : 'Present'} &#8226; {endDate ? differenceInCalendarMonths(parseISO(endDate), parseISO(startDate)) : differenceInCalendarMonths(new Date, parseISO(startDate))} months</p>
             <p className='text-muted mb-1'>{area}</p>
@@ -121,27 +133,27 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate}) => {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
                         <Form.Label>Company</Form.Label>
-                        <Form.Control type="text" placeholder="Company" value={newCompany} onChange={e => setNewCompany(e.target.value)} />
+                        <Form.Control type="text" placeholder="Company" value={newCompany} onChange={e => setNewCompany(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Role</Form.Label>
-                        <Form.Control type="text" placeholder="Role" value={newRole} onChange={e => setNewRole(e.target.value)} />
+                        <Form.Control type="text" placeholder="Role" value={newRole} onChange={e => setNewRole(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" placeholder="Description" value={newDescription} onChange={e => setNewDescription(e.target.value)} />
+                        <Form.Control type="text" placeholder="Description" value={newDescription} onChange={e => setNewDescription(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Location</Form.Label>
-                        <Form.Control type="text" placeholder="Location" value={newLocation} onChange={e => setNewLocation(e.target.value)} />
+                        <Form.Control type="text" placeholder="Location" value={newLocation} onChange={e => setNewLocation(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Start Date</Form.Label>
-                        <Form.Control type="date" value={newStartDate} onChange={e => setNewStartDate(e.target.value)} />
+                        <Form.Control type="date" value={newStartDate} onChange={e => setNewStartDate(e.target.value)} required />
                     </Form.Group>
 
                     <Form.Group>
