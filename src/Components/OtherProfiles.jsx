@@ -2,7 +2,7 @@ import SidebarProfiles from "./SidebarProfiles";
 
 const OtherProfiles = ({ title, profiles }) => {
 
-    const randomNum = Math.floor(Math.random() * profiles.length)
+    const randomNum = Math.floor(Math.random() * (profiles.length -5))
 
     return (
         <div className='sidebar-wrapper'>

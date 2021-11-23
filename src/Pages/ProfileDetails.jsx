@@ -9,8 +9,6 @@ const ProfileDetails = () => {
 
     const params = useParams()
     const profileId = params.profileId
-    console.log(profileId)
-
 
     const [data, setData] = useState(null)
   
@@ -34,7 +32,7 @@ const ProfileDetails = () => {
     
     useEffect(() => {
         fetchMyDetails()
-    }, [])
+    }, [profileId])
 
     
     return (
