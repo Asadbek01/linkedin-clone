@@ -3,11 +3,13 @@ import { useState, setLocation } from "react";
 
 const Licence =()=>{
 const [addLicence, setAddLicence] = useState(false);
-
-
+const [description, setDescription] = useState('');
+const [title, setTitle] = useState('')
+const [startDate, setStartDate] = useState('')
+const [endDate, setEndDate] = useState("");
 
 const showAddLicence = () => setAddLicence(true);
- const closeAddLicence = () => setAddLicence(false);
+const closeAddLicence = () => setAddLicence(false);
 
 
 return (
@@ -111,21 +113,12 @@ return (
         <Form>
           {/* onSubmit={handleSubmit} */}
           <Form.Group>
-            <Form.Label>Company</Form.Label>
+            <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Company"
-              // value={company}
-              // onChange={(e) => setCompany(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Role</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Role"
-              // value={role}
-              // onChange={(e) => setRole(e.target.value)}
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </Form.Group>
           <Form.Group>
@@ -133,33 +126,24 @@ return (
             <Form.Control
               type="text"
               placeholder="Description"
-              // value={description}
-              // onChange={(e) => setDescription(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Location</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Location"
-              // value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Start Date</Form.Label>
             <Form.Control
               type="date"
-              // value={startDate}
-              // onChange={(e) => setStartDate(e.target.value)}
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>End Date</Form.Label>
             <Form.Control
               type="date"
-              // value={endDate}
-              // onChange={(e) => setEndDate(e.target.value)}
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
             />
           </Form.Group>
           <Button variant="success" type="submit">
