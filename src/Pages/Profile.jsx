@@ -6,6 +6,7 @@ import Dashboard from "../Components/Dashboard"
 import ProfileSubSection from "../Components/ProfileSubSection"
 import SkillEndorsemnt from "../Components/SkillEndorsemnt"
 import Experience from "../Components/Experience"
+import Licence from "../Components/Licence"
 
 
 const Profile = () => {
@@ -62,6 +63,7 @@ const Profile = () => {
                     <ProfileSubSection heading='Activity' />
                     <Experience heading='Experience' />
                     <SkillEndorsemnt />
+                    <Licence />
                     <ProfileSubSection heading='Interests' />
                 </Col>
                 <Col xs='12' md='4'>
