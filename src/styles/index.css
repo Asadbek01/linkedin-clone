@@ -103,3 +103,38 @@ a:hover button.second-btn-outline {
 .footer-logo {
   height: 25px;
 }
+
+/* Notification */
+
+.list_group{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-bottom:10px;
+}
+.span{
+  position:absolute;
+  left:22%;
+  top:25%;
+  color:black;
+}
+.icon_dot{
+  position:absolute;
+  left:85%;
+  bottom:40%;
+  font-size:18px;
+  color:gray;
+}
+.hour{
+  position:absolute;
+  left:87%;
+  bottom:50%;
+  font-size:10px;
+color:gray;
+}
+.second_title{
+  padding-top:70px
+}
+.outline-primary{
+margin-left:110px;
+}

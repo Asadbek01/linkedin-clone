@@ -30,11 +30,10 @@ const ProfileDetails = () => {
     } catch (error) {
       console.error(error)
     }
-  }
-
-  useEffect(() => {
-    fetchMyDetails()
-  }, [])
+    
+    useEffect(() => {
+        fetchMyDetails()
+    }, [profileId])
 
   return (
     <Container>

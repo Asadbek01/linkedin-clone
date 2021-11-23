@@ -5,6 +5,8 @@ import Sidebar from "../Components/Sidebar"
 import Dashboard from "../Components/Dashboard"
 import ProfileSubSection from "../Components/ProfileSubSection"
 import SkillEndorsemnt from "../Components/SkillEndorsemnt"
+import Experience from "../Components/Experience"
+
 
 const Profile = () => {
   const [data, setData] = useState(null)
@@ -45,26 +47,26 @@ const Profile = () => {
   useEffect(() => {
     fetchMyDetails()
   }, [])
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    handleCloseModal()
-  }
-
-  return (
-    <Container>
-      <Row>
-        <Col xs="12" md="8">
-          <ProfileJumbo data={data} handleShowModal={handleShowModal} />
-          <Dashboard />
-          <ProfileSubSection heading="Activity" />
-          <ProfileSubSection heading="Interests" />
-          <SkillEndorsemnt />
-        </Col>
-        <Col xs="12" md="4">
-          <Sidebar />
-        </Col>
-      </Row>
+  
+    const handleSubmit = e => {
+        e.preventDefault()
+        handleCloseModal()
+    }
+    
+    return (
+        <Container>
+            <Row>
+                <Col xs='12' md='8'>
+                    <ProfileJumbo data={data} handleShowModal={handleShowModal}/>
+                    <Dashboard />
+                    <ProfileSubSection heading='Activity' />
+                    <Experience heading='Experience' />
+                    <ProfileSubSection heading='Interests' />
+                </Col>
+                <Col xs='12' md='4'>
+                    <Sidebar />
+                </Col>
+            </Row>
       <Modal>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
