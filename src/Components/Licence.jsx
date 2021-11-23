@@ -1,6 +1,6 @@
 import { Row, Card } from "react-bootstrap";
 
-  const Licence =()=>{
+const Licence =()=>{
 
 return (
   <div className="profile-sub-section mt-4">
