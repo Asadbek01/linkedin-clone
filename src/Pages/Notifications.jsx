@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card,Button } from 'react-bootstrap'
 import SecondNotification from '../Components/SecondNotification'
 const Notifications = () => {
@@ -26,6 +27,7 @@ const Notifications = () => {
     
       useEffect(() => {
         fetchingData()
+        // eslint-disable-next-line
       }, [])
   
     return (
@@ -44,7 +46,7 @@ const Notifications = () => {
                             </Card.Text>
                         </Card.Body>
                         <Card.Header className='text-center'>Improve your notifications <br />
-                        <a href=""className='text-center'>View settings</a>
+                        <Link to='/' className='text-center'>View settings</Link>
                         </Card.Header>
                     </Card>
                 </Col>

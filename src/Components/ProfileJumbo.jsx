@@ -7,8 +7,7 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
 
     const location = useLocation()
     const path = location.pathname
-    console.log(path)
-
+    
     return (
         <>
         {
@@ -29,7 +28,7 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
                             <MyButton type='button second-btn-outline mr-2' text='Add Section'/>
                             <MyButton type='button second-btn-outline mr-2' text='More'/>
                         </Col>
-                        { path === '/profile' && <i className='bi bi-pencil p-2' onClick={handleShowModal}></i> }
+                        <i className='bi bi-pencil p-2' onClick={handleShowModal}></i>
                     </Row>
                 </div>
         </div>

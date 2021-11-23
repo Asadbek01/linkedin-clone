@@ -29,6 +29,7 @@ const MyNavbar = () => {
 
     useEffect(() => {
         fetchMyDetails()
+        // eslint-disable-next-line
     }, [])
  
   return (

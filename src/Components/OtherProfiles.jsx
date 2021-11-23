@@ -10,7 +10,7 @@ const OtherProfiles = ({ title, profiles }) => {
 
             { profiles && 
             profiles.slice(randomNum, randomNum + 5).map(({ _id, image, name, surname, title}) => (
-            <SidebarProfiles  _id={_id} image={image} name={name} surname={surname} title={title}/>
+            <SidebarProfiles key={_id}  _id={_id} image={image} name={name} surname={surname} title={title}/>
             ))}
         </div>
     )

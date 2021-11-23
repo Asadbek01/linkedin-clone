@@ -35,14 +35,12 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate, description
                 setNewLocation(data.area)
                 setNewStartDate(data.startDate)
                 setNewEndDate(data.endDate)
-                console.log(data)
             } else {
                 console.log('Fetch Failed')
             }
         } catch (error) {
             console.error(error)
-        }
-        
+        }   
     }
 
     useEffect(() => {
@@ -52,6 +50,7 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate, description
         setNewLocation(area)
         setNewStartDate(startDate)
         setNewEndDate(endDate)
+        // eslint-disable-next-line
     }, [])
 
     const handleSubmit = async e => {
@@ -77,7 +76,6 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate, description
             })
             if (response.ok) {
                 const data = await response.json()
-                console.log(data)
                 setExperiences(data)
                 setExperienceChanged()
                 closeEditExperience()
@@ -114,7 +112,7 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate, description
         <Col xs='11' className='pl-3 mb-2'>
             <h4>{company}</h4>
             <h6>{role}</h6>
-            <p className='text-muted mb-1'>{format(parseISO(startDate), 'MMM. yyyy')} - {endDate ? format(parseISO(endDate), 'MMM. yyyy') : 'Present'} &#8226; {endDate ? differenceInCalendarMonths(parseISO(endDate), parseISO(startDate)) : differenceInCalendarMonths(new Date, parseISO(startDate))} months</p>
+            <p className='text-muted mb-1'>{format(parseISO(startDate), 'MMM. yyyy')} - {endDate ? format(parseISO(endDate), 'MMM. yyyy') : 'Present'} &#8226; {endDate ? differenceInCalendarMonths(parseISO(endDate), parseISO(startDate)) : differenceInCalendarMonths(new Date(), parseISO(startDate))} months</p>
             <p className='text-muted mb-1'>{area}</p>
             <hr />
         </Col>

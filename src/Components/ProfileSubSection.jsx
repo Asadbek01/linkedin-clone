@@ -7,7 +7,7 @@ const ProfileSubSection = ({ heading }) => {
 
     const [profiles, setProfiles] = useState([])
 
-    const randomNum = Math.floor(Math.random() * profiles.length)
+    const randomNum = Math.floor(Math.random() * (profiles.length - 4))
     
     const fetchingData = async () => {
       try {
@@ -18,9 +18,8 @@ const ProfileSubSection = ({ heading }) => {
             }
           })
         if (res.ok) {
-          let data = await res.json();
-          setProfiles(data);
-          console.log(profiles);
+          let data = await res.json()
+          setProfiles(data)
         } else {
           console.log("Something goes wrong while fetching the data")
         }
@@ -31,6 +30,7 @@ const ProfileSubSection = ({ heading }) => {
   
     useEffect(() => {
       fetchingData()
+      // eslint-disable-next-line
     }, [])
 
 
@@ -40,9 +40,9 @@ const ProfileSubSection = ({ heading }) => {
             <Row className='p-3'>
                 { profiles && 
                     profiles.slice(randomNum, randomNum + 4).map(({ _id, image, name, surname, title}) => (
-                        <Col xs='12' md='6'>
-                            <SidebarProfiles  _id={_id} image={image} name={name} surname={surname} title={title}/>
-                        </Col>
+                      <Col xs='12' md='6' key={_id}>
+                          <SidebarProfiles _id={_id} image={image} name={name} surname={surname} title={title}/>
+                      </Col>
                 ))}
             </Row>
         </div>

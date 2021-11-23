@@ -47,6 +47,7 @@ const Profile = () => {
 
   useEffect(() => {
     fetchMyDetails()
+    // eslint-disable-next-line
   }, [])
 
     const handleSubmit = e => {

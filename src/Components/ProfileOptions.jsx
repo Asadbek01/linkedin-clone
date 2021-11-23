@@ -6,7 +6,7 @@ const ProfileOptions = () => {
         <Link to="/">
           <div className="py-3 text-dark d-flex justify-content-between">
             <p className='mb-0'>Update your public profile and URL{" "}</p>
-            <i class="bi bi-question-circle-fill"></i>
+            <i className="bi bi-question-circle-fill"></i>
           </div>
         </Link>
 
@@ -15,7 +15,7 @@ const ProfileOptions = () => {
         <Link to="/">
             <div className="py-3 text-dark d-flex justify-content-between">
                 <p className='mb-0'>Add your profile in another language{" "}</p>
-                <i class="bi bi-question-circle-fill"></i>
+                <i className="bi bi-question-circle-fill"></i>
             </div>
         </Link>
         
