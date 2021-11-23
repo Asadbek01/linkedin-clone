@@ -4,6 +4,7 @@ import ProfileJumbo from "../Components/ProfileJumbo"
 import Sidebar from "../Components/Sidebar"
 import Dashboard from "../Components/Dashboard"
 import ProfileSubSection from "../Components/ProfileSubSection"
+import Licence from "../Components/Licence"
 
 
 const Profile = () => {
@@ -56,6 +57,7 @@ const Profile = () => {
                     <ProfileJumbo data={data} handleShowModal={handleShowModal}/>
                     <Dashboard />
                     <ProfileSubSection heading='Activity' />
+                    <Licence />
                     <ProfileSubSection heading='Interests' />
                 </Col>
                 <Col xs='12' md='4'>
