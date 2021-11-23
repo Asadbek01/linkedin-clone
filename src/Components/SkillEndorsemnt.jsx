@@ -25,16 +25,17 @@ const SkillEndorsemnt = () => {
     //   </ListGroup>
     // </div>
     <div className="profile-sub-section mt-4">
-      <Row>
+      <Row className="align-items-center">
         <Col xs="8">
           <h4 className="pt-4 pl-3 text-muted">Skills &#38; endorsment </h4>
         </Col>
-        <Col xs="3" className="mt-4  ">
-          <p>Add a new Skill</p>
+        <Col xs="4" className="mt-4 d-flex align-items-center ">
+          <p className="mb-0 ">Add a new Skill</p>
+          <i className="bi bi-pencil p-2  mt-0 ml-2 "></i>
         </Col>
-        <Col xs="1" className="mt-4  ">
-          <i className="bi bi-pencil p-2  mt-3"></i>
-        </Col>
+        {/* <Col xs="1" className="mt-4  ">
+     
+        </Col> */}
       </Row>
       <Row className="p-3">
         <Col>
