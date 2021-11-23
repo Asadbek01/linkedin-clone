@@ -1,64 +1,78 @@
-import React from 'react';
-import { Navbar, Nav, Form, FormControl, Container,NavDropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { BsLinkedin, BsHouseDoorFill, BsFillChatDotsFill,BsSearch, BsFillBriefcaseFill,BsBellFill } from 'react-icons/bs'
+import { useState, useEffect } from 'react'
+import { Navbar, Nav, FormControl, Container, NavDropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { BsLinkedin } from 'react-icons/bs'
+import NavIconLink from './NavIconLink';
+import MyButton from './MyButton';
 
 const MyNavbar = () => {
+
+    const [data, setData] = useState(null)
+
+    const fetchMyDetails = async () => {
+        try {
+            const response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+                headers: {
+                    'Authorization': process.env.REACT_APP_TOKEN
+                }
+            })
+            if (response.ok) {
+                const data = await response.json()
+                setData(data)
+            } else {
+                console.error('fetch failed')
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    useEffect(() => {
+        fetchMyDetails()
+    }, [])
  
   return (
-	<Navbar bg="light" expand="lg" className='mb-3'>
-	<Container>
-			<Link to="/*" className='navbar-brand pb-2 font-weight-bold'>
-			 <BsLinkedin size='25px' />
-			</Link>
-		<Form inline>
-		  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-		</Form>
+	<Navbar bg="light" className='mb-3 p-0'>
+	<Container className='px-3'>
+        <Link to="/" className='navbar-brand pb-2 font-weight-bold'>
+            <BsLinkedin size='30px' color='#2d50ec'/>
+        </Link>
 		{/* <BsSearch /> */}
-	  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-	  <Navbar.Collapse id="basic-navbar-nav">
-		<Nav className="mr-auto icons " >
-			<Link to='/home'>
-		  <div  className='nav-link' ><BsHouseDoorFill size='20px ' className="mr-2 "/></div> 
-		  <p className='Home'>Home</p>
-			 </Link>
-			 <Link to='/mynetwork'>
-		  <div className='nav-link' >< BsFillChatDotsFill size='20px' className='mr-2'/></div>
-		  <p className='mynetwork'>MyNetwork</p>
-			 </Link>
-			 <Link to='/jobs'>
-		  <div className='nav-link' >< BsFillBriefcaseFill size='20px' className='mr-2'/></div> 
-			 <p className='Jobs'>Jobs</p>
-			 </Link>
-			 <Link to='/messaging'>
-		  <div className='nav-link' >< BsFillChatDotsFill size='20px' className='mr-2'/></div> 
-		  <p className='messaging'>Messaging</p>
-			 </Link>
-			 <Link to='/notification'>
-		  <div className='nav-link'>< BsBellFill  size='20px' className='mr-2'/></div> 
-			 <p className='notification'>Notification</p>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2 w-25 d-none d-md-block" />
+		<Nav className="ml-auto icons">
+            <NavIconLink path='/' icon='bi bi-house-door-fill text-center' text='Home' />
+            <NavIconLink path='/network' icon='bi bi-people-fill text-center' text='Network' />
+            <NavIconLink path='/jobs' icon='bi bi-briefcase-fill text-center' text='Jobs' />
+            <NavIconLink path='/messages' icon='bi bi-chat-dots-fill text-center' text='Messages' />
+            <NavIconLink path='/notifications' icon='bi bi-bell-fill text-center' text='Notifications' />
 
-			 </Link>
+            <div className="d-flex flex-column mt-2 align-items-center">
+                <img src={data?.image} className='nav-image pl-0 ml-0' alt="" />
+                <NavDropdown title='Me' id="basic-nav-dropdown" className='pt-0'>
+                    <Container>
+                        <div className="d-flex mb-2 align-items-center">
+                            <img src={data?.image} alt="" className='dropdown-image'/>
+                            <div className="d-flex flex-column pl-2">
+                                <h6 className='mb-0'>{data?.name} {data?.surname}</h6>
+                            </div>
+                        </div>
+                        <Link to='/profile'> <MyButton type='button main-btn-outline' text='View Profile' /> </Link>
+                    </Container>
+                    <NavDropdown.Divider />
+                    <p className='pl-2 mb-1 font-weight-bold'>Account</p>
+                    <Link to='/' className='dropdown-item pl-2 text-muted'>Settings & Privacy</Link>
+                    <Link to='/' className='dropdown-item pl-2 text-muted'>Help</Link>
+                    <Link to='/' className='dropdown-item pl-2 text-muted'>Language</Link>
+                    <NavDropdown.Divider />
+                    <p className='pl-2 mb-1 font-weight-bold'>Manage</p>
+                    <Link to='/' className='dropdown-item pl-2 text-muted'>Posts & Activity</Link>
+                    <Link to='/' className='dropdown-item pl-2 text-muted'>Job Posting Account</Link>
+                    <NavDropdown.Divider />
+                    <Link to='/' className='dropdown-item pl-2 text-muted'>Sign out</Link>
+                </NavDropdown>
+            </div>
 
-
-		  <NavDropdown title='Me' id="basic-nav-dropdown" >
-			  
-			  <p>Lorem ipsum dolor sit amet consectetur 
-				  <br /> adipisicing elit. Nemo repudiandae.</p>
-			<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-			<NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-			<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-			<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-			<NavDropdown.Divider />
-			<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-			<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-			<NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-			<NavDropdown.Divider />
-			<NavDropdown.Item href="#action/3.3">Sign out</NavDropdown.Item>
-
-		 </NavDropdown>
 		</Nav>
-	  </Navbar.Collapse>
 	  </Container>
 	</Navbar>
   )

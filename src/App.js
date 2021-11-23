@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
-import Footer2 from "./Components/Footer2"
-import MyNavbar2 from "./Components/MyNavbar2"
+import Footer from "./Components/Footer"
+import MyNavbar from "./Components/MyNavbar"
 import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
 import Profile from "./Pages/Profile"
@@ -10,13 +10,11 @@ import Jobs from "./Pages/Jobs"
 import Messages from "./Pages/Messages"
 import Network from "./Pages/Network"
 import Notifications from "./Pages/Notifications"
-import "./Footer.css"
-import './style.css'
 
 function App() {
   return (
     <BrowserRouter>
-      <MyNavbar2 />
+      <MyNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
@@ -27,7 +25,7 @@ function App() {
         <Route path="/profile/:profileId" element={<ProfileDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer2 />
+      <Footer />
     </BrowserRouter>
   )
 }

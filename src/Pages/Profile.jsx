@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row, Modal, Button, Form } from "react-bootstrap"
 import ProfileJumbo from "../Components/ProfileJumbo"
-import Sidebar2 from "../Components/Sidebar2"
+import Sidebar from "../Components/Sidebar"
 import Dashboard from "../Components/Dashboard"
 import ProfileSubSection from "../Components/ProfileSubSection"
 
@@ -59,7 +59,7 @@ const Profile = () => {
                     <ProfileSubSection heading='Interests' />
                 </Col>
                 <Col xs='12' md='4'>
-                    <Sidebar2 />
+                    <Sidebar />
                 </Col>
             </Row>
 
