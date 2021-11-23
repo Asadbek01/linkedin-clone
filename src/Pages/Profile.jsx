@@ -47,7 +47,7 @@ const Profile = () => {
   useEffect(() => {
     fetchMyDetails()
   }, [])
-  
+
     const handleSubmit = e => {
         e.preventDefault()
         handleCloseModal()
@@ -61,6 +61,7 @@ const Profile = () => {
                     <Dashboard />
                     <ProfileSubSection heading='Activity' />
                     <Experience heading='Experience' />
+                    <SkillEndorsemnt />
                     <ProfileSubSection heading='Interests' />
                 </Col>
                 <Col xs='12' md='4'>
