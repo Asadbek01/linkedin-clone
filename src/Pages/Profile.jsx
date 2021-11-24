@@ -64,6 +64,7 @@ const Profile = () => {
           <Experience heading="Experience" />
           {/* <SkillEndorsemnt /> */}
           <SkillDropDown />
+
           <Licence />
           <ProfileSubSection heading="Interests" />
         </Col>

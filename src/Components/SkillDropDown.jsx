@@ -61,13 +61,16 @@ const SkillDropDown = () => {
           </h6> */}
 
           {!showMore && (
-            <button
-              className="btn btn-primary "
-              type="button"
-              onClick={() => setShowMore(true)}
-            >
-              Show More
-            </button>
+            <p className=" text-center">
+              {" "}
+              <button
+                className="outline button third2-btn-outline"
+                type="button"
+                onClick={() => setShowMore(true)}
+              >
+                Show More <i class="bi bi-caret-down "></i>
+              </button>
+            </p>
           )}
 
           {showMore && (
@@ -79,13 +82,26 @@ const SkillDropDown = () => {
                 <strong> Diego Torres and 5 connections</strong> have given
                 endorsments for this skill
               </p>
-              <button
-                className="btn btn-primary "
-                type="button"
-                onClick={() => setShowMore(false)}
-              >
-                Show Less
-              </button>
+              {/*  */}
+              <h5>
+                Leadership <span className="text-muted">.4</span>
+              </h5>
+              <p>
+                <strong> Diego Torres and 5 connections</strong> have given
+                endorsments for this skill
+              </p>
+              {/*  */}
+
+              <p className=" text-center">
+                {" "}
+                <button
+                  className="outline button third2-btn-outline"
+                  type="button"
+                  onClick={() => setShowMore(false)}
+                >
+                  Show Less <i class="bi bi-caret-up"></i>
+                </button>
+              </p>
             </>
           )}
         </Col>
