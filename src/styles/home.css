@@ -4,4 +4,32 @@
  
   .text_muted{
       color: gray;
+      font-size: 11px;
+      
+
   }
+  .sidebar-image{
+      width: 55px;
+      border-radius: 50%;
+      padding-top: 10px;
+  }
+  .text-secondary{
+      font-size: 12px;
+  }
+  .saved{
+      margin-top: 5px;
+     margin-left: 13px;
+
+    }
+    .num_prof{
+        position: absolute;
+        left:80%;
+        top:51%;
+        color: blue;
+    }
+    .num_post{
+        position: absolute;
+        left:80%;
+        top:61%;
+        color: blue;
+    }
