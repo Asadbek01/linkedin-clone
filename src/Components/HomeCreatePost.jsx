@@ -72,7 +72,7 @@ try {  const res = await fetch(
                   </Button>
                 </div>
 
-                <Card.Text className="text-muted">
+                <Card.Text className="text-muted mt-4">
                   <div className="d-flex mt-4">
                     <div className="d-flex mr-4">
                       <AiOutlinePicture
