@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import SinglePost from './SinglePost'
 import SkeletonPost from './SkeletonPost'
-import MyButton from './MyButton'
 
 const HomeViewPost = () => {
 
     const [posts, setPosts] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [randomNumber, setRandomNumber] = useState(0)
+    const [numOfPosts, setNumOfPosts] = useState(25)
 
     const fetchPosts = async () => {
         try {
@@ -43,9 +43,10 @@ const HomeViewPost = () => {
         }
         {
             posts &&
-                posts.slice(posts.length - 25, posts.length).reverse().map(post => <SinglePost post={post} /> )
+                posts.slice(posts.length - numOfPosts, posts.length).reverse().map(post => <SinglePost post={post} /> )
         }
-        { posts && <div className="d-flex justify-content-center mt-3"><button className='button main-btn-outline' onClick={() => alert('works')} >Show More </button></div> }
+        { posts && <div className="d-flex justify-content-center mt-3"><button className='button main-btn-outline' onClick={() => setNumOfPosts(count => count + 25)} >Show More </button></div> }
+
         </>
     )
 }

@@ -17,6 +17,7 @@ function App() {
       <MyNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/feed/post/:postId" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/network" element={<Network />} />

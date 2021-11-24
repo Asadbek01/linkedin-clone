@@ -76,4 +76,42 @@
   left: 80%;
   top: 61%;
   color: blue;
+  background-color: lightgray;
+  margin: 0.25rem 0;
+  height: 12px;
+  border-radius: 0.25rem;
+}
+
+.skeleton-bio {
+  background-color: lightgray;
+  margin: 0.255rem 0;
+  height: 12px;
+  border-radius: 0.25rem;
+}
+
+.skeleton-text {
+  background-color: lightgray;
+  margin: 0.25rem 0;
+  height: 12px;
+  border-radius: 0.25rem;
+}
+
+.skeleton-action {
+  background-color: lightgray;
+  margin: 0.25rem 0;
+  height: 16px;
+  border-radius: 0.25rem;
+}
+
+.bi-three-dots {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding-left: 0.4rem;
+  padding-top: 0.2rem;
+}
+
+.bi-three-dots:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
