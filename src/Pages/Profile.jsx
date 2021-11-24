@@ -98,7 +98,7 @@ const Profile = () => {
         </Col>
       </Row>
 
-      <Modal>
+      <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
