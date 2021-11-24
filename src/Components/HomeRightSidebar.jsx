@@ -5,7 +5,36 @@ const Image =
 const HomeRightSidebar = () => {
   return (
     <Card className="mb-3 profile-cards">
-      <h5>Add to your feed</h5>
+      <h5 className="ml-2 mb-3">Add to your feed</h5>
+      <div className="d-flex align-items-center">
+        <Card.Img
+          src={Image}
+          className="sidebar-Home-images ml-2 mt-0 d-flex align-items-baseline"
+        />
+        <Card.Body className="p-2 card-profile-title">
+          <Card.Title className="mb-1 text-dark">Linkedin</Card.Title>
+          <Card.Text className="text-muted">Company.Internet</Card.Text>
+        </Card.Body>
+      </div>
+      <div className="ml-5">
+        <button className="button second-btn-outline mr-2">+ Follow</button>
+      </div>
+      {/*  */}
+
+      <div className="d-flex align-items-center">
+        <Card.Img
+          src={Image}
+          className="sidebar-Home-images ml-2 mt-0 d-flex align-items-baseline"
+        />
+        <Card.Body className="p-2 card-profile-title">
+          <Card.Title className="mb-1 text-dark">Linkedin</Card.Title>
+          <Card.Text className="text-muted">Company.Internet</Card.Text>
+        </Card.Body>
+      </div>
+      <div className="ml-5">
+        <button className="button second-btn-outline mr-2">+ Follow</button>
+      </div>
+      {/*  */}
       <div className="d-flex align-items-center">
         <Card.Img
           src={Image}
