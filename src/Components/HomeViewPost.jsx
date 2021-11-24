@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import SinglePost from './SinglePost'
+import SkeletonPost from './SkeletonPost'
 
 const HomeViewPost = () => {
 
     const [posts, setPosts] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
     const [randomNumber, setRandomNumber] = useState(0)
 
     const fetchPosts = async () => {
@@ -16,7 +18,8 @@ const HomeViewPost = () => {
             if (response.ok) {
                 const data = await response.json()
                 setPosts(data)
-                setRandomNumber(Math.floor(Math.random() * (data.length - 50)))
+                setRandomNumber(Math.floor(Math.random() * (data.length - 100)))
+                setIsLoading(false)
                 console.log(data)
             } else {    
                 console.error('Fetch Failed')
@@ -34,10 +37,12 @@ const HomeViewPost = () => {
     return (
         <>
         {
+            isLoading && 
+            [1, 2, 3, 4].map(number => <SkeletonPost /> )
+        }
+        {
             posts && 
-            posts.slice(randomNumber, randomNumber + 50).map(post => (
-               <SinglePost post={post}/>
-            ))
+            posts.slice(posts.length - 50, posts.length).map(post => <SinglePost post={post} /> )
         }
         </>
     )

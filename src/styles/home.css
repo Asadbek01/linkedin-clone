@@ -9,3 +9,40 @@
     width: 60px;
     border-radius: 50%;
 }
+
+.post-actions .col-2:hover {
+    background-color: rgb(236, 233, 233);
+    cursor: pointer;
+}
+
+.skeleton-profile-pic {
+    background-color: lightgray;
+    margin: 0.5rem 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.skeleton-name {
+    background-color: lightgray;
+    margin: 0.25rem 0;
+    height: 10px;
+}
+
+.skeleton-bio {
+    background-color: lightgray;
+    margin: 0.255rem 0;
+    height: 10px;
+}
+
+.skeleton-text {
+    background-color: lightgray;
+    margin: 0.25rem 0;
+    height: 10px;
+}
+
+.skeleton-action {
+    background-color: lightgray;
+    margin: 0.25rem 0;
+    height: 10px;    
+}
