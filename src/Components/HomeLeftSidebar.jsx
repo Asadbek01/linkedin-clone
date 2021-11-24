@@ -1,5 +1,6 @@
 import {Card,ListGroup,List} from 'react-bootstrap';
 import Image from '../assets/Asadbek.png'
+import { BsBookmarkFill, BsPeopleFill } from "react-icons/bs";
 const HomeLeftSidebar = () => {
     return (
         <>
@@ -22,24 +23,24 @@ const HomeLeftSidebar = () => {
                  <a className='pl-3 pt-1 pb-1'>Try Premium for free</a>
                </ListGroup>
                <ListGroup variant='flush'>
-               <p className='pl-3 pt-2'>My items</p>
+               <p className='pl-3 pt-2'> <BsBookmarkFill />My items</p>
                </ListGroup>
              </Card>
           <Card  className="mt-2"style={{ width: '18rem', }}>
           <Card.Body>
             <Card.Title>Recent</Card.Title>
 <ListGroup>
-    <p>Intership Japan</p>
-    <p>React Developer-ReactJS...</p>
-    <p>Angular, React, Vue, Node, I...</p>
-    <p>UI/UX User Experience Inter...</p>
-    <p>iOS Developer Group</p>
+    <p><BsPeopleFill/>Intership Japan</p>
+    <p><BsPeopleFill/>React Developer-ReactJS...</p>
+    <p><BsPeopleFill/>Angular, React, Vue, Node, I...</p>
+    <p><BsPeopleFill/>UI/UX User Experience Inter...</p>
+    <p><BsPeopleFill/>iOS Developer Group</p>
     </ListGroup>  
     <Card.Title>Groups</Card.Title>
     <ListGroup>
-    <p>Intership Japan</p>
-    <p>React Developer-ReactJS...</p>
-    <p>Angular, React, Vue, Node, I...</p>
+    <p><BsPeopleFill/>Intership Japan</p>
+    <p><BsPeopleFill/>React Developer-ReactJS...</p>
+    <p><BsPeopleFill/>Angular, React, Vue, Node, I...</p>
     </ListGroup>
     <div>
     <a href="">Events</a>
