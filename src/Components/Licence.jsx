@@ -1,6 +1,16 @@
-import { Row, Card, Col } from "react-bootstrap";
+import { Row, Card, Col, Modal, Form, Button } from "react-bootstrap";
+import { useState, setLocation } from "react";
 
 const Licence =()=>{
+const [addLicence, setAddLicence] = useState(false);
+const [description, setDescription] = useState('');
+const [title, setTitle] = useState('')
+const [startDate, setStartDate] = useState('')
+const [endDate, setEndDate] = useState("");
+
+const showAddLicence = () => setAddLicence(true);
+const closeAddLicence = () => setAddLicence(false);
+
 
 return (
   <div className="profile-sub-section mt-4">
@@ -9,7 +19,7 @@ return (
         <h4 className="py-4 pl-3">Licenses & certifications</h4>
       </Col>
       <Col xs={2} className="py-4 pl-5">
-        <i className="bi bi-plus mt-3 mr-4 "></i>
+        <i className="bi bi-plus mt-3 mr-4" onClick={showAddLicence}></i>
       </Col>
     </Row>
 
@@ -94,6 +104,54 @@ return (
         ></i>{" "}
       </Col>
     </Row>
+
+    <Modal show={addLicence} onHide={closeAddLicence}>
+      <Modal.Header closeButton>
+        <Modal.Title>Edit Info</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          {/* onSubmit={handleSubmit} */}
+          <Form.Group>
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Start Date</Form.Label>
+            <Form.Control
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>End Date</Form.Label>
+            <Form.Control
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+            />
+          </Form.Group>
+          <Button variant="success" type="submit">
+            Add
+          </Button>
+        </Form>
+      </Modal.Body>
+    </Modal>
   </div>
 );
 };
