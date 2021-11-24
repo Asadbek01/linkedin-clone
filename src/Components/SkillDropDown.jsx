@@ -3,8 +3,11 @@ import DashboardItem from "./DashboardItem"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { Button } from "react-bootstrap"
+import { useState } from "react"
 
-const SkillEndorsemnt = () => {
+const SkillDropDown = () => {
+  const [showMore, setShowMore] = useState(false)
+
   return (
     <div className="profile-sub-section mt-4">
       <Row className="align-items-center">
@@ -52,13 +55,42 @@ const SkillEndorsemnt = () => {
             endorsments for this skill
           </p>
           <hr />
-          <h6 className="text-muted text-center">
+          {/* <h6 className="text-muted text-center">
             Show More<i class="bi bi-caret-down pl-2"></i>
             <span className="text-muted text-center"></span>
-          </h6>
+          </h6> */}
+
+          {!showMore && (
+            <button
+              className="btn btn-primary "
+              type="button"
+              onClick={() => setShowMore(true)}
+            >
+              Show More
+            </button>
+          )}
+
+          {showMore && (
+            <>
+              <h5>
+                Leadership <span className="text-muted">.4</span>
+              </h5>
+              <p>
+                <strong> Diego Torres and 5 connections</strong> have given
+                endorsments for this skill
+              </p>
+              <button
+                className="btn btn-primary "
+                type="button"
+                onClick={() => setShowMore(false)}
+              >
+                Show Less
+              </button>
+            </>
+          )}
         </Col>
       </Row>
     </div>
   )
 }
-export default SkillEndorsemnt
+export default SkillDropDown

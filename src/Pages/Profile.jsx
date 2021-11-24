@@ -5,9 +5,9 @@ import Sidebar from "../Components/Sidebar"
 import Dashboard from "../Components/Dashboard"
 import ProfileSubSection from "../Components/ProfileSubSection"
 import SkillEndorsemnt from "../Components/SkillEndorsemnt"
+import SkillDropDown from "../Components/SkillDropDown"
 import Experience from "../Components/Experience"
 import Licence from "../Components/Licence"
-
 
 const Profile = () => {
   const [data, setData] = useState(null)
@@ -49,27 +49,28 @@ const Profile = () => {
     fetchMyDetails()
   }, [])
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        handleCloseModal()
-    }
-    
-    return (
-        <Container>
-            <Row>
-                <Col xs='12' md='8'>
-                    <ProfileJumbo data={data} handleShowModal={handleShowModal}/>
-                    <Dashboard />
-                    <ProfileSubSection heading='Activity' />
-                    <Experience heading='Experience' />
-                    <SkillEndorsemnt />
-                    <Licence />
-                    <ProfileSubSection heading='Interests' />
-                </Col>
-                <Col xs='12' md='4'>
-                    <Sidebar />
-                </Col>
-            </Row>
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    handleCloseModal()
+  }
+
+  return (
+    <Container>
+      <Row>
+        <Col xs="12" md="8">
+          <ProfileJumbo data={data} handleShowModal={handleShowModal} />
+          <Dashboard />
+          <ProfileSubSection heading="Activity" />
+          <Experience heading="Experience" />
+          {/* <SkillEndorsemnt /> */}
+          <SkillDropDown />
+          <Licence />
+          <ProfileSubSection heading="Interests" />
+        </Col>
+        <Col xs="12" md="4">
+          <Sidebar />
+        </Col>
+      </Row>
       <Modal>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
