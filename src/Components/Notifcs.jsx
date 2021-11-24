@@ -1,4 +1,4 @@
-import { Container, Row, Col,ListGroup} from 'react-bootstrap'
+import { Container, Row, Col, ListGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { BsThreeDots } from "react-icons/bs";
 
@@ -7,16 +7,16 @@ const Notifcs = ({ _id, image, name, surname, }) => {
         <Container >
             <Row>
                 <Col xs={'6'} md={'12'}>
-      <Link to={`/profile/${_id}`}>
-        <ListGroup key={_id} className=''>
-   <img src={image} className='list_group ml-2' alt='' /><span className="span">{name} {surname}</span> 
-  <div ><BsThreeDots className="icon_dot" /></div>
-  <p className='hour'>4h</p>
-</ListGroup>
-        </Link>
+                    <Link to={`/profile/${_id}`}>
+                        <ListGroup variant="flush" key={_id} className=''>
+                            <img src={image} className='list_group ml-2' alt='' /><span className="span">{name} {surname}</span>
+                            <div ><BsThreeDots className="icon_dot" /></div>
+                            <p className='hour'>4h</p>
+                        </ListGroup>
+                    </Link>
 
-        </Col>
-        </Row>
+                </Col>
+            </Row>
         </Container>
     )
 }

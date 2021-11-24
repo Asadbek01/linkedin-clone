@@ -137,9 +137,15 @@ a:hover button.second-btn-outline {
   font-size: 10px;
   color: gray;
 }
-.second_title {
-  padding-top: 70px;
-}
+
 .outline-primary {
   margin-left: 110px;
 }
+.notif_img{
+    width: 65px;
+    border-radius: 50%;
+    padding-top: 10px;
+    margin-left: 110px;
+}
+
+

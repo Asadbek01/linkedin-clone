@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card,Button } from 'react-bootstrap'
 import SecondNotification from '../Components/SecondNotification'
+import Image from '../assets/Asadbek.png'
 const Notifications = () => {
 
     const [notification, setNotification] = useState([])
@@ -61,7 +62,7 @@ const Notifications = () => {
                                >
                         <Card.Body className=''>
                            <Card.Title className='text-center h6'>EU Funds, free business courses, stories and <br /> curiosities about IP.</Card.Title>
-                            {/* <img src */}
+                            <img className='notif_img' src={Image}/>
                             <Card.Title className='text-center second_title '>All about Intellectual Property for SMEs</Card.Title>
                          <Button className='outline-primary' variant="outline-primary">Follow</Button>{' '}
                         </Card.Body>
