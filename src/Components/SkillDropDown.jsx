@@ -3,8 +3,11 @@ import DashboardItem from "./DashboardItem"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { Button } from "react-bootstrap"
+import { useState } from "react"
 
 const SkillDropDown = () => {
+  const [showMore, setShowMore] = useState(false)
+
   return (
     <div className="profile-sub-section mt-4">
       <Row className="align-items-center">
@@ -56,20 +59,19 @@ const SkillDropDown = () => {
             Show More<i class="bi bi-caret-down pl-2"></i>
             <span className="text-muted text-center"></span>
           </h6> */}
-          <p className=" text-center">
+
+          {!showMore && (
             <button
               className="btn btn-primary "
               type="button"
-              data-toggle="collapse"
-              data-target="#collapseExample"
-              aria-expanded="false"
-              aria-controls="collapseExample"
+              onClick={() => setShowMore(true)}
             >
               Show More
             </button>
-          </p>
-          <div className="collapse" id="collapseExample">
-            <div className="card card-body">
+          )}
+
+          {showMore && (
+            <>
               <h5>
                 Leadership <span className="text-muted">.4</span>
               </h5>
@@ -77,8 +79,15 @@ const SkillDropDown = () => {
                 <strong> Diego Torres and 5 connections</strong> have given
                 endorsments for this skill
               </p>
-            </div>
-          </div>
+              <button
+                className="btn btn-primary "
+                type="button"
+                onClick={() => setShowMore(false)}
+              >
+                Show Less
+              </button>
+            </>
+          )}
         </Col>
       </Row>
     </div>
