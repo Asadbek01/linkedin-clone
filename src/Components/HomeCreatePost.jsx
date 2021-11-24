@@ -70,42 +70,55 @@ try {  const res = await fetch(
                   >
                     Start a post
                   </Button>
-                 
                 </div>
 
-                <Card.Text className="text-muted">
-                  <AiOutlinePicture
-                    style={{
-                      marginRight: "15",
-                      color: "#70b5f9",
-                      fontWeight: "bold",
-                      fontSize: "25",
-                    }}
-                  />
-                  <BsPlayBtnFill
-                    style={{
-                      marginRight: "15",
-                      color: "#7fc15e",
-                      fontWeight: "bold",
-                      fontSize: "25",
-                    }}
-                  />
-                  <BsCalendar2Date
-                    style={{
-                      marginRight: "15",
-                      color: "#e7a33e",
-                      fontWeight: "bold",
-                      fontSize: "20",
-                    }}
-                  />
-                  <RiArticleLine
-                    style={{
-                      marginRight: "15",
-                      color: "#fc9295",
-                      fontWeight: "bold",
-                      fontSize: "23",
-                    }}
-                  />
+                <Card.Text className="text-muted mt-4">
+                  <div className="d-flex mt-4">
+                    <div className="d-flex mr-4">
+                      <AiOutlinePicture
+                        style={{
+                          marginRight: "15",
+                          color: "#70b5f9",
+                          fontWeight: "bold",
+                          fontSize: "25",
+                        }}
+                      />
+                      <p>Photo</p>
+                    </div>
+                    <div className="d-flex mr-4">
+                      <BsPlayBtnFill
+                        style={{
+                          marginRight: "15",
+                          color: "#7fc15e",
+                          fontWeight: "bold",
+                          fontSize: "25",
+                        }}
+                      />
+                      <p>Video</p>
+                    </div>
+                    <div className="d-flex mr-4">
+                      <BsCalendar2Date
+                        style={{
+                          marginRight: "15",
+                          color: "#e7a33e",
+                          fontWeight: "bold",
+                          fontSize: "20",
+                        }}
+                      />
+                      <p>Event</p>
+                    </div>
+                    <div className="d-flex mr-4">
+                      <RiArticleLine
+                        style={{
+                          marginRight: "15",
+                          color: "#fc9295",
+                          fontWeight: "bold",
+                          fontSize: "23",
+                        }}
+                      />
+                      <p>Write article</p>
+                    </div>
+                  </div>
                 </Card.Text>
               </Card.Body>
             </div>
@@ -118,9 +131,7 @@ try {  const res = await fetch(
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={addPostFunction}>
-   
-
-            <Form.Group >
+            <Form.Group>
               <div className="d-flex justify-content-lg-start mb-4">
                 <div style={{ marginRight: "5%" }}>
                   <img
