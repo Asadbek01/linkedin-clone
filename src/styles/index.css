@@ -1,144 +1,167 @@
 :root {
-  --primary-blue: #2d50ec;
+    --primary-blue: #2d50ec;
 }
 
 body {
-  background: #f3f3f3;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background: #f3f3f3;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* NAVBAR */
 
 .nav-link i {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .nav-link:hover a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .nav-image {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  margin-top: 0.5rem;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-top: 0.5rem;
 }
 
 .dropdown-image {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
+
 
 /* BUTTONS */
 
 button.button {
-  outline: none;
-  border: none;
-  padding: 0.25rem 1.25rem;
-  border-radius: 500px;
-  background-color: #fff;
-  font-weight: bold;
+    outline: none;
+    border: none;
+    padding: 0.25rem 1.25rem;
+    border-radius: 500px;
+    background-color: #fff;
+    font-weight: bold;
 }
 
 button.button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 button.main-btn {
-  color: white;
-  background-color: var(--primary-blue);
+    color: white;
+    background-color: var(--primary-blue);
 }
 
 button.main-btn:hover {
-  background-color: #1c39be;
+    background-color: #1c39be;
 }
 
 button.main-btn-outline {
-  color: var(--primary-blue);
-  border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
 }
 
 button.main-btn-outline:hover {
-  background-color: #b5bfeeaf;
+    background-color: #b5bfeeaf;
 }
 
 button.second-btn-outline {
-  color: #838383;
-  border: 1px solid #838383;
+    color: #838383;
+    border: 1px solid #838383;
 }
 
 button.second-btn-outline:hover {
-  background-color: #e6e4e4e8;
-  border: 1px solid #838383;
-  text-decoration: none;
+    background-color: #e6e4e4e8;
+    border: 1px solid #838383;
+    text-decoration: none;
 }
+
 button.third-btn-outline {
-  color: #3528f7;
-  border: 1px solid #3528f7;
+    color: #3528f7;
+    border: 1px solid #3528f7;
 }
+
 button.third2-btn-outline {
-  color: #838383;
-  border: none;
+    color: #838383;
+    border: none;
+}
+
+button.postsection {
+    color: #838383;
+    background-color: #e6e4e4e8;
+    border: 1px solid #838383;
+    text-decoration: none;
+}
+
+button.postsection:hover {
+    color: #838383;
+    background-color: #b5bfeeaf;
+    border: 1px solid #838383;
+    text-decoration: none;
 }
 
 a:hover button.second-btn-outline {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 
 /* FOOTER */
 
 .footer-links a {
-  color: #838383;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
+    color: #838383;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .copyright {
-  color: #838383;
+    color: #838383;
 }
 
 .footer-logo {
-  height: 25px;
+    height: 25px;
 }
+
 
 /* Notification */
 
 .list_group {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
+
 .span {
-  position: absolute;
-  left: 22%;
-  top: 25%;
-  color: black;
+    position: absolute;
+    left: 22%;
+    top: 25%;
+    color: black;
 }
+
 .icon_dot {
-  position: absolute;
-  left: 85%;
-  bottom: 40%;
-  font-size: 18px;
-  color: gray;
+    position: absolute;
+    left: 85%;
+    bottom: 40%;
+    font-size: 18px;
+    color: gray;
 }
+
 .hour {
-  position: absolute;
-  left: 87%;
-  bottom: 50%;
-  font-size: 10px;
-  color: gray;
+    position: absolute;
+    left: 87%;
+    bottom: 50%;
+    font-size: 10px;
+    color: gray;
 }
+
 .second_title {
-  padding-top: 70px;
+    padding-top: 70px;
 }
+
 .outline-primary {
-  margin-left: 110px;
+    margin-left: 110px;
 }
