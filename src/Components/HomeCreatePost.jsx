@@ -17,28 +17,31 @@ import { useState, setState } from "react";
 const HomeCreatePost = () => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
-  const [title, setTitle] = useState("");
+  
 
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
 
 
-const addPostFunction = async () =>{
+const addPostFunction = async (e) =>{
+    e.preventDefault()
 try {  const res = await fetch(
     `https://striveschool-api.herokuapp.com/api/posts`,
     {
       method: "POST",
-      body: JSON.stringify(post),
+      body: JSON.stringify({
+          "text":post
+      }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: process.env.REACT_APP_TOKEN,
+        "Authorization": process.env.REACT_APP_TOKEN,
       },
     }
   );
   if (res.ok) {
     const data = await res.json();
-    setPost(data);
+    // setPost(data);
     
   } else {
     console.error("fetch failed");
@@ -114,10 +117,10 @@ try {  const res = await fetch(
           <Modal.Title>Create a post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            {/* onSubmit={handleSubmit} */}
+          <Form onSubmit={addPostFunction}>
+   
 
-            <Form.Group onSubmit={addPostFunction}>
+            <Form.Group >
               <div className="d-flex justify-content-lg-start mb-4">
                 <div style={{ marginRight: "5%" }}>
                   <img
