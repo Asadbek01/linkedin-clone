@@ -15,6 +15,7 @@
   }
   .text-secondary{
       font-size: 12px;
+     
   }
   .saved{
       margin-top: 5px;
@@ -32,4 +33,11 @@
         left:80%;
         top:61%;
         color: blue;
+    }
+    .plus{
+        cursor: pointer;
+        position: absolute;
+        top: 75%;
+        left: 90%;
+        font-size: 22px;
     }

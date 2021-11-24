@@ -60,6 +60,9 @@ const HomeLeftSidebar = () => {
           </Card.Body>
     <ListGroup variant='flush'>
      <p className='m-auto p-2' >Discover more</p>
+     <div>
+       <p className='plus'>+</p>
+     </div>
     </ListGroup>
         </Card> 
           </>  
