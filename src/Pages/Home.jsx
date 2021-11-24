@@ -11,7 +11,7 @@ const Home = () => {
         <Container>
             <Row>
                 <Col xs='2'>
-                    <HomeLeftSidebar />
+                    {/* <HomeLeftSidebar /> */}
                 </Col>
                 <Col xs='7'>
                     <HomeCreatePost />
