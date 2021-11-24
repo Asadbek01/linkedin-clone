@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import OtherProfiles from "./OtherProfiles"
 import ProfileOptions from "./ProfileOptions"
 
-const Sidebar2 = () => {
+const Sidebar = () => {
   
   const [profiles, setProfiles] = useState([])
 
@@ -17,7 +17,6 @@ const Sidebar2 = () => {
       if (res.ok) {
         let data = await res.json();
         setProfiles(data);
-        console.log(profiles);
       } else {
         console.log("Something goes wrong while fetching the data")
       }
@@ -28,6 +27,7 @@ const Sidebar2 = () => {
 
   useEffect(() => {
     fetchingData()
+    // eslint-disable-next-line
   }, [])
 
 
@@ -40,4 +40,4 @@ const Sidebar2 = () => {
   );
 };
 
-export default Sidebar2
+export default Sidebar

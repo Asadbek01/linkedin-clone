@@ -10,7 +10,6 @@ const Experience = ({ heading }) => {
     const [experiences, setExperiences] = useState(null)
     const [experienceChanged, setExperienceChanged] = useState(0)
     const [addExperience, setAddExperience] = useState(false)
-    
 
     const closeAddExperience = () => setAddExperience(false)
     const showAddExperience = () => setAddExperience(true)
@@ -45,7 +44,6 @@ const Experience = ({ heading }) => {
             })
             if (response.ok) {
                 const data = await response.json()
-                console.log(data)
                 setExperiences(data)
                 setExperienceChanged(count => count + 1)
             } else {
@@ -65,7 +63,6 @@ const Experience = ({ heading }) => {
             })
             if (response.ok) {
                 const data = await response.json()
-                console.log(data)
                 setExperiences(data)
             } else {
                 console.error('fetch failed')
@@ -77,6 +74,7 @@ const Experience = ({ heading }) => {
 
     useEffect(() => {
         fetchExperiences()
+        // eslint-disable-next-line
     }, [experienceChanged])
 
     return (

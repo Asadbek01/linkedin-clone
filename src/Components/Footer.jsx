@@ -11,7 +11,7 @@ const Footer2 = () => {
                 <Row>
                     <Col xs='12' className='mb-3 mt-4'>
                     <img className='footer-logo' 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png"/>
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png" alt=''/>
                     </Col>
                     <Col xs='12' sm='6' md='2' className='d-flex flex-column footer-links'>
                         <Link to='/' >About</Link>

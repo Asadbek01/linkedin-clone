@@ -15,8 +15,9 @@ const Profile = () => {
   const [surname, setSurname] = useState(null)
   const [bio, setBio] = useState(null)
   const [area, setArea] = useState(null)
+  const [detailsChanged, setDetailsChanged] = useState(0)
+  
   const [showModal, setShowModal] = useState(false)
-
   const handleCloseModal = () => setShowModal(false)
   const handleShowModal = () => setShowModal(true)
 
@@ -47,11 +48,35 @@ const Profile = () => {
 
   useEffect(() => {
     fetchMyDetails()
-  }, [])
+    // eslint-disable-next-line
+  }, [detailsChanged])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     handleCloseModal()
+    const newDetails = {
+      'name': name,
+      'surname': surname,
+      'bio': bio,
+      'area': area
+    }
+    try {
+      const response = await fetch('https://striveschool-api.herokuapp.com/api/profile', {
+        method: 'PUT',
+        body: JSON.stringify(newDetails),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': process.env.REACT_APP_TOKEN
+        }
+      })
+      if (response.ok) {
+        setDetailsChanged(count => count + 1)
+      } else {
+        console.error('Fetch Failed')
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -71,6 +96,7 @@ const Profile = () => {
           <Sidebar />
         </Col>
       </Row>
+
       <Modal>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -120,8 +146,8 @@ const Profile = () => {
           </Form>
         </Modal.Body>
       </Modal>
-    </Container>
-  )
+      </Container>
+)
 }
 
 export default Profile

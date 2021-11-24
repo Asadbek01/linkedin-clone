@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Container, Row, Modal, Button, Form } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import ProfileJumbo from "../Components/ProfileJumbo"
 import Sidebar2 from "../Components/Sidebar"
 import { useParams } from "react-router-dom"
@@ -34,6 +34,7 @@ const ProfileDetails = () => {
     
     useEffect(() => {
         fetchMyDetails()
+        // eslint-disable-next-line
     }, [profileId])
 
   return (
