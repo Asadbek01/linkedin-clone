@@ -82,6 +82,10 @@ button.third-btn-outline {
   color: #3528f7;
   border: 1px solid #3528f7;
 }
+button.third2-btn-outline {
+  color: #838383;
+  border: none;
+}
 
 a:hover button.second-btn-outline {
   text-decoration: none;
@@ -106,35 +110,35 @@ a:hover button.second-btn-outline {
 
 /* Notification */
 
-.list_group{
+.list_group {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
-.span{
-  position:absolute;
-  left:22%;
-  top:25%;
-  color:black;
+.span {
+  position: absolute;
+  left: 22%;
+  top: 25%;
+  color: black;
 }
-.icon_dot{
-  position:absolute;
-  left:85%;
-  bottom:40%;
-  font-size:18px;
-  color:gray;
+.icon_dot {
+  position: absolute;
+  left: 85%;
+  bottom: 40%;
+  font-size: 18px;
+  color: gray;
 }
-.hour{
-  position:absolute;
-  left:87%;
-  bottom:50%;
-  font-size:10px;
-color:gray;
+.hour {
+  position: absolute;
+  left: 87%;
+  bottom: 50%;
+  font-size: 10px;
+  color: gray;
 }
-.second_title{
-  padding-top:70px
+.second_title {
+  padding-top: 70px;
 }
-.outline-primary{
-margin-left:110px;
+.outline-primary {
+  margin-left: 110px;
 }
