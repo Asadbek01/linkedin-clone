@@ -33,23 +33,40 @@
 .skeleton-name {
     background-color: lightgray;
     margin: 0.25rem 0;
-    height: 10px;
+    height: 12px;
+    border-radius: 0.25rem
 }
 
 .skeleton-bio {
     background-color: lightgray;
     margin: 0.255rem 0;
-    height: 10px;
+    height: 12px;
+    border-radius: 0.25rem
 }
 
 .skeleton-text {
     background-color: lightgray;
     margin: 0.25rem 0;
-    height: 10px;
+    height: 12px;
+    border-radius: 0.25rem
 }
 
 .skeleton-action {
     background-color: lightgray;
     margin: 0.25rem 0;
-    height: 10px;    
+    height: 16px;    
+    border-radius: 0.25rem
+}
+
+.bi-three-dots {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    padding-left: 0.40rem;
+    padding-top: .20rem;
+}
+    
+.bi-three-dots:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }

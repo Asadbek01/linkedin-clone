@@ -10,10 +10,10 @@ const Home = () => {
     return (
         <Container>
             <Row>
-                <Col xs='2'>
-                    {/* <HomeLeftSidebar /> */}
+                <Col xs='3'>
+                    <HomeLeftSidebar />
                 </Col>
-                <Col xs='7'>
+                <Col xs='6'>
                     <HomeCreatePost />
                     <HomeViewPost />
                 </Col>

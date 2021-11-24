@@ -5,7 +5,7 @@ const HomeLeftSidebar = () => {
     return (
         <>
        
-               <Card style={{ width: '18rem' }}>
+               <Card >
               <Card.Header  className='text-center'  style={{height: '4rem', }}>
                    <img style={{width: "75px"}} src={Image} alt="jbdjkb" />
                    </Card.Header>
@@ -26,7 +26,7 @@ const HomeLeftSidebar = () => {
                <p className='pl-3 pt-2'> <BsBookmarkFill />My items</p>
                </ListGroup>
              </Card>
-          <Card  className="mt-2"style={{ width: '18rem', }}>
+          <Card  className="mt-2">
           <Card.Body>
             <Card.Title>Recent</Card.Title>
 <ListGroup>
