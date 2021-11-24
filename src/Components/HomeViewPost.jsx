@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import SinglePost from './SinglePost'
 import SkeletonPost from './SkeletonPost'
+import MyButton from './MyButton'
 
 const HomeViewPost = () => {
 
@@ -38,12 +39,13 @@ const HomeViewPost = () => {
         <>
         {
             isLoading && 
-            [1, 2, 3, 4].map(number => <SkeletonPost /> )
+            [1, 2, 3, 4].map(number => <SkeletonPost key={number}/> )
         }
         {
-            posts && 
-            posts.slice(posts.length - 50, posts.length).map(post => <SinglePost post={post} /> )
+            posts &&
+                posts.slice(posts.length - 25, posts.length).reverse().map(post => <SinglePost post={post} /> )
         }
+        { posts && <div className="d-flex justify-content-center mt-3"><button className='button main-btn-outline' onClick={() => alert('works')} >Show More </button></div> }
         </>
     )
 }
