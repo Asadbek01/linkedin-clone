@@ -23,7 +23,7 @@ import { HiBadgeCheck } from "react-icons/hi";
 import { BsChatTextFill } from "react-icons/bs";
 
 
-const HomeCreatePost = () => {
+const HomeCreatePost = ({ setPostsAdded }) => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
   const [selectedFile, setSelectedFile]= useState(null)
@@ -31,14 +31,11 @@ const HomeCreatePost = () => {
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
 
-const onFileChange = (e)=>{
-    console.log(e)
-    setSelectedFile(e.target.files[0])}
-
-
 
   const addPostFunction = async (e) => {
     e.preventDefault();
+    closeAddPost()
+    setPostsAdded(count => count + 1)
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts`,
@@ -202,6 +199,7 @@ const addImage = async (id)=>{
               <Form.Control
                 as="textarea"
                 placeholder="What do you want to talk about?"
+                className='border-0'
                 value={post}
                 style={{ height: "200px" }}
                 onChange={(e) => setPost(e.target.value)}
