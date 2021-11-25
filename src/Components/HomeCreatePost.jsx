@@ -6,7 +6,7 @@ import {
   Form,
   Modal,
   Container,
-  FloatingLabel,
+  Input
 } from "react-bootstrap";
 import { BsPlayBtnFill } from "react-icons/bs";
 import { AiOutlinePicture } from "react-icons/ai";
@@ -23,28 +23,63 @@ import { HiBadgeCheck } from "react-icons/hi";
 import { BsChatTextFill } from "react-icons/bs";
 
 
-const HomeCreatePost = ({ setPostsAdded }) => {
+const HomeCreatePost = () => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
+  const [selectedFile, setSelectedFile]= useState(null)
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
 
+const onFileChange = (e)=>{
+    console.log(e)
+    setSelectedFile(e.target.files[0])}
+
+
+
   const addPostFunction = async (e) => {
     e.preventDefault();
-    closeAddPost()
-    setPostsAdded(count => count + 1)
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts`,
         {
           method: "POST",
           body: JSON.stringify({
-              "text":post
+            text: post,
           }),
           headers: {
             "Content-Type": "application/json",
-            "Authorization": process.env.REACT_APP_TOKEN,
+            Authorization: process.env.REACT_APP_TOKEN,
+          },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        if(selectedFile !==null){
+            addImage(data._id)
+        }
+        // setPost(data);
+      } else {
+        console.error("fetch failed");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+const addImage = async (id)=>{
+   
+     let fd = new FormData();
+     fd.append("post", selectedFile);
+    try {
+      const res = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts/${id}`,
+        {
+          method: "POST",
+          body: fd,
+          headers: {
+          Authorization: process.env.REACT_APP_TOKEN,
           },
         }
       );
@@ -56,84 +91,86 @@ const HomeCreatePost = ({ setPostsAdded }) => {
       }
     } catch (error) {
       console.error(error);
-  }
+    }
 }
 
   return (
     <Container>
-      <Row className="profile-sub-section">
-        <Col>
-          <Card className="mb-3 profile-cards">
-            <div className="d-flex justify-space-between align-items-center">
-              <Card.Img
-                src="https://via.placeholder.com/150"
-                className="sidebar-profile-images ml-2"
-              />
-              <Card.Body className="p-2">
-                  
-                <div className="d-flex justify-content-between">
-                  <Button
-                    onClick={showAddPost}
-                    className="button second-btn-outline"
-                    style={{marginTop:"10px"}}
-                  >
-                    Start a post
-                  </Button>
-                </div>
+      <Row className="profile-sub-section pt-3">
+        <Col xs={3}>
+          <Card.Img
+            src="https://via.placeholder.com/150"
+            className="sidebar-profile-images ml-2"
+          />
+        </Col>
+        <Col xs={9}>
+          <div className="d-flex justify-content-between">
+            <Button
+              onClick={showAddPost}
+              className="button second-btn-outline"
+              style={{ marginTop: "10px" }}
+            >
+              Start a post
+            </Button>
+          </div>
+        </Col>
 
-                <Card.Text className="text-muted mt-4" style={{paddingTop:"25px"}}>
-                  <div className="d-flex mt-4">
-                    <div className="d-flex mr-4">
-                      <AiOutlinePicture
-                        style={{
-                          marginRight: "15",
-                          color: "#70b5f9",
-                          fontWeight: "bold",
-                          fontSize: "25",
-                        }}
-                      />
-                      <p>Photo</p>
-                    </div>
-                    <div className="d-flex mr-4">
-                      <BsPlayBtnFill
-                        style={{
-                          marginRight: "15",
-                          color: "#7fc15e",
-                          fontWeight: "bold",
-                          fontSize: "25",
-                        }}
-                      />
-                      <p>Video</p>
-                    </div>
-                    <div className="d-flex mr-4">
-                      <BsCalendar2Date
-                        style={{
-                          marginRight: "15",
-                          color: "#e7a33e",
-                          fontWeight: "bold",
-                          fontSize: "20",
-                        }}
-                      />
-                      <p>Event</p>
-                    </div>
-                    <div className="d-flex mr-4">
-                      <RiArticleLine
-                        style={{
-                          marginRight: "15",
-                          color: "#fc9295",
-                          fontWeight: "bold",
-                          fontSize: "23",
-                        }}
-                      />
-                      <p>Write article</p>
-                    </div>
+        <Col>
+          <Card className="mb-1 mt-2 profile-cards">
+            <Card.Body>
+              <Card.Text className="text-muted mt-2">
+                <div className="d-flex mt-2">
+                  <div className="d-flex mr-4">
+                    <AiOutlinePicture
+                      style={{
+                        marginRight: "15",
+                        color: "#70b5f9",
+                        fontWeight: "bold",
+                        fontSize: "25",
+                      }}
+                    />
+                    <p>Photo</p>
                   </div>
-                </Card.Text>
-              </Card.Body>
-            </div>
-          </Card>{" "}
+                  <div className="d-flex mr-4">
+                    <BsPlayBtnFill
+                      style={{
+                        marginRight: "15",
+                        color: "#7fc15e",
+                        fontWeight: "bold",
+                        fontSize: "25",
+                      }}
+                    />
+                    <p>Video</p>
+                  </div>
+                  <div className="d-flex mr-4">
+                    <BsCalendar2Date
+                      style={{
+                        marginRight: "15",
+                        color: "#e7a33e",
+                        fontWeight: "bold",
+                        fontSize: "20",
+                      }}
+                    />
+                    <p>Event</p>
+                  </div>
+                  <div className="d-flex mr-4">
+                    <RiArticleLine
+                      style={{
+                        marginRight: "15",
+                        color: "#fc9295",
+                        fontWeight: "bold",
+                        fontSize: "23",
+                      }}
+                    />
+                    <p>Write article</p>
+                  </div>
+                </div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
+
       <Modal show={addPost} onHide={closeAddPost}>
         <Modal.Header closeButton>
           <Modal.Title>Create a post</Modal.Title>
@@ -169,17 +206,15 @@ const HomeCreatePost = ({ setPostsAdded }) => {
                 style={{ height: "200px" }}
                 onChange={(e) => setPost(e.target.value)}
               />
-              {/* <FloatingLabel controlId="floatingTextarea2" label="Comments">
-                <Form.Control
-                  as="textarea"
-                  placeholder="What do you want to talk about?"
-                  style={{ height: "70%" }}
-                  value={post}
-                  onChange={(e) => setPost(e.target.value)}
-                />
-              </FloatingLabel> */}
             </Form.Group>
-            <AiOutlinePicture
+            <input
+              type="file"
+              onChange={(e)=>setSelectedFile(e.target.files[0])}
+              //             <Button onclick={()=><input type="file" onChange={onFileChange}} >
+              // <AiOutlinePicture />
+
+              //             </Button>
+
               style={{
                 marginRight: "15",
                 color: "gray",
@@ -241,7 +276,7 @@ const HomeCreatePost = ({ setPostsAdded }) => {
               variant="success"
               type="submit"
               className="button second-btn-outline"
-              style={{fontSize:'12px', marginRight:'25px'}}
+              style={{ fontSize: "12px", marginRight: "25px" }}
             >
               <BsChatTextFill className="mr-2" />
               Anyone
@@ -251,6 +286,7 @@ const HomeCreatePost = ({ setPostsAdded }) => {
               variant="success"
               type="submit"
               className="button second-btn-outline"
+              onClick={addPostFunction}
             >
               Post
             </Button>
