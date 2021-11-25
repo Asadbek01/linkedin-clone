@@ -142,3 +142,16 @@ a:hover button.second-btn-outline {
 .outline-primary {
   margin-left: 110px;
 }
+.rside {
+  margin: 0;
+  padding: 0;
+}
+.test {
+  padding: 0;
+}
+.test-2 {
+  padding-right: 0;
+}
+.test3 {
+  padding: 0%;
+}

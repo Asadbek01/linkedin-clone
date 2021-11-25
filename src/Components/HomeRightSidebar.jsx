@@ -11,99 +11,116 @@ const HomeRightSidebar = () => {
   return (
     <>
       <Card>
-        <Card.Body>
-          <Card.Title>Linkdlen News </Card.Title>
-          <ListGroup>
-            <div className="d-flex">
-              <ul className="text_muted pl-3">
+        <Card.Body className="ml-0 test-2">
+          <Row className=" d-flex align-items-between">
+            <Col xs="10">
+              <h6 className="mr-5 mt-0  pb-2 pt-0">Linkdln News</h6>
+              {/* <h4 className="pt-4 pl-3 text-muted">Skills &#38; endorsment </h4> */}
+            </Col>
+            <Col xs="2" className=" d-flex align-items-center ml-auto mb-0 ">
+              <i class="bi bi-info-square-fill"></i>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col className=" ml-0 test pl-3">
+              <ul className=" pb-0 pl-3">
                 <li>
-                  <p className="text_muted pl-2">
-                    {" "}
-                    <strong>Bulb collapses into </strong>
-                  </p>{" "}
-                </li>
-                <p className="text-muted pt-0 pb-3">
-                  {" "}
-                  <small>1d ago. 14359 readers</small>
-                </p>
-              </ul>
-            </div>
-            <div className="d-flex">
-              <ul className="text_muted pl-3">
-                <li>
-                  <p className="text_muted pl-2">Bulb collapses into </p>{" "}
+                  <strong>Bulb collapses into </strong>
+                  <p className="text-muted p-0 ">
+                    <small>1d ago. 14359 readers</small>
+                  </p>
                 </li>
               </ul>
-            </div>
-            <div className="d-flex">
               <ul className="text_muted pl-3">
                 <li>
-                  <p className="text_muted pl-2">Bulb collapses into </p>{" "}
+                  <p className="text_muted ">
+                    <strong>Amazon workers </strong>
+                    <p className="text-muted pt-0 ">
+                      <small>2d ago. 14359 readers</small>
+                    </p>
+                  </p>
                 </li>
               </ul>
-            </div>
-            <div className="d-flex">
               <ul className="text_muted pl-3">
                 <li>
-                  <p className="text_muted pl-2">Bulb collapses into</p>{" "}
+                  <p className="text_muted ">
+                    <strong>Apple shiffting </strong>
+                    <p className="text-muted pt-0 ">
+                      <small>6d ago. 14359 readers</small>
+                    </p>
+                  </p>
                 </li>
               </ul>
-            </div>
-            <div className="d-flex">
               <ul className="text_muted pl-3">
                 <li>
-                  <p className="text_muted pl-2">Bulb collapses into</p>{" "}
+                  <p className="text_muted ">
+                    <strong>Netflix future? </strong>
+                    <p className="text-muted pt-0 ">
+                      <small>21hr ago. 14359 readers</small>
+                    </p>
+                  </p>
                 </li>
               </ul>
-            </div>
-            {/* </div> */}
-          </ListGroup>
+
+              <button
+                className="outline button third2-btn-outline"
+                type="button"
+              >
+                Show More <i class="bi bi-caret-down "></i>
+              </button>
+            </Col>
+          </Row>
+
+          {/* </div> */}
         </Card.Body>
       </Card>
       {/*  */}
       <Card className="mb-3 mt-2 profile-cards">
-        <h5 className="ml-2 mt-2  mb-3">Promoted</h5>
+        <div className="d-flex align-items-center">
+          <h6 className="ml-2 mt-2  mb-4">Promoted</h6>
+          <i class="bi bi-three-dots ml-auto align-items-baseline mb-0"></i>
+        </div>
         <div className="d-flex align-items-center">
           <Card.Img
             src={Image}
-            className="sidebar-Home-images ml-2 mt-0 d-flex align-items-baseline"
+            className="sidebar-Home2-images ml-2 mt-0 d-flex align-items-baseline"
           />
-          <Card.Body className="p-2 card-profile-title">
-            <Card.Title className="mb-1 text-dark">Linkedin</Card.Title>
-            <Card.Text className="text-muted">Company.Internet</Card.Text>
+          <Card.Body className="p-2 card-profile-title test3 p-0">
+            <p className="mb-1 text-dark">Remote Developer Job</p>
+            <small className="text-muted">
+              Work Remotely For London top Tech comapines From 40k to 100k
+            </small>
           </Card.Body>
         </div>
-        <div className="ml-5">
-          <button className="button second-btn-outline mr-2">+ Follow</button>
-        </div>
+
         {/*  */}
 
         <div className="d-flex align-items-center">
           <Card.Img
-            src={Image}
+            src="https://image.similarpng.com/very-thumbnail/2021/08/Travel-agency-logo-design-template-on-transparent-background-PNG.png"
             className="sidebar-Home-images ml-2 mt-0 d-flex align-items-baseline"
           />
           <Card.Body className="p-2 card-profile-title">
-            <Card.Title className="mb-1 text-dark">Linkedin</Card.Title>
-            <Card.Text className="text-muted">Company.Internet</Card.Text>
+            <p className="mb-1 text-dark">Environment Agency </p>
+            <small className="text-muted">
+              You will do vital purposfull work that infulences and protect
+            </small>
           </Card.Body>
         </div>
-        <div className="ml-5">
-          <button className="button second-btn-outline mr-2">+ Follow</button>
-        </div>
+
         {/*  */}
         <div className="d-flex align-items-center">
           <Card.Img
-            src={Image}
+            src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-doctors-safety-prevention-and-control-shield-png-image_5362335.jpg"
             className="sidebar-Home-images ml-2 mt-0 d-flex align-items-baseline"
           />
           <Card.Body className="p-2 card-profile-title">
-            <Card.Title className="mb-1 text-dark">Linkedin</Card.Title>
-            <Card.Text className="text-muted">Company.Internet</Card.Text>
+            <p className="mb-1 text-dark">Puplic Safety antennas</p>
+            <small className="text-muted">
+              Explore panmormas high performing antennas
+            </small>
           </Card.Body>
-        </div>
-        <div className="ml-5">
-          <button className="button second-btn-outline mr-2">+ Follow</button>
         </div>
       </Card>
     </>
