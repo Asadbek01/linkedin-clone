@@ -160,10 +160,10 @@ a:hover button.second-btn-outline {
   margin-left: 110px;
 }
 .notif_img {
-  width: 65px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
-  padding-top: 10px;
-  margin-left: 110px;
+  margin-left: 45%;
 }
 
 .rside {

@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col'
 import { useState } from 'react'
 import HomeSideBarFooter from '../Components/HomeSideBarFooter'
 
-const Home = () => {
+const Home = ({ data }) => {
 
     const [postsAdded, setPostsAdded] = useState(0)
 
@@ -16,10 +16,10 @@ const Home = () => {
         <Container>
             <Row>
                 <Col xs='3'>
-                    <HomeLeftSidebar />
+                    <HomeLeftSidebar data={data} />
                 </Col>
                 <Col xs='6'>
-                    <HomeCreatePost setPostsAdded={setPostsAdded} />
+                    <HomeCreatePost setPostsAdded={setPostsAdded} data={data} />
                     <HomeViewPost postsAdded={postsAdded} />
                 </Col>
                 <Col xs='3'>
