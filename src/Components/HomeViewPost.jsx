@@ -53,6 +53,7 @@ const HomeViewPost = ({ postsAdded }) => {
                     'Authorization': process.env.REACT_APP_TOKEN
                 }
             })
+            if (response.status === 401) alert('You Can Only Edit Or Delete Your Own Posts')
             if (response.ok) {
                 setPostsChanged(count => count + 1)
                 handleCloseModal()
@@ -60,6 +61,10 @@ const HomeViewPost = ({ postsAdded }) => {
         } catch (error) {
             console.error(error)
         }
+    }
+
+    const handleUpdatePost = async () => {
+        alert('edit')
     }
 
     const fetchPosts = async () => {
@@ -106,8 +111,8 @@ const HomeViewPost = ({ postsAdded }) => {
             </Modal.Header>
             <Modal.Body>{selectedPostDetails?.text}</Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-                Close
+            <Button variant="success" onClick={handleUpdatePost}>
+                Update
             </Button>
             <Button variant="danger" onClick={handleDeletePost}>
                 Delete
