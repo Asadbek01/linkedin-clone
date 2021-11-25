@@ -6,27 +6,33 @@ import {
   Form,
   Modal,
   Container,
-  Input
+  OverlayTrigger, Tooltip
 } from "react-bootstrap";
-import { BsPlayBtnFill } from "react-icons/bs";
+// import { BsPlayBtnFill } from "react-icons/bs";
 import { AiOutlinePicture } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
-import { BsCalendar2Date } from "react-icons/bs";
+import {
+  BsCalendar2Date,
+  BsFillBriefcaseFill,
+  BsChatTextFill,
+  BsPlayBtnFill,
+} from "react-icons/bs";
 import { useState, setState } from "react";
 import { BiWorld } from "react-icons/bi";
 import { IoDocumentText } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHistogram } from "react-icons/gi";
 import { BsThreeDots } from "react-icons/bs";
-import { MdWork } from "react-icons/md";
+// import { BsFillBriefcaseFill } from "react-icons/bs";
 import { HiBadgeCheck } from "react-icons/hi";
-import { BsChatTextFill } from "react-icons/bs";
+// import { BsChatTextFill } from "react-icons/bs";
 
 
 const HomeCreatePost = () => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
-  const [selectedFile, setSelectedFile]= useState(null)
+  const [selectedFile, setSelectedFile] = useState(null)
+  const [show, setShow] = useState(true)
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
@@ -96,19 +102,28 @@ const addImage = async (id)=>{
 
   return (
     <Container>
-      <Row className="profile-sub-section pt-3">
-        <Col xs={3}>
+      <Row className="profile-sub-section pt-3 ">
+        <Col xs={2}>
           <Card.Img
             src="https://via.placeholder.com/150"
             className="sidebar-profile-images ml-2"
           />
         </Col>
-        <Col xs={9}>
+        <Col xs={10}>
           <div className="d-flex justify-content-between">
             <Button
               onClick={showAddPost}
               className="button second-btn-outline"
-              style={{ marginTop: "10px" }}
+              style={{
+                marginTop: "10px",
+                paddingLeft: "10px",
+                paddingRight: "270px",
+                paddingTop: "10px",
+                paddingBottom: "10px",
+                textAlign: "left",
+                color: "darkgrey",
+                fontWeight: "normal",
+              }}
             >
               Start a post
             </Button>
@@ -207,29 +222,55 @@ const addImage = async (id)=>{
                 onChange={(e) => setPost(e.target.value)}
               />
             </Form.Group>
-            <input
-              type="file"
-              onChange={(e)=>setSelectedFile(e.target.files[0])}
-              //             <Button onclick={()=><input type="file" onChange={onFileChange}} >
-              // <AiOutlinePicture />
 
-              //             </Button>
+            {!show && (
+              <input
+                type="file"
+                onChange={(e) => setSelectedFile(e.target.files[0])}
+              />
+            )}
+            {show && (
+              <OverlayTrigger
+                key={"top"}
+                placement={"top"}
+                overlay={
+                  <Tooltip id={`tooltip-${"top"}`}>add a picture</Tooltip>
+                }
+              >
+                <Button variant="light" style={{ padding: "0" }}>
+                  <AiOutlinePicture
+                    onClick={(e) => {
+                      setShow(!show);
+                      console.log(show);
+                    }}
+                    style={{
+                      marginRight: "15",
+                      color: "gray",
+                      fontWeight: "bold",
+                      fontSize: "20",
+                    }}
+                  />
+                </Button>
+              </OverlayTrigger>
+            )}
 
-              style={{
-                marginRight: "15",
-                color: "gray",
-                fontWeight: "bold",
-                fontSize: "20",
-              }}
-            />
-            <BsPlayBtnFill
-              style={{
-                marginRight: "15",
-                color: "gray",
-                fontWeight: "bold",
-                fontSize: "20",
-              }}
-            />
+            <OverlayTrigger
+              key={"top"}
+              placement={"top"}
+              overlay={<Tooltip id={`tooltip-${"top"}`}>add a video</Tooltip>}
+            >
+              <Button variant="light" style={{ padding: "0" }}>
+                <BsPlayBtnFill
+                  style={{
+                    marginRight: "15",
+                    color: "gray",
+                    fontWeight: "bold",
+                    fontSize: "20",
+                  }}
+                />
+              </Button>
+            </OverlayTrigger>
+
             <IoDocumentText
               style={{
                 marginRight: "15",
@@ -238,7 +279,7 @@ const addImage = async (id)=>{
                 fontSize: "20",
               }}
             />
-            <MdWork
+            <BsFillBriefcaseFill
               style={{
                 marginRight: "15",
                 color: "gray",
