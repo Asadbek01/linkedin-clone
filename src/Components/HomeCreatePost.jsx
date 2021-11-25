@@ -14,7 +14,7 @@ import { RiArticleLine } from "react-icons/ri";
 import { BsCalendar2Date } from "react-icons/bs";
 import { useState, setState } from "react";
 
-const HomeCreatePost = () => {
+const HomeCreatePost = ({ setPostsAdded }) => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
   
@@ -26,6 +26,8 @@ const HomeCreatePost = () => {
 
 const addPostFunction = async (e) =>{
     e.preventDefault()
+    closeAddPost()
+    setPostsAdded(count => count + 1)
 try {  const res = await fetch(
     `https://striveschool-api.herokuapp.com/api/posts`,
     {

@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { parseISO, differenceInCalendarMonths  } from "date-fns"
+import { parseISO, differenceInHours  } from "date-fns"
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
@@ -48,7 +48,7 @@ const SinglePost = ({ post }) => {
                     <div className="d-flex flex-column w-75 ml-2">
                         <Link to={`/profile/${post.user._id}`} className='text-dark'><h6 className='mb-0'>{post.user.name} {post.user.surname} &#8226; <span className='text-muted font-weight-normal'>Following</span></h6></Link>
                         <p className='text-muted reduced-text mb-0'>{post.user.bio}</p>
-                        <p className='text-muted mb-0'>{differenceInCalendarMonths(new Date(), parseISO(post.createdAt))}mo &#8226; <i className='bi bi-globe2'></i></p>
+                        <p className='text-muted mb-0'>{differenceInHours(new Date(), parseISO(post.createdAt))}h &#8226; <i className='bi bi-globe2'></i></p>
                     </div>
                 </div>
                 <i className='bi bi-three-dots' onClick={() => {

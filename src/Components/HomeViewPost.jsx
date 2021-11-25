@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import SinglePost from './SinglePost'
 import SkeletonPost from './SkeletonPost'
 
-const HomeViewPost = () => {
+const HomeViewPost = ({ postsAdded }) => {
 
     const [posts, setPosts] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -33,7 +33,7 @@ const HomeViewPost = () => {
     useEffect(() => {
         fetchPosts()
         // eslint-disable-next-line
-    }, [])
+    }, [postsAdded])
 
     return (
         <>
