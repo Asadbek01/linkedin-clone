@@ -10,54 +10,64 @@ const Image =
 const HomeRightSidebar = () => {
   return (
     <>
-      <Card>
+      <Card style={{width:'25rem'}}>
         <Card.Body className="ml-0 test-2">
           <Row className=" d-flex align-items-between">
             <Col xs="10">
-              <h6 className="mr-5 mt-0  pb-2 pt-0">Linkdln News</h6>
+              <h4 className="mr-5 mt-0  pb-2 pt-0">Linkdln News</h4>
               {/* <h4 className="pt-4 pl-3 text-muted">Skills &#38; endorsment </h4> */}
             </Col>
             <Col xs="2" className=" d-flex align-items-center ml-auto mb-0 ">
-              <i class="bi bi-info-square-fill"></i>
+              <i class="bi bi-info-square-fill rightsideicon"></i>
             </Col>
           </Row>
 
           <Row>
             <Col className=" ml-0 test pl-3">
-              <ul className=" pb-0 pl-3">
+              <ul className=" pb-0 pl-4 ">
                 <li>
-                  <strong>Bulb collapses into </strong>
+                  <strong>IBM see quantrum computing future </strong>
                   <p className="text-muted p-0 ">
-                    <small>1d ago. 14359 readers</small>
+                    <small>1d ago. 2,430 readers</small>
                   </p>
                 </li>
               </ul>
-              <ul className="text_muted pl-3">
+              <ul className="text_muted pl-4">
                 <li>
                   <p className="text_muted ">
-                    <strong>Amazon workers </strong>
+                    <strong>Amazon workers prepare global strike </strong>
                     <p className="text-muted pt-0 ">
-                      <small>2d ago. 14359 readers</small>
+                      <small>2d ago. 80,283 readers</small>
                     </p>
                   </p>
                 </li>
               </ul>
-              <ul className="text_muted pl-3">
+              <ul className="text_muted pl-4">
                 <li>
                   <p className="text_muted ">
-                    <strong>Apple shiffting </strong>
+                    <strong>Workers suffer 'headaches of hybrid' </strong>
                     <p className="text-muted pt-0 ">
                       <small>6d ago. 14359 readers</small>
                     </p>
                   </p>
                 </li>
               </ul>
-              <ul className="text_muted pl-3">
+              <ul className="text_muted pl-4">
                 <li>
                   <p className="text_muted ">
-                    <strong>Netflix future? </strong>
+                    <strong>Bulb collapses ino adminstration</strong>
                     <p className="text-muted pt-0 ">
                       <small>21hr ago. 14359 readers</small>
+                    </p>
+                  </p>
+                </li>
+              </ul>
+              <ul className="text_muted pl-4">
+                <li>
+                  <p className="text_muted ">
+                    <strong>Apple shifting to 'DIY' repair model</strong>
+                    <p className="text-muted pt-0 ">
+                      <small>7d ago. 38,400 readers</small>
                     </p>
                   </p>
                 </li>
