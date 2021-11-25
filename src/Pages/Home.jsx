@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { useState } from 'react'
+import HomeSideBarFooter from '../Components/HomeSideBarFooter'
 
 const Home = () => {
 
@@ -23,6 +24,7 @@ const Home = () => {
                 </Col>
                 <Col xs='3'>
                     <HomeRightSidebar />
+                    <HomeSideBarFooter />
                 </Col>
             </Row>
         </Container>

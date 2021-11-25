@@ -174,3 +174,27 @@
 .rightsideicon{
     font-size:12px
 }
+
+ /* home Side Footer */
+ .text-second{
+     margin: auto;
+     color:gray;
+     font-size: 12px;
+
+ } 
+ .footerParagh{
+   font-size: 11px;
+  padding-left: 8px;
+  }
+ .atags{
+   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+
+ }
+
+#span{
+  font-weight:bold;
+}
