@@ -3,6 +3,7 @@ import SinglePost from './SinglePost'
 import SkeletonPost from './SkeletonPost'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 const HomeViewPost = ({ postsAdded }) => {
 
@@ -64,7 +65,25 @@ const HomeViewPost = ({ postsAdded }) => {
     }
 
     const handleUpdatePost = async () => {
-        alert('edit')
+        try {
+            const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${selectedPost}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    "text": selectedPostDetails.text
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': process.env.REACT_APP_TOKEN
+                }
+            })
+            if (response.status === 401) alert('You Can Only Edit Or Delete Your Own Posts')
+            if (response.ok) {
+                setPostsChanged(count => count + 1)
+                handleCloseModal()
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     const fetchPosts = async () => {
@@ -109,7 +128,11 @@ const HomeViewPost = ({ postsAdded }) => {
             <Modal.Header closeButton>
             <Modal.Title>{selectedPostDetails?.username}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{selectedPostDetails?.text}</Modal.Body>
+            <Modal.Body>
+                <Form>
+                    <Form.Control as="textarea" rows={4} value={selectedPostDetails?.text} onChange={e => setSelectedPostDetails({...selectedPostDetails, text: e.target.value})}/>
+                </Form>
+            </Modal.Body>
             <Modal.Footer>
             <Button variant="success" onClick={handleUpdatePost}>
                 Update
