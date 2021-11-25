@@ -10,11 +10,14 @@ const Image =
 const HomeRightSidebar = () => {
   return (
     <>
-      <Card style={{width:'25rem'}}>
+      <Card style={{ width: "25rem" }}>
         <Card.Body className="ml-0 test-2">
           <Row className=" d-flex align-items-between">
             <Col xs="10">
-              <h4 className="mr-5 mt-0  pb-2 pt-0">Linkdln News</h4>
+              <h6 className="ml-2 mt-2  mb-4">
+                <strong>Linkdln News</strong>
+              </h6>
+              {/* <h4 className="mr-5 mt-0  pb-2 pt-0">Linkdln News</h4> */}
               {/* <h4 className="pt-4 pl-3 text-muted">Skills &#38; endorsment </h4> */}
             </Col>
             <Col xs="2" className=" d-flex align-items-center ml-auto mb-0 ">
@@ -32,43 +35,35 @@ const HomeRightSidebar = () => {
                   </p>
                 </li>
               </ul>
-              <ul className="text_muted pl-4">
+              <ul className="pb-0 pl-4">
                 <li>
-                  <p className="text_muted ">
-                    <strong>Amazon workers prepare global strike </strong>
-                    <p className="text-muted pt-0 ">
-                      <small>2d ago. 80,283 readers</small>
-                    </p>
+                  <strong>Amazon workers prepare global strike </strong>
+                  <p className="text-muted pt-0 ">
+                    <small>2d ago. 80,283 readers</small>
                   </p>
                 </li>
               </ul>
-              <ul className="text_muted pl-4">
+              <ul className="pb-0 pl-4">
                 <li>
-                  <p className="text_muted ">
-                    <strong>Workers suffer 'headaches of hybrid' </strong>
-                    <p className="text-muted pt-0 ">
-                      <small>6d ago. 14359 readers</small>
-                    </p>
+                  <strong>Workers suffer 'headaches of hybrid' </strong>
+                  <p className="text-muted pt-0 ">
+                    <small>6d ago. 14359 readers</small>
                   </p>
                 </li>
               </ul>
-              <ul className="text_muted pl-4">
+              <ul className="pb-0 pl-4">
                 <li>
-                  <p className="text_muted ">
-                    <strong>Bulb collapses ino adminstration</strong>
-                    <p className="text-muted pt-0 ">
-                      <small>21hr ago. 14359 readers</small>
-                    </p>
+                  <strong>Bulb collapses ino adminstration</strong>
+                  <p className="text-muted pt-0 ">
+                    <small>21hr ago. 14359 readers</small>
                   </p>
                 </li>
               </ul>
-              <ul className="text_muted pl-4">
+              <ul className="pb-0 pl-4">
                 <li>
-                  <p className="text_muted ">
-                    <strong>Apple shifting to 'DIY' repair model</strong>
-                    <p className="text-muted pt-0 ">
-                      <small>7d ago. 38,400 readers</small>
-                    </p>
+                  <strong>Apple shifting to 'DIY' repair model</strong>
+                  <p className="text-muted pt-0 ">
+                    <small>7d ago. 38,400 readers</small>
                   </p>
                 </li>
               </ul>
@@ -86,9 +81,11 @@ const HomeRightSidebar = () => {
         </Card.Body>
       </Card>
       {/*  */}
-      <Card className="mb-3 mt-2 profile-cards">
+      <Card className="mb-3 mt-2 " style={{ width: "25rem" }}>
         <div className="d-flex align-items-center">
-          <h6 className="ml-2 mt-2  mb-4">Promoted</h6>
+          <h6 className="ml-2 mt-2  mb-4">
+            <strong>Promoted</strong>
+          </h6>
           <i class="bi bi-three-dots ml-auto align-items-baseline mb-0"></i>
         </div>
         <div className="d-flex align-items-center">
