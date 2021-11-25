@@ -6,51 +6,56 @@ import {
   Form,
   Modal,
   Container,
-  Dropdown
+  FloatingLabel,
 } from "react-bootstrap";
 import { BsPlayBtnFill } from "react-icons/bs";
 import { AiOutlinePicture } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
 import { BsCalendar2Date } from "react-icons/bs";
 import { useState, setState } from "react";
+import { BiWorld } from "react-icons/bi";
+import { IoDocumentText } from "react-icons/io5";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { GiHistogram } from "react-icons/gi";
+import { BsThreeDots } from "react-icons/bs";
+import { MdWork } from "react-icons/md";
+import { HiBadgeCheck } from "react-icons/hi";
+import { BsChatTextFill } from "react-icons/bs";
+
 
 const HomeCreatePost = () => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
-  
-
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
 
-
-const addPostFunction = async (e) =>{
-    e.preventDefault()
-try {  const res = await fetch(
-    `https://striveschool-api.herokuapp.com/api/posts`,
-    {
-      method: "POST",
-      body: JSON.stringify({
-          "text":post
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": process.env.REACT_APP_TOKEN,
-      },
+  const addPostFunction = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            text: post,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: process.env.REACT_APP_TOKEN,
+          },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        // setPost(data);
+      } else {
+        console.error("fetch failed");
+      }
+    } catch (error) {
+      console.error(error);
     }
-  );
-  if (res.ok) {
-    const data = await res.json();
-    // setPost(data);
-    
-  } else {
-    console.error("fetch failed");
-  }
-} catch (error) {
-  console.error(error);
-}
-
-}
+  };
 
   return (
     <Container>
@@ -63,16 +68,18 @@ try {  const res = await fetch(
                 className="sidebar-profile-images ml-2"
               />
               <Card.Body className="p-2">
+                  
                 <div className="d-flex justify-content-between">
                   <Button
                     onClick={showAddPost}
                     className="button second-btn-outline"
+                    style={{marginTop:"10px"}}
                   >
                     Start a post
                   </Button>
                 </div>
 
-                <Card.Text className="text-muted mt-4">
+                <Card.Text className="text-muted mt-4" style={{paddingTop:"25px"}}>
                   <div className="d-flex mt-4">
                     <div className="d-flex mr-4">
                       <AiOutlinePicture
@@ -142,29 +149,107 @@ try {  const res = await fetch(
                 </div>
                 <div>
                   <h5>profile name</h5>
-                  <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                      Dropdown Button
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#">Anyone</Dropdown.Item>
-                      <Dropdown.Item href="#">Anyone + Twitter</Dropdown.Item>
-                      <Dropdown.Item href="#">Connections only</Dropdown.Item>
-                      <Dropdown.Item href="#">Group members</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <Button
+                    variant="success"
+                    type="submit"
+                    className="button second-btn-outline"
+                  >
+                    <BiWorld className="mr-2" />
+                    Anyone
+                    <IoMdArrowDropdown className="mr-2" />
+                  </Button>
                 </div>
               </div>
               <Form.Control
-                type="text"
+                as="textarea"
                 placeholder="What do you want to talk about?"
                 value={post}
+                style={{ height: "200px" }}
                 onChange={(e) => setPost(e.target.value)}
               />
+              {/* <FloatingLabel controlId="floatingTextarea2" label="Comments">
+                <Form.Control
+                  as="textarea"
+                  placeholder="What do you want to talk about?"
+                  style={{ height: "70%" }}
+                  value={post}
+                  onChange={(e) => setPost(e.target.value)}
+                />
+              </FloatingLabel> */}
             </Form.Group>
+            <AiOutlinePicture
+              style={{
+                marginRight: "15",
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "20",
+              }}
+            />
+            <BsPlayBtnFill
+              style={{
+                marginRight: "15",
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "20",
+              }}
+            />
+            <IoDocumentText
+              style={{
+                marginRight: "15",
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "20",
+              }}
+            />
+            <MdWork
+              style={{
+                marginRight: "15",
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "20",
+              }}
+            />
 
-            <Button variant="success" type="submit">
+            <HiBadgeCheck
+              style={{
+                marginRight: "15",
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "20",
+              }}
+            />
+            <GiHistogram
+              style={{
+                marginRight: "15",
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "20",
+              }}
+            />
+            <BsThreeDots
+              style={{
+                marginRight: "15",
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "20",
+              }}
+            />
+
+            <Button
+              variant="success"
+              type="submit"
+              className="button second-btn-outline"
+              style={{fontSize:'12px', marginRight:'25px'}}
+            >
+              <BsChatTextFill className="mr-2" />
+              Anyone
+            </Button>
+
+            <Button
+              variant="success"
+              type="submit"
+              className="button second-btn-outline"
+            >
               Post
             </Button>
           </Form>
