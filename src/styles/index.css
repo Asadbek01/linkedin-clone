@@ -170,3 +170,16 @@ a:hover button.second-btn-outline {
 }
 
 
+.rside {
+  margin: 0;
+  padding: 0;
+}
+.test {
+  padding: 0;
+}
+.test-2 {
+  padding-right: 0;
+}
+.test3 {
+  padding: 0%;
+}
