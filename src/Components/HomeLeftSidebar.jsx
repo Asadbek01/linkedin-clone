@@ -1,7 +1,10 @@
 import {Card,ListGroup,List} from 'react-bootstrap';
 import Image from '../assets/Asadbek.png'
 import { BsBookmarkFill, BsPeopleFill } from "react-icons/bs";
+import {useState} from 'react'
 const HomeLeftSidebar = () => {
+  const [show, setShow] = useState(false)
+
     return (
         <>
        
@@ -51,6 +54,44 @@ const HomeLeftSidebar = () => {
     <div className='d-flex'><BsPeopleFill/><p className='text_muted pl-2'>React Developer-ReactJS...</p></div>
     <div className='d-flex'><BsPeopleFill/> <p className='text_muted pl-2'>Angular, React, Vue, Node, I...</p></div>
     </ListGroup>
+
+ {!show && (
+            <p className=" text-center"> <button className="outline button Showmore" type="button"onClick={() => setShow(true)}>
+                Show More
+                 <i class="bi bi-caret-down "></i>
+              </button>
+            </p>
+          )}
+
+          {show && (
+            <>
+              <ListGroup>
+    <div className='d-flex'><BsPeopleFill/><p className='text_muted pl-2'>Intership Japan</p></div>
+    <div className='d-flex'><BsPeopleFill/><p className='text_muted pl-2'>React Developer-ReactJS...</p></div>
+    <div className='d-flex'><BsPeopleFill/> <p className='text_muted pl-2'>Angular, React, Vue, Node, I...</p></div>
+    </ListGroup>
+              <p className=" text-center">
+
+                <button
+                  className="outline button Showless"
+                  type="button"
+                  onClick={() => setShow(false)}
+                >
+                  Show Less <i class="bi bi-caret-up"></i>
+                </button>
+              </p>
+              </>
+          )}
+
+
+
+
+
+
+
+
+    
+
     <div>
     <a href="" >Events</a> <br />
     <a  href="">Followed Hashtags</a>
