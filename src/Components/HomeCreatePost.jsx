@@ -6,7 +6,7 @@ import {
   Form,
   Modal,
   Container,
-  Input
+  OverlayTrigger, Tooltip
 } from "react-bootstrap";
 import { BsPlayBtnFill } from "react-icons/bs";
 import { AiOutlinePicture } from "react-icons/ai";
@@ -97,19 +97,26 @@ const addImage = async (id)=>{
 
   return (
     <Container>
-      <Row className="profile-sub-section pt-3">
-        <Col xs={3}>
+      <Row className="profile-sub-section pt-3 ">
+        <Col xs={2}>
           <Card.Img
             src="https://via.placeholder.com/150"
             className="sidebar-profile-images ml-2"
           />
         </Col>
-        <Col xs={9}>
+        <Col xs={10}>
           <div className="d-flex justify-content-between">
             <Button
               onClick={showAddPost}
               className="button second-btn-outline"
-              style={{ marginTop: "10px" }}
+              style={{
+                marginTop: "10px",
+                paddingLeft: "10px",
+                paddingRight: "270px",
+                paddingTop: "10px",
+                paddingBottom: "10px",
+                textAlign: "left",
+              }}
             >
               Start a post
             </Button>
@@ -209,18 +216,6 @@ const addImage = async (id)=>{
               />
             </Form.Group>
 
-            {/* <AiOutlinePicture
-              onClick={(e) => {
-                setShow("true");
-                console.log(e);
-              }}
-              style={{
-                marginRight: "15",
-                color: "gray",
-                fontWeight: "bold",
-                fontSize: "20",
-              }}
-            /> */}
             {!show && (
               <input
                 type="file"
@@ -228,28 +223,47 @@ const addImage = async (id)=>{
               />
             )}
             {show && (
-              <AiOutlinePicture
-                onClick={(e) => {
-                  setShow(!show);
-                  console.log(show);
-                }}
-                style={{
-                  marginRight: "15",
-                  color: "gray",
-                  fontWeight: "bold",
-                  fontSize: "20",
-                }}
-              />
+              <OverlayTrigger
+                key={"top"}
+                placement={"top"}
+                overlay={
+                  <Tooltip id={`tooltip-${"top"}`}>add a picture</Tooltip>
+                }
+              >
+                <Button variant="light" style={{ padding: "0" }}>
+                  <AiOutlinePicture
+                    onClick={(e) => {
+                      setShow(!show);
+                      console.log(show);
+                    }}
+                    style={{
+                      marginRight: "15",
+                      color: "gray",
+                      fontWeight: "bold",
+                      fontSize: "20",
+                    }}
+                  />
+                </Button>
+              </OverlayTrigger>
             )}
 
-            <BsPlayBtnFill
-              style={{
-                marginRight: "15",
-                color: "gray",
-                fontWeight: "bold",
-                fontSize: "20",
-              }}
-            />
+            <OverlayTrigger
+              key={"top"}
+              placement={"top"}
+              overlay={<Tooltip id={`tooltip-${"top"}`}>add a video</Tooltip>}
+            >
+              <Button variant="light" style={{ padding: "0" }}>
+                <BsPlayBtnFill
+                  style={{
+                    marginRight: "15",
+                    color: "gray",
+                    fontWeight: "bold",
+                    fontSize: "20",
+                  }}
+                />
+              </Button>
+            </OverlayTrigger>
+
             <IoDocumentText
               style={{
                 marginRight: "15",
