@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card,Button } from 'react-bootstrap'
 import SecondNotification from '../Components/SecondNotification'
 import Image from '../assets/Asadbek.png'
+import HomeSideBarFooter from "../Components/HomeSideBarFooter"
 const Notifications = () => {
 
     const [notification, setNotification] = useState([])
@@ -68,6 +69,7 @@ const Notifications = () => {
                         </Card.Body>
                         
                     </Card>
+                    <HomeSideBarFooter/>
                 </Col>
             </Row>
         </Container>
