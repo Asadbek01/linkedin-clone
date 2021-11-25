@@ -116,6 +116,8 @@ const addImage = async (id)=>{
                 paddingTop: "10px",
                 paddingBottom: "10px",
                 textAlign: "left",
+                color:'darkgrey',
+                fontWeight:'normal'
               }}
             >
               Start a post
