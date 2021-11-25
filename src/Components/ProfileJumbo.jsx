@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Modal from "react-bootstrap/Modal"
 import { useLocation, Link } from "react-router-dom"
 import MyButton from './MyButton'
 import { BsLinkedin } from 'react-icons/bs'
+import Form from 'react-bootstrap/Form'
 
 const ProfileJumbo = ({ data, handleShowModal }) => {
 
@@ -18,6 +19,36 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
     const [imageModal, setImageModal] = useState(false)
     const closeImageModal = () => setImageModal(false)
     const showImageModal = () => setImageModal(true)
+
+    const [profileImage, setProfileImage] = useState(null)
+
+    const updateProfilePic =  async () => {
+        const formData = new FormData()
+        formData.append('profile', profileImage)
+        console.log(formData)
+        try {
+            const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/619b5603bdf6a10015e98bb8/picture`, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Authorization': process.env.REACT_APP_TOKEN
+                }
+            })
+            if (response.ok) {
+                alert('success')
+            } else {
+                console.error('something went wrong')
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    useEffect(() => {
+        if (profileImage !== null) {
+            updateProfilePic()
+        }
+    }, [profileImage])
     
     return (
         <>
@@ -75,6 +106,14 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
                     <Modal.Body className='d-flex justify-content-center'>
                         <img src={data.image} className='modalImage' alt="" />
                     </Modal.Body>
+                    <Modal.Footer>
+                    <Form>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Profile Picture</Form.Label>
+                            <Form.Control type="file" onChange={e => setProfileImage(e.target.files[0])} />
+                        </Form.Group> 
+                    </Form>
+                    </Modal.Footer>
                 </Modal>
 
         </div>
