@@ -41,8 +41,17 @@
         left: 90%;
         font-size: 22px;
     }
-    .Showmore{
+    .Showmore {
         color:gray;
-        font-size:12px;
-        padding-bottom: 5px
+        font-size:11px;
+       position: absolute;
+       top:73%;
+       left: 40%;
+    }
+    .Showless{
+        color: gray;
+        font-size:11px;
+        position: absolute;
+        top:78%;
+        left: 40%;
     }
