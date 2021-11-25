@@ -1,36 +1,12 @@
-import { useState, useEffect } from 'react'
 import { Navbar, Nav, FormControl, Container, NavDropdown } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { BsLinkedin } from 'react-icons/bs'
 import NavIconLink from './NavIconLink';
 import MyButton from './MyButton';
 
-const MyNavbar = () => {
+const MyNavbar = ({ data }) => {
 
-    const [data, setData] = useState(null)
-
-    const fetchMyDetails = async () => {
-        try {
-            const response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
-                headers: {
-                    'Authorization': process.env.REACT_APP_TOKEN
-                }
-            })
-            if (response.ok) {
-                const data = await response.json()
-                setData(data)
-            } else {
-                console.error('fetch failed')
-            }
-        } catch (error) {
-            console.error(error)
-        }
-    }
-
-    useEffect(() => {
-        fetchMyDetails()
-        // eslint-disable-next-line
-    }, [])
+    const { pathname } = useLocation()
  
   return (
 	<Navbar bg="light" className='mb-3 p-0'>
@@ -41,11 +17,11 @@ const MyNavbar = () => {
 		{/* <BsSearch /> */}
         <FormControl type="text" placeholder="Search" className="mr-sm-2 w-25 d-none d-md-block" />
 		<Nav className="ml-auto icons">
-            <NavIconLink path='/' icon='bi bi-house-door-fill text-center' text='Home' />
-            <NavIconLink path='/network' icon='bi bi-people-fill text-center' text='Network' />
-            <NavIconLink path='/jobs' icon='bi bi-briefcase-fill text-center' text='Jobs' />
-            <NavIconLink path='/messages' icon='bi bi-chat-dots-fill text-center' text='Messages' />
-            <NavIconLink path='/notifications' icon='bi bi-bell-fill text-center' text='Notifications' />
+            <NavIconLink path='/' icon={pathname === '/' ? 'bi bi-house-door-fill text-center active' : 'bi bi-house-door-fill text-center'} text='Home' />
+            <NavIconLink path='/network' icon={pathname === '/network' ? 'bi bi-people-fill text-center active' : 'bi bi-people-fill text-center'} text='Network' />
+            <NavIconLink path='/jobs' icon={pathname.includes('/jobs') ? 'bi bi-briefcase-fill text-center active' : 'bi bi-briefcase-fill text-center'} text='Jobs' />
+            <NavIconLink path='/messages' icon={pathname.includes('/messages') ? 'bi bi-chat-dots-fill text-center active' : 'bi bi-chat-dots-fill text-center'} text='Messages' />
+            <NavIconLink path='/notifications' icon={pathname === '/notifications' ? 'bi bi-bell-fill text-center active' : 'bi bi-bell-fill text-center'} text='Notifications' />
 
             <div className="d-flex flex-column mt-2 align-items-center">
                 <img src={data?.image} className='nav-image pl-0 ml-0' alt="" />

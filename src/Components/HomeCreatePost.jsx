@@ -28,7 +28,7 @@ import { HiBadgeCheck } from "react-icons/hi";
 // import { BsChatTextFill } from "react-icons/bs";
 
 
-const HomeCreatePost = () => {
+const HomeCreatePost = ({ setPostsAdded, data }) => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
   const [selectedFile, setSelectedFile] = useState(null)
@@ -37,14 +37,11 @@ const HomeCreatePost = () => {
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
 
-const onFileChange = (e)=>{
-    console.log(e)
-    setSelectedFile(e.target.files[0])}
-
-
 
   const addPostFunction = async (e) => {
     e.preventDefault();
+    closeAddPost()
+    setPostsAdded(count => count + 1)
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts`,
@@ -105,34 +102,23 @@ const addImage = async (id)=>{
       <Row className="profile-sub-section pt-3 ">
         <Col xs={2}>
           <Card.Img
-            src="https://via.placeholder.com/150"
+            src={data?.image}
             className="sidebar-profile-images ml-2"
           />
         </Col>
-        <Col xs={10}>
-          <div className="d-flex justify-content-between">
+        <Col xs={10} className=''>
             <Button
               onClick={showAddPost}
-              className="button second-btn-outline"
-              style={{
-                marginTop: "10px",
-                paddingLeft: "10px",
-                paddingRight: "270px",
-                paddingTop: "10px",
-                paddingBottom: "10px",
-                textAlign: "left",
-                color: "darkgrey",
-                fontWeight: "normal",
-              }}
+              className="button second-btn-outline w-100"
+              style={{ marginTop: "10px" }}
             >
               Start a post
             </Button>
-          </div>
         </Col>
 
         <Col>
           <Card className="mb-1 mt-2 profile-cards">
-            <Card.Body>
+            <Card.Body className='pb-0 pt-2'>
               <Card.Text className="text-muted mt-2">
                 <div className="d-flex mt-2">
                   <div className="d-flex mr-4">
@@ -196,13 +182,13 @@ const addImage = async (id)=>{
               <div className="d-flex justify-content-lg-start mb-4">
                 <div style={{ marginRight: "5%" }}>
                   <img
-                    src="https://via.placeholder.com/150"
+                    src={data?.image}
                     className="sidebar-profile-images ml-2"
                     alt="profile image"
                   />
                 </div>
                 <div>
-                  <h5>profile name</h5>
+                  <h5>{data?.name} {data?.surname}</h5>
                   <Button
                     variant="success"
                     type="submit"
@@ -217,6 +203,7 @@ const addImage = async (id)=>{
               <Form.Control
                 as="textarea"
                 placeholder="What do you want to talk about?"
+                className='border-0'
                 value={post}
                 style={{ height: "200px" }}
                 onChange={(e) => setPost(e.target.value)}

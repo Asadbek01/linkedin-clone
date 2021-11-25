@@ -1,18 +1,17 @@
 import {Card,ListGroup,List} from 'react-bootstrap';
-import Image from '../assets/Asadbek.png'
 import { BsBookmarkFill, BsPeopleFill } from "react-icons/bs";
 import {useState} from 'react'
-const HomeLeftSidebar = () => {
+const HomeLeftSidebar = ({ data }) => {
   const [show, setShow] = useState(false)
 
     return (
         <>
        
                <Card>
-              <Card.Header  className='text-center'  style={{height: '4rem', }}>
-                   <img className='sidebar-image' src={Image} alt="jbdjkb" />
+              <Card.Header  className='text-center'  style={{height: '3rem', }}>
+                   <img className='profile-image-posts' src={data?.image} alt="" />
                    </Card.Header>
-                   <Card.Title className='text-center mt-5'> Asadbek Azamjonov </Card.Title>
+                   <Card.Title className='text-center mt-5'>{data?.name} {data?.surname}</Card.Title>
                    <Card.Text className='text-secondary text-center'>
                        <p >Bachelor's degree at Akademia Finansów i Biznesu Vistula</p>
                        </Card.Text>

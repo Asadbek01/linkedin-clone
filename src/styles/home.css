@@ -10,7 +10,7 @@
   text-overflow: ellipsis;
 }
 
-.profile-image {
+.profile-image-posts {
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -197,4 +197,9 @@
 
 #span{
   font-weight:bold;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+  border: none;
 }

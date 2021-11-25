@@ -130,7 +130,7 @@ const HomeViewPost = ({ postsAdded }) => {
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <Form.Control as="textarea" rows={4} value={selectedPostDetails?.text} onChange={e => setSelectedPostDetails({...selectedPostDetails, text: e.target.value})}/>
+                    <Form.Control as="textarea" className='border-0' rows={4} value={selectedPostDetails?.text} onChange={e => setSelectedPostDetails({...selectedPostDetails, text: e.target.value})}/>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
