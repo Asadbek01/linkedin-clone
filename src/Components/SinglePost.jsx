@@ -21,6 +21,7 @@ const SinglePost = ({ post, handleEdit }) => {
                 <i className='bi bi-three-dots' onClick={() => handleEdit(post._id)}></i>
             </Row>
             <p className='pl-2 mt-2 mb-2'>{post.text}</p>
+            { post.image &&  <img src={post.image} className='w-100'/> }
             <hr className='my-1' />
             <Row className='text-muted post-actions justify-content-center'>
                 <Col xs='2' className='d-flex align-items-center justify-content-center p-2 mx-3 rounded'>
