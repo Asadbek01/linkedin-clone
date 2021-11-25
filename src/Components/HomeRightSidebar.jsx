@@ -10,22 +10,59 @@ const Image =
 const HomeRightSidebar = () => {
   return (
     <>
-      <Card className="mb-3 profile-cards">
-        <ListGroup className="w-100 mt-4 rounded">
-          <ListGroup.Item className="w-100">
+      <Card>
+        <Card.Body>
+          <Card.Title>Linkdlen News </Card.Title>
+          <ListGroup>
             <div className="d-flex">
-              <i></i>
-              <div className="d-flex flex-nowrap">
-                <h6 className="mb-1">Bulb Collpase into Admisnistration </h6>
-                <p className="mb-1 text-muted"> </p>
-              </div>
+              <ul className="text_muted pl-3">
+                <li>
+                  <p className="text_muted pl-2">
+                    {" "}
+                    <strong>Bulb collapses into </strong>
+                  </p>{" "}
+                </li>
+                <p className="text-muted pt-0 pb-3">
+                  {" "}
+                  <small>1d ago. 14359 readers</small>
+                </p>
+              </ul>
             </div>
-          </ListGroup.Item>
-        </ListGroup>
+            <div className="d-flex">
+              <ul className="text_muted pl-3">
+                <li>
+                  <p className="text_muted pl-2">Bulb collapses into </p>{" "}
+                </li>
+              </ul>
+            </div>
+            <div className="d-flex">
+              <ul className="text_muted pl-3">
+                <li>
+                  <p className="text_muted pl-2">Bulb collapses into </p>{" "}
+                </li>
+              </ul>
+            </div>
+            <div className="d-flex">
+              <ul className="text_muted pl-3">
+                <li>
+                  <p className="text_muted pl-2">Bulb collapses into</p>{" "}
+                </li>
+              </ul>
+            </div>
+            <div className="d-flex">
+              <ul className="text_muted pl-3">
+                <li>
+                  <p className="text_muted pl-2">Bulb collapses into</p>{" "}
+                </li>
+              </ul>
+            </div>
+            {/* </div> */}
+          </ListGroup>
+        </Card.Body>
       </Card>
       {/*  */}
-      <Card className="mb-3 profile-cards">
-        <h5 className="ml-2 mb-3">Promoted</h5>
+      <Card className="mb-3 mt-2 profile-cards">
+        <h5 className="ml-2 mt-2  mb-3">Promoted</h5>
         <div className="d-flex align-items-center">
           <Card.Img
             src={Image}
