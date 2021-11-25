@@ -8,19 +8,24 @@ import {
   Container,
   OverlayTrigger, Tooltip
 } from "react-bootstrap";
-import { BsPlayBtnFill } from "react-icons/bs";
+// import { BsPlayBtnFill } from "react-icons/bs";
 import { AiOutlinePicture } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
-import { BsCalendar2Date } from "react-icons/bs";
+import {
+  BsCalendar2Date,
+  BsFillBriefcaseFill,
+  BsChatTextFill,
+  BsPlayBtnFill,
+} from "react-icons/bs";
 import { useState, setState } from "react";
 import { BiWorld } from "react-icons/bi";
 import { IoDocumentText } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHistogram } from "react-icons/gi";
 import { BsThreeDots } from "react-icons/bs";
-import { MdWork } from "react-icons/md";
+// import { BsFillBriefcaseFill } from "react-icons/bs";
 import { HiBadgeCheck } from "react-icons/hi";
-import { BsChatTextFill } from "react-icons/bs";
+// import { BsChatTextFill } from "react-icons/bs";
 
 
 const HomeCreatePost = () => {
@@ -116,8 +121,8 @@ const addImage = async (id)=>{
                 paddingTop: "10px",
                 paddingBottom: "10px",
                 textAlign: "left",
-                color:'darkgrey',
-                fontWeight:'normal'
+                color: "darkgrey",
+                fontWeight: "normal",
               }}
             >
               Start a post
@@ -274,7 +279,7 @@ const addImage = async (id)=>{
                 fontSize: "20",
               }}
             />
-            <MdWork
+            <BsFillBriefcaseFill
               style={{
                 marginRight: "15",
                 color: "gray",
