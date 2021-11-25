@@ -120,6 +120,11 @@
   height: 50px;
   width: 50px;
 }
+.sidebar-Home2-images {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
 
 .card.profile-cards {
   border: none;
@@ -143,4 +148,8 @@
   height: 200px;
   width: 200px;
   border-radius: 50%;
+}
+.rside {
+  margin: 0;
+  padding: 0;
 }

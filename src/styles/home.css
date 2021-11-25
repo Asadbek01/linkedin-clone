@@ -115,59 +115,57 @@
   background-color: lightgray;
   cursor: pointer;
 }
- /* HomeLeftSideBar */
+/* HomeLeftSideBar */
 
- 
-  .text_muted{
-      color: gray;
-      font-size: 11px;
-      
-
-  }
-  .sidebar-image{
-      width: 55px;
-      border-radius: 50%;
-      padding-top: 10px;
-  }
-  .text-secondary{
-      font-size: 12px;
-     
-  }
-  .saved{
-      margin-top: 5px;
-     margin-left: 13px;
-
-    }
-    .num_prof{
-        position: absolute;
-        left:80%;
-        top:51%;
-        color: blue;
-    }
-    .num_post{
-        position: absolute;
-        left:80%;
-        top:61%;
-        color: blue;
-    }
-    .plus{
-        cursor: pointer;
-        position: absolute;
-        top: 75%;
-        left: 90%;
-        font-size: 22px;
-    }
-    .Showmore {
-        color:gray;
-        font-size:11px;
-       position: absolute;
-       top:73%;
-       left: 40%;
-    }
-    .Showless{
-        color: gray;
-        font-size:11px;
-        position: absolute;
-        top:78%;
-        left: 40%;
-    }
+.text_muted {
+  color: gray;
+  font-size: 11px;
+}
+.sidebar-image {
+  width: 55px;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+.text-secondary {
+  font-size: 12px;
+}
+.saved {
+  margin-top: 5px;
+  margin-left: 13px;
+}
+.num_prof {
+  position: absolute;
+  left: 80%;
+  top: 51%;
+  color: blue;
+}
+.num_post {
+  position: absolute;
+  left: 80%;
+  top: 61%;
+  color: blue;
+}
+.plus {
+  cursor: pointer;
+  position: absolute;
+  top: 75%;
+  left: 90%;
+  font-size: 22px;
+}
+.Showmore {
+  color: gray;
+  font-size: 11px;
+  position: absolute;
+  top: 73%;
+  left: 40%;
+}
+.Showless {
+  color: gray;
+  font-size: 11px;
+  position: absolute;
+  top: 78%;
+  left: 40%;
+}
+.rightsideicon {
+  font-size: 12px;
+}
