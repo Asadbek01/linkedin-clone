@@ -26,7 +26,8 @@ import { BsChatTextFill } from "react-icons/bs";
 const HomeCreatePost = () => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
-  const [selectedFile, setSelectedFile]= useState(null)
+  const [selectedFile, setSelectedFile] = useState(null)
+  const [show, setShow] = useState(true)
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
@@ -207,21 +208,40 @@ const addImage = async (id)=>{
                 onChange={(e) => setPost(e.target.value)}
               />
             </Form.Group>
-            <input
-              type="file"
-              onChange={(e)=>setSelectedFile(e.target.files[0])}
-              //             <Button onclick={()=><input type="file" onChange={onFileChange}} >
-              // <AiOutlinePicture />
 
-              //             </Button>
-
+            {/* <AiOutlinePicture
+              onClick={(e) => {
+                setShow("true");
+                console.log(e);
+              }}
               style={{
                 marginRight: "15",
                 color: "gray",
                 fontWeight: "bold",
                 fontSize: "20",
               }}
-            />
+            /> */}
+            {!show && (
+              <input
+                type="file"
+                onChange={(e) => setSelectedFile(e.target.files[0])}
+              />
+            )}
+            {show && (
+              <AiOutlinePicture
+                onClick={(e) => {
+                  setShow(!show);
+                  console.log(show);
+                }}
+                style={{
+                  marginRight: "15",
+                  color: "gray",
+                  fontWeight: "bold",
+                  fontSize: "20",
+                }}
+              />
+            )}
+
             <BsPlayBtnFill
               style={{
                 marginRight: "15",
