@@ -23,7 +23,7 @@ import { HiBadgeCheck } from "react-icons/hi";
 import { BsChatTextFill } from "react-icons/bs";
 
 
-const HomeCreatePost = () => {
+const HomeCreatePost = ({ setPostsAdded }) => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
 
@@ -32,17 +32,19 @@ const HomeCreatePost = () => {
 
   const addPostFunction = async (e) => {
     e.preventDefault();
+    closeAddPost()
+    setPostsAdded(count => count + 1)
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts`,
         {
           method: "POST",
           body: JSON.stringify({
-            text: post,
+              "text":post
           }),
           headers: {
             "Content-Type": "application/json",
-            Authorization: process.env.REACT_APP_TOKEN,
+            "Authorization": process.env.REACT_APP_TOKEN,
           },
         }
       );
@@ -54,8 +56,8 @@ const HomeCreatePost = () => {
       }
     } catch (error) {
       console.error(error);
-    }
-  };
+  }
+}
 
   return (
     <Container>
