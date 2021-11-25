@@ -110,7 +110,15 @@ const addImage = async (id)=>{
             <Button
               onClick={showAddPost}
               className="button second-btn-outline w-100"
-              style={{ marginTop: "10px" }}
+              style={{   marginTop: "10px",
+              paddingLeft: "10px",
+              paddingRight: "270px",
+              paddingTop: "10px",
+              paddingBottom: "10px",
+              textAlign: "left",
+              color: "darkgrey",
+              fontWeight: "normal"
+            }}
             >
               Start a post
             </Button>
