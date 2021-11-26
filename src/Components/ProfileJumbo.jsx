@@ -61,7 +61,7 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
               src={data.image}
               alt=""
               className="profile-image ml-4 mt-5"
-              onClick={showImageModal}
+              onClick={path === '/profile' && showImageModal }
             />
             <i className="bi bi-camera-fill bg-white mr-3 mt-4 pl-1"></i>
           </div>
@@ -71,7 +71,7 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
                 <h3 className="mb-1">
                   {data.name} {data.surname}
                 </h3>
-                <p className="mb-1">{data.bio}</p>
+                <p className="mb-1 reduced-text">{data.bio}</p>
                 <p className="text-muted mb-1">
                   {data.area} &#8226;{" "}
                   <span className="text-link" onClick={showContactModal}>
@@ -79,14 +79,16 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
                   </span>{" "}
                 </p>
                 <p className="text-link mb-2">500+ connections</p>
-                <MyButton type="button main-btn mr-2" text="Open to" />
-                <MyButton
-                  type="button second-btn-outline mr-2"
-                  text="Add Section"
-                />
-                <MyButton type="button second-btn-outline mr-2" text="More" />
+                { path === '/' ? (
+                  <>
+                    <MyButton type="button main-btn mr-2" text="Open to" />
+                    <MyButton type="button second-btn-outline mr-2" text="Add Section" />
+                    <MyButton type="button second-btn-outline mr-2" text="More" />
+                  </>
+                ) : <MyButton type="button main-btn-outline mr-2" text="Follow" />
+              }
               </Col>
-              <i className="bi bi-pencil p-2" onClick={handleShowModal}></i>
+              { path === '/profile' && <i className="bi bi-pencil p-2" onClick={handleShowModal}></i> }
             </Row>
           </div>
           <Modal show={contactModal} onHide={closeContactModal}>

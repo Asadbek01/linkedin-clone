@@ -2,12 +2,16 @@ import { useState, useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import SidebarProfiles from './SidebarProfiles'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 
 const ProfileSubSection = ({ heading, myInfo }) => {
 
     const [profiles, setProfiles] = useState([])
     const [posts, setPosts] = useState([])
+    const [me, setMe] = useState(null)
+
+    const { pathname } = useLocation()
+    const { profileId } = useParams()
 
     const randomNum = Math.floor(Math.random() * (profiles.length - 4))
     
@@ -22,6 +26,25 @@ const ProfileSubSection = ({ heading, myInfo }) => {
         if (res.ok) {
           let body = await res.json()
           setProfiles(body)
+        } else {
+          console.log("Something goes wrong while fetching the data")
+        }
+      } catch (err) {
+        console.log("error connecting to the server")
+      }
+    }
+
+    const fetchingProfile = async () => {
+      try {
+        let res = await fetch(
+          `https://striveschool-api.herokuapp.com/api/profile/${profileId}`, {
+            headers: {
+              Authorization: process.env.REACT_APP_TOKEN,
+            }
+          })
+        if (res.ok) {
+          let body = await res.json()
+          setMe(body)
         } else {
           console.log("Something goes wrong while fetching the data")
         }
@@ -50,7 +73,14 @@ const ProfileSubSection = ({ heading, myInfo }) => {
     }
   
     useEffect(() => {
-      heading === 'Interests' ? fetchingData() : fetchingActivity()
+    
+      if (heading === 'Interests') {
+        fetchingData()
+        fetchingProfile()
+      } else {
+        fetchingActivity()
+        fetchingProfile()
+      }
       // eslint-disable-next-line
     }, [])
 
@@ -68,14 +98,32 @@ const ProfileSubSection = ({ heading, myInfo }) => {
                 ))}
             </Row> :
             <Row className='p-3'>
-               { posts && 
-                  posts.filter(post => post?.user?._id === myInfo?._id).slice(0, 4).map(post => (
-                    <Col xs='12' md='6' className='mb-2'>
-                      <Link to={`/post/${post._id}`}><p className='reduced-text mb-0'>{post.text}</p></Link>
-                      <p className='text-muted mb-2'>{myInfo.name} posted this</p>
-                    </Col>
-                  ))
+               {
+                 pathname === '/profile' ? 
+                 (<>
+                    { posts && 
+                      posts.filter(post => post?.user?._id === myInfo?._id).slice(0, 4).map(post => (
+                        <Col xs='12' md='6' className='mb-2'>
+                          <Link to={`/post/${post._id}`}><p className='reduced-text mb-0'>{post.text}</p></Link>
+                          <p className='text-muted mb-2'>{myInfo.name} posted this</p>
+                        </Col>
+                      ))
+                    }
+                 </>) :
+                  (
+                   <>
+                   { posts && 
+                      posts.filter(post => post?.user?._id === me?._id).slice(0, 4).map(post => (
+                        <Col xs='12' md='6' className='mb-2'>
+                          <Link to={`/post/${post._id}`}><p className='reduced-text mb-0'>{post.text}</p></Link>
+                          <p className='text-muted mb-2'>{me.name} posted this</p>
+                        </Col>
+                      ))
+                    }
+                   </>
+                 )
                }
+               
             </Row>
             }
         </div>

@@ -51,7 +51,7 @@ function App() {
         <Route path="/network" element={<Network />} />
         <Route path="/notifications" element={<Notifications data={data} />} />
         <Route path="/profile" element={<Profile myInfo={data} />} />
-        <Route path="/profile/:profileId" element={<ProfileDetails />} />
+        <Route path="/profile/:profileId" element={<ProfileDetails myInfo={data}/>} />
         <Route path="/search/:searchQuery" element={<Search />} />
         <Route path="/post/:postId" element={<Post />} />
         <Route path="*" element={<NotFound />} />
