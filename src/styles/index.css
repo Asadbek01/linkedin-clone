@@ -199,3 +199,10 @@ a:hover button.second-btn-outline {
   color: rgba(0,0,0,0.9);
   margin: 0;
 }
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+.single-search-result:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}

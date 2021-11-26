@@ -10,6 +10,7 @@ import Jobs from "./Pages/Jobs"
 import Messages from "./Pages/Messages"
 import Network from "./Pages/Network"
 import Notifications from "./Pages/Notifications"
+import Search from './Pages/Search'
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
         <Route path="/notifications" element={<Notifications data={data} />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/:profileId" element={<ProfileDetails />} />
+        <Route path="/search/:searchQuery" element={<Search />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
