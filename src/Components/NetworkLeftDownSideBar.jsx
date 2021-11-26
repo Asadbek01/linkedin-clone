@@ -1,10 +1,10 @@
-import { Card, ListGroup } from "react-bootstrap";
+import { Card, ListGroup, Container, Row, Col } from "react-bootstrap";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { useState } from "react";
-import Notifcs from "./Notifcs";
+import { Link } from "react-router-dom";
 
-const NetworkLeftDownSidebar = () => {
-  const [show, setShow] = useState(true);
+const NetworkLeftDownSidebar = (_id, image, name, surname) => {
+ 
 
   return (
     <>
@@ -25,23 +25,23 @@ const NetworkLeftDownSidebar = () => {
                 Hitachi brings you the updates as a Climate Change Innovator
               </p>{" "}
             </div>
-            <Notifcs />
-            <div className='d-flex align-content-center'>
-                <div><img
-              src="https://via.placeholder.com/150"
-              alt=""
-                />
-            </div>
-            <div>
-                <img
-              src="https://via.placeholder.com/150"
-              alt=""
-                />
-            </div>
-            
+            <div className="d-flex align-content-center">
+              <Link to={`/profile/${_id}`}>
+                <ListGroup variant="flush" key={_id} className="">
+                  <img src={image} className="list_group ml-2" alt="" />
+                  <span className="span">
+                    {name} {surname}
+                  </span>
+                </ListGroup>
+              </Link>
 
+              <div className="ml-3">
+                <img src="https://via.placeholder.com/150" alt="" />
+              </div>
             </div>
-            
+            <h6 style={{ textAlign: "center", marginTop: "10px" }}>
+              Technology can do better for the Environment
+            </h6>
           </ListGroup>
         </Card.Body>
       </Card>
