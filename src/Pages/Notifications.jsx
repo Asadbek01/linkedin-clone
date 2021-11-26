@@ -35,10 +35,10 @@ const Notifications = ({ data }) => {
         <>
             <Container>
                 <Row>
-                    <Col xs={"6"} md={"3"} >
+                    <Col xs={"3"} >
                     <Card
-             style={{ width: '17rem', height: '10rem', }}
-                 className="mb-1"
+            
+                 className="mt-3"
                                >
                         <Card.Body className=''>
                             <Card.Title className='text-center'> Notifications </Card.Title>
@@ -50,15 +50,14 @@ const Notifications = ({ data }) => {
                         <Link to='/' className='text-center'>View settings</Link>
                         </Card.Header>
                     </Card>
-                </Col>
-                <Col>
-                <SecondNotification profiles={notification} />      
+                </Col >
+                <Col xs={'6'}>
+                <SecondNotification profiles={notification}  />      
                 </Col>
 
-                <Col xs={"6"} md={'4'}>
+                <Col xs={"3"} >
                     <Card
-             style={{ width: '25rem', height: '16rem', }}
-                 className="mb-1"
+                 className="mt-3"
                                >
                         <Card.Body className=''>
                            <Card.Title className='text-center h6'>EU Funds, free business courses, stories and <br /> curiosities about IP.</Card.Title>
