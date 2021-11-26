@@ -126,6 +126,16 @@
   width: 85px;
   border-radius: 50%;
 }
+.sidebar-Home3-images {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.sidebar-Home4-images {
+  height: 150px;
+  width: 150px;
+  object-fit: fill;
+}
 
 .card.profile-cards {
   border: none;
