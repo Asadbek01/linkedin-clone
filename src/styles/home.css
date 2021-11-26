@@ -175,26 +175,23 @@
     font-size:12px
 }
 
- /* home Side Footer */
- .text-second{
-     margin: auto;
-     color:gray;
-     font-size: 12px;
+/* FeedPageFooter */
+.feedpagefooter {
+  text-align: center;
+}
 
- } 
- .footerParagh{
-   font-size: 11px;
-  padding-left: 8px;
-  }
- .atags{
-   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.feedpagefooter .btn {
+  color: rgba(0,0,0,0.6);
+  margin: 0 10px;
+  padding: 0;
+  font-size: 12px;
+}
 
+.feedpagefooter .logo {
+  height: 15px;
+}
 
- }
-
-#span{
-  font-weight:bold;
+.feedpagefooter .corp {
+  color: rgba(0,0,0,0.9);
+  margin: 0;
 }

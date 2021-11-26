@@ -179,3 +179,23 @@ a:hover button.second-btn-outline {
 .test3 {
   padding: 0%;
 }
+ /* FeedPageFooter */
+.feedpagefooter {
+  text-align: center;
+}
+
+.feedpagefooter .btn {
+  color: rgba(0,0,0,0.6);
+  margin: 0 10px;
+  padding: 0;
+  font-size: 12px;
+}
+
+.feedpagefooter .logo {
+  height: 15px;
+}
+
+.feedpagefooter .corp {
+  color: rgba(0,0,0,0.9);
+  margin: 0;
+}
