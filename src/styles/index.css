@@ -183,3 +183,7 @@ a:hover button.second-btn-outline {
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
+
+.single-search-result:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
