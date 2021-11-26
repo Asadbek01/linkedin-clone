@@ -206,3 +206,13 @@ input:focus, textarea:focus, select:focus{
 .single-list-item:not(:last-child) {
   border-bottom: 1px solid lightgray;
 }
+
+.message-list {
+  max-height: 86vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.message-chat-middle {
+  min-height: 86vh;
+}
