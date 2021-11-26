@@ -91,7 +91,7 @@ const addImage = async (id)=>{
       );
       if (res.ok) {
         const data = await res.json();
-        // setPost(data);
+        
       } else {
         console.error("fetch failed");
       }
@@ -222,7 +222,7 @@ const addImage = async (id)=>{
                 onChange={(e) => setPost(e.target.value)}
               />
             </Form.Group>
-
+            {/* 
             {!show && (
               <input
                 type="file"
@@ -252,8 +252,41 @@ const addImage = async (id)=>{
                   />
                 </Button>
               </OverlayTrigger>
-            )}
+            )} */}
 
+            {/* ========== add a picture */}
+            {/* ================================= */}
+            <OverlayTrigger
+              key={"top"}
+              placement={"top"}
+              overlay={<Tooltip id={`tooltip-${"top"}`}>add a picture</Tooltip>}
+            >
+              <label>
+                <AiOutlinePicture
+                  onClick={(e) => {
+                    setShow(!show);
+                    console.log(show);
+                  }}
+                  style={{
+                    marginRight: "15",
+                    color: "gray",
+                    fontWeight: "bold",
+                    fontSize: "20",
+                  }}
+                />
+                <input
+                  type="file"
+                  onChange={(e) => {setSelectedFile(e.target.files[0]);
+                  console.log(selectedFile)}
+                
+                }
+                  style={{ display: "none" }}
+                />
+              </label>
+            </OverlayTrigger>
+
+            {/* ========== add a video */}
+            {/* ================================= */}
             <OverlayTrigger
               key={"top"}
               placement={"top"}
@@ -271,14 +304,19 @@ const addImage = async (id)=>{
               </Button>
             </OverlayTrigger>
 
-            <IoDocumentText
-              style={{
-                marginRight: "15",
-                color: "gray",
-                fontWeight: "bold",
-                fontSize: "20",
-              }}
-            />
+            <label>
+              <IoDocumentText
+                style={{
+                  marginRight: "15",
+                  color: "gray",
+                  fontWeight: "bold",
+                  fontSize: "20",
+                }}
+              />
+
+              <input type="file" name="myfile" style={{ display: "none" }} />
+            </label>
+
             <BsFillBriefcaseFill
               style={{
                 marginRight: "15",
