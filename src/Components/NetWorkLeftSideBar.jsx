@@ -10,6 +10,7 @@ import { MdGroups } from "react-icons/md";
 import { BiNews } from "react-icons/bi";
 import { FaHashtag } from "react-icons/fa";
 import { IoChatbubbleOutline } from "react-icons/io5";
+import NetworkLeftDownSidebar from './NetworkLeftDownSideBar';
 
 
 const NetworkLeftSidebar = () => {
@@ -145,6 +146,7 @@ const NetworkLeftSidebar = () => {
             )}
           </Card.Body>
         </Card>
+        <NetworkLeftDownSidebar/>
       </>
     );
 }
