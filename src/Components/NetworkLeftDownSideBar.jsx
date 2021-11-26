@@ -1,11 +1,8 @@
 import { Card, ListGroup, Container, Row, Col } from "react-bootstrap";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const NetworkLeftDownSidebar = (_id, image, name, surname) => {
- 
-
+const NetworkLeftDownSidebar = ({_id, image, name, surname}) => {
   return (
     <>
       <Card className="mt-2">
@@ -25,7 +22,7 @@ const NetworkLeftDownSidebar = (_id, image, name, surname) => {
                 Hitachi brings you the updates as a Climate Change Innovator
               </p>{" "}
             </div>
-            <div className="d-flex align-content-center">
+            <div className="d-flex justify-content-center">
               <Link to={`/profile/${_id}`}>
                 <ListGroup variant="flush" key={_id} className="">
                   <img src={image} className="list_group ml-2" alt="" />
@@ -36,7 +33,7 @@ const NetworkLeftDownSidebar = (_id, image, name, surname) => {
               </Link>
 
               <div className="ml-3">
-                <img src="https://via.placeholder.com/150" alt="" />
+                <img src="/logo192.png" height='80px' alt="" />
               </div>
             </div>
             <h6 style={{ textAlign: "center", marginTop: "10px" }}>
