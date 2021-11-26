@@ -11,13 +11,13 @@ import NetWorkLeftSideBar from "../Components/NetWorkLeftSideBar"
 import NetworkFirstPart from "../Components/NetworkFirstPart"
 import NetworkFetch from "../Components/NetworkFetch"
 
-const Network = () => {
+const Network = ({myInfo}) => {
   const [postsAdded, setPostsAdded] = useState(0)
   return (
     <Container>
       <Row>
         <Col xs="4">
-          <NetWorkLeftSideBar />
+          <NetWorkLeftSideBar myInfo={myInfo}/>
         </Col>
         <Col xs="8">
           <NetworkFirstPart />

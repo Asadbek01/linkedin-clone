@@ -15,51 +15,81 @@ import Post from './Pages/Post'
 
 function App() {
 
-  const [data, setData] = useState(null)
+    const [data, setData] = useState(null)
 
-  const fetchMyDetails = async () => {
-      try {
-          const response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
-              headers: {
-                  'Authorization': process.env.REACT_APP_TOKEN
-              }
-          })
-          if (response.ok) {
-              const data = await response.json()
-              setData(data)
-          } else {
-              console.error('fetch failed')
-          }
-      } catch (error) {
-          console.error(error)
-      }
-  }
+    const fetchMyDetails = async() => {
+        try {
+            const response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+                headers: {
+                    'Authorization': process.env.REACT_APP_TOKEN
+                }
+            })
+            if (response.ok) {
+                const data = await response.json()
+                setData(data)
+            } else {
+                console.error('fetch failed')
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
-  useEffect(() => {
-      fetchMyDetails()
-      // eslint-disable-next-line
-  }, [])
+    useEffect(() => {
+        fetchMyDetails()
+            // eslint-disable-next-line
+    }, [])
 
-  return (
-    <BrowserRouter>
-      <MyNavbar data={data} />
-      <Routes>
-        <Route path="/" element={<Home data={data} />} />
-        <Route path="/feed/post/:postId" element={<Home />} />
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/network" element={<Network />} />
-        <Route path="/notifications" element={<Notifications data={data} />} />
-        <Route path="/profile" element={<Profile myInfo={data} />} />
-        <Route path="/profile/:profileId" element={<ProfileDetails myInfo={data}/>} />
-        <Route path="/search/:searchQuery" element={<Search />} />
-        <Route path="/post/:postId" element={<Post />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-  )
-}
+    return ( <
+            BrowserRouter >
+            <
+            MyNavbar data = { data }
+            /> <
+            Routes >
+            <
+            Route path = "/"
+            element = { < Home data = { data }
+                />} / >
+                <
+                Route path = "/feed/post/:postId"
+                element = { < Home / > }
+                /> <
+                Route path = "/jobs"
+                element = { < Jobs / > }
+                /> <
+                Route path = "/messages"
+                element = { < Messages / > }
+                /> <
+                Route path = "/network"
+                element = { < Network myInfo = { data }
+                    />} / >
+                    <
+                    Route path = "/notifications"
+                    element = { < Notifications data = { data }
+                        />} / >
+                        <
+                        Route path = "/profile"
+                        element = { < Profile myInfo = { data }
+                            />} / >
+                            <
+                            Route path = "/profile/:profileId"
+                            element = { < ProfileDetails myInfo = { data }
+                                />} / >
+                                <
+                                Route path = "/search/:searchQuery"
+                                element = { < Search / > }
+                                /> <
+                                Route path = "/post/:postId"
+                                element = { < Post / > }
+                                /> <
+                                Route path = "*"
+                                element = { < NotFound / > }
+                                /> <
+                                /Routes> <
+                                Footer / >
+                                <
+                                /BrowserRouter>
+                            )
+                        }
 
-export default App
-
+                        export default App

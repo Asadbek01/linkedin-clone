@@ -2,7 +2,7 @@ import { Card, ListGroup, Container, Row, Col } from "react-bootstrap";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const NetworkLeftDownSidebar = ({_id, image, name, surname}) => {
+const NetworkLeftDownSidebar = ({myInfo}) => {
   return (
     <>
       <Card className="mt-2">
@@ -23,12 +23,10 @@ const NetworkLeftDownSidebar = ({_id, image, name, surname}) => {
               </p>{" "}
             </div>
             <div className="d-flex justify-content-center">
-              <Link to={`/profile/${_id}`}>
-                <ListGroup variant="flush" key={_id} className="">
-                  <img src={image} className="list_group ml-2" alt="" />
-                  <span className="span">
-                    {name} {surname}
-                  </span>
+              <Link to={`/profile/${myInfo._id}`}>
+                <ListGroup variant="flush" key={myInfo._id} className="">
+                  <img src={myInfo.image} className="list_group ml-2" alt="" />
+                  
                 </ListGroup>
               </Link>
 
