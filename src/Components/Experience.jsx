@@ -78,7 +78,7 @@ const Experience = ({ heading }) => {
     }, [experienceChanged])
 
     return (
-        <div className='profile-sub-section mt-4'>
+        <div className='profile-sub-section mt-4 single-list-item'>
             <Row className='justify-content-between px-3'>
                 <h4 className='pt-4 pl-3'>{heading}</h4>
                 <i 

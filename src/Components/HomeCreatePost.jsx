@@ -73,7 +73,6 @@ const addImage = async (id)=>{
    
      let fd = new FormData();
      fd.append("post", selectedFile);
-     setPostsAdded(count => count + 1)
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts/${id}`,
@@ -87,6 +86,7 @@ const addImage = async (id)=>{
       );
       if (res.ok) {
         const data = await res.json();
+        setPostsAdded(count => count + 1)
         
       } else {
         console.error("fetch failed");

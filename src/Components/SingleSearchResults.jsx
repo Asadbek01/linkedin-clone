@@ -13,7 +13,7 @@ const SingleSearchResult = ({ data, type }) => {
     const diffInMo = differenceInMonths(new Date(), parseISO(data.createdAt))
 
     return (
-        <Row className='single-search-result my-1 py-3'>
+        <Row className='single-list-item my-1 py-3'>
             <Col xs='1'>
                 <img src={type === 'profile' ? data.image : data.user.image} className='profile-image-posts' alt="" />
             </Col>
@@ -25,14 +25,16 @@ const SingleSearchResult = ({ data, type }) => {
                     <p className='text-muted reduced-text mb-0'>{diffInM < 60 ? diffInM + 'm' : diffInH < 24 ? diffInH + 'h' : diffInD < 7 ? diffInD + 'd' : diffInW  < 4 ? diffInW + 'w' : diffInMo + 'mo'} &#8226; <BiWorld /></p>
                 }
             </Col>
+            <Col xs='2'>
+                <button onClick={() => 
+                    type === 'profile' ? navigate(`/profile/${data._id}`) : navigate(`/post/${data._id}`)
+                } className='button main-btn-outline mt-3 ml-2'>{ type === 'profile' ? 'Connect' : 'View Post' }</button>
+            </Col>
             { type === 'posts' &&
                 <Col xs='12' className='mt-3 ml-2'>
                     { data.text}
                 </Col>
             }
-            <Col xs='2'>
-                { type === 'profile' && <button onClick={() => navigate(`/profile/${data._id}`)} className='button main-btn-outline mt-3 ml-2'>Connect</button> }
-            </Col>
         </Row>
     )
 }

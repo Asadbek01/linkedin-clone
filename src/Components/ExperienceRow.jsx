@@ -114,7 +114,6 @@ const ExperienceRow = ({company, id, role, area, startDate, endDate, description
             <h6>{role}</h6>
             <p className='text-muted mb-1'>{format(parseISO(startDate), 'MMM. yyyy')} - {endDate ? format(parseISO(endDate), 'MMM. yyyy') : 'Present'} &#8226; {endDate ? differenceInCalendarMonths(parseISO(endDate), parseISO(startDate)) : differenceInCalendarMonths(new Date(), parseISO(startDate))} months</p>
             <p className='text-muted mb-1'>{area}</p>
-            <hr />
         </Col>
         <Col xs='1'>
             <i className='bi bi-pencil' onClick={() => {
