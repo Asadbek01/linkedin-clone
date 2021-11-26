@@ -1,12 +1,22 @@
-import { Navbar, Nav, FormControl, Container, NavDropdown } from 'react-bootstrap'
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { Navbar, Nav, Form, FormControl, Container, NavDropdown } from 'react-bootstrap'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BsLinkedin } from 'react-icons/bs'
 import NavIconLink from './NavIconLink';
 import MyButton from './MyButton';
 
 const MyNavbar = ({ data }) => {
 
+    const [searchQuery, setSearchQuery] = useState('')
+
     const { pathname } = useLocation()
+    const navigate = useNavigate()
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        navigate(`/search/${searchQuery}`)
+        setSearchQuery('')
+    }
  
   return (
 	<Navbar bg="light" className='mb-3 p-0'>
@@ -15,7 +25,9 @@ const MyNavbar = ({ data }) => {
             <BsLinkedin size='30px' color='#2d50ec'/>
         </Link>
 		{/* <BsSearch /> */}
-        <FormControl type="text" placeholder="Search" className="mr-sm-2 w-25 d-none d-md-block" />
+        <Form onSubmit={handleSubmit} className='w-25'>  
+            <FormControl type="search" placeholder="Search" className="mr-sm-2 w-100 d-none d-md-block" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+        </Form>
 		<Nav className="ml-auto icons">
             <NavIconLink path='/' icon={pathname === '/' ? 'bi bi-house-door-fill text-center active' : 'bi bi-house-door-fill text-center'} text='Home' />
             <NavIconLink path='/network' icon={pathname === '/network' ? 'bi bi-people-fill text-center active' : 'bi bi-people-fill text-center'} text='Network' />
