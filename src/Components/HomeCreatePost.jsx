@@ -39,7 +39,6 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
   const addPostFunction = async (e) => {
     e.preventDefault();
     closeAddPost()
-    setPostsAdded(count => count + 1)
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts`,
@@ -73,6 +72,7 @@ const addImage = async (id)=>{
    
      let fd = new FormData();
      fd.append("post", selectedFile);
+     setPostsAdded(count => count + 1)
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts/${id}`,
@@ -215,6 +215,7 @@ const addImage = async (id)=>{
                 onChange={(e) => setPost(e.target.value)}
               />
             </Form.Group>
+            {/* { selectedFile &&  <img src={selectedFile} className='w-100' /> } */}
             {/* 
             {!show && (
               <input
