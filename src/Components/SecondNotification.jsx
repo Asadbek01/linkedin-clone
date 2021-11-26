@@ -8,7 +8,7 @@ const SecondNotification = ({ title, profiles }) => {
             <h5 className='my-3 mb-4'>{title}</h5>
 
             { profiles && 
-            profiles.slice( 50).map(({ _id, image, name, surname, title}) => (
+            profiles.slice(0, 50).reverse().map(({ _id, image, name, surname, title}) => (
             <Notifcs  _id={_id} image={image} name={name} surname={surname} title={title}/>
             ))}
         </div>

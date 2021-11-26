@@ -9,7 +9,7 @@ const Notifcs = ({ _id, image, name, surname,  }) => {
                 <Col xs={'6'} md={'12'}>
                     <Link to={`/profile/${_id}`}>
                         <ListGroup variant="flush" key={_id} className=''>
-                            <img src={image} className='list_group ml-2' alt='asdfg'/><span className="span">{name} {surname}</span>
+                            <img src={image} className='list_group ml-2' alt='asdfg'/><span className="span">{name} {surname} followed you</span>
                             <div ><BsThreeDots className="icon_dot" /></div>
                             <p className='hour'>4h</p>
                         </ListGroup>
