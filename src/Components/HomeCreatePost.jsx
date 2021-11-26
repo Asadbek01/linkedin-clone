@@ -30,6 +30,7 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
   const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
   const [selectedFile, setSelectedFile] = useState(null)
+  const [imageSrc, setImageSrc] = useState(null)
   const [show, setShow] = useState(true)
 
   const showAddPost = () => setAddPost(true);
@@ -215,7 +216,7 @@ const addImage = async (id)=>{
                 onChange={(e) => setPost(e.target.value)}
               />
             </Form.Group>
-            {/* { selectedFile &&  <img src={selectedFile} className='w-100' /> } */}
+            { selectedFile &&  <img src={imageSrc} className='w-100' /> }
             {/* 
             {!show && (
               <input
@@ -270,8 +271,11 @@ const addImage = async (id)=>{
                 />
                 <input
                   type="file"
-                  onChange={(e) => {setSelectedFile(e.target.files[0]);
-                  console.log(selectedFile)}
+                  onChange={(e) => {
+                    setSelectedFile(e.target.files[0]);
+                    setImageSrc(URL.createObjectURL(e.target.files[0]))
+                    console.log(selectedFile)
+                }
                 
                 }
                   style={{ display: "none" }}
