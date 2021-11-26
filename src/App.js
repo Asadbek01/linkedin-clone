@@ -11,6 +11,7 @@ import Messages from "./Pages/Messages"
 import Network from "./Pages/Network"
 import Notifications from "./Pages/Notifications"
 import Search from './Pages/Search'
+import Post from './Pages/Post'
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/:profileId" element={<ProfileDetails />} />
         <Route path="/search/:searchQuery" element={<Search />} />
+        <Route path="/post/:postId" element={<Post />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
