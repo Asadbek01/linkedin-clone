@@ -8,7 +8,6 @@ import {
   Container,
   OverlayTrigger, Tooltip
 } from "react-bootstrap";
-// import { BsPlayBtnFill } from "react-icons/bs";
 import { AiOutlinePicture } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
 import {
@@ -23,9 +22,8 @@ import { IoDocumentText } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHistogram } from "react-icons/gi";
 import { BsThreeDots } from "react-icons/bs";
-// import { BsFillBriefcaseFill } from "react-icons/bs";
 import { HiBadgeCheck } from "react-icons/hi";
-// import { BsChatTextFill } from "react-icons/bs";
+
 
 
 const HomeCreatePost = ({ setPostsAdded, data }) => {
