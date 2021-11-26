@@ -36,7 +36,7 @@ const MessageMain = () => {
   }, [])
 
   return (
-    <div className="profile-sub-section mt-0 container">
+    <div className="profile-sub-section mt-0 container message-list">
       <Row className=" pt-3 pb-0">
         <Col xs="8">
           <p className=" pl-3 ">Messaging </p>
@@ -57,7 +57,7 @@ const MessageMain = () => {
         </Col>
       </Row>
 
-      <Row className="p-3 mt-0 ">
+      <Row className="p-3 mt-0">
         {profiles &&
           profiles.slice(0, 10).map(({ _id, image, name, surname, title }) => (
             <Col xs="12" key={_id}>
