@@ -23,9 +23,9 @@ const NetworkLeftDownSidebar = ({myInfo}) => {
               </p>{" "}
             </div>
             <div className="d-flex justify-content-center">
-              <Link to={`/profile/${myInfo._id}`}>
-                <ListGroup variant="flush" key={myInfo._id} className="">
-                  <img src={myInfo.image} className="list_group ml-2" alt="" />
+              <Link to={`/profile/${myInfo?._id}`}>
+                <ListGroup variant="flush" key={myInfo?._id} className="">
+                  <img src={myInfo?.image} className="list_group ml-2" alt="" />
                   
                 </ListGroup>
               </Link>
