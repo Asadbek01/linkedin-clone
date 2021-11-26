@@ -9,6 +9,7 @@ import { useState } from "react"
 import HomeSideBarFooter from "../Components/HomeSideBarFooter"
 import NetWorkLeftSideBar from "../Components/NetWorkLeftSideBar"
 import NetworkFirstPart from "../Components/NetworkFirstPart"
+import NetworkFetch from "../Components/NetworkFetch"
 
 const Network = () => {
   const [postsAdded, setPostsAdded] = useState(0)
@@ -20,6 +21,7 @@ const Network = () => {
         </Col>
         <Col xs="8">
           <NetworkFirstPart />
+          <NetworkFetch />
         </Col>
       </Row>
     </Container>

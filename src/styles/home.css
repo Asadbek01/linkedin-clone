@@ -15,6 +15,11 @@
   width: 60px;
   border-radius: 50%;
 }
+.profile-image-posts2 {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
 
 .post-actions .col-2:hover {
   background-color: rgb(236, 233, 233);
@@ -115,64 +120,59 @@
   background-color: lightgray;
   cursor: pointer;
 }
- /* HomeLeftSideBar */
+/* HomeLeftSideBar */
 
- 
-  .text_muted{
-      color: gray;
-      font-size: 11px;
-      
-
-  }
-  .sidebar-image{
-      width: 55px;
-      border-radius: 50%;
-      padding-top: 10px;
-  }
-  .text-secondary{
-      font-size: 12px;
-     
-  }
-  .saved{
-      margin-top: 5px;
-     margin-left: 13px;
-
-    }
-    .num_prof{
-        position: absolute;
-        left:80%;
-        top:51%;
-        color: blue;
-    }
-    .num_post{
-        position: absolute;
-        left:80%;
-        top:61%;
-        color: blue;
-    }
-    .plus{
-        cursor: pointer;
-        position: absolute;
-        top: 75%;
-        left: 90%;
-        font-size: 22px;
-    }
-    .Showmore {
-        color:gray;
-        font-size:11px;
-       position: absolute;
-       top:73%;
-       left: 40%;
-    }
-    .Showless{
-        color: gray;
-        font-size:11px;
-        position: absolute;
-        top:78%;
-        left: 40%;
-    }
-.rightsideicon{
-    font-size:12px
+.text_muted {
+  color: gray;
+  font-size: 11px;
+}
+.sidebar-image {
+  width: 55px;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+.text-secondary {
+  font-size: 12px;
+}
+.saved {
+  margin-top: 5px;
+  margin-left: 13px;
+}
+.num_prof {
+  position: absolute;
+  left: 80%;
+  top: 51%;
+  color: blue;
+}
+.num_post {
+  position: absolute;
+  left: 80%;
+  top: 61%;
+  color: blue;
+}
+.plus {
+  cursor: pointer;
+  position: absolute;
+  top: 75%;
+  left: 90%;
+  font-size: 22px;
+}
+.Showmore {
+  color: gray;
+  font-size: 11px;
+  position: absolute;
+  top: 73%;
+  left: 40%;
+}
+.Showless {
+  color: gray;
+  font-size: 11px;
+  position: absolute;
+  top: 78%;
+  left: 40%;
+}
+.rightsideicon {
+  font-size: 12px;
 }
 
 /* FeedPageFooter */
@@ -181,7 +181,7 @@
 }
 
 .feedpagefooter .btn {
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0 10px;
   padding: 0;
   font-size: 12px;
@@ -192,11 +192,14 @@
 }
 
 .feedpagefooter .corp {
-  color: rgba(0,0,0,0.9);
+  color: rgba(0, 0, 0, 0.9);
   margin: 0;
 }
 
-input:focus, textarea:focus, select:focus, .form-control:focus{
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
   outline: none;
   border: 0;
 }
@@ -215,8 +218,91 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
-.uneditable-input:focus {   
+.uneditable-input:focus {
   border-color: rgba(126, 239, 104, 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(126, 239, 104, 0.6);
   outline: 0 none;
+}
+/* HomeLeftSideBar */
+
+.text_muted {
+  color: gray;
+  font-size: 11px;
+}
+.sidebar-image {
+  width: 55px;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+.text-secondary {
+  font-size: 12px;
+}
+.saved {
+  margin-top: 5px;
+  margin-left: 13px;
+}
+.num_prof {
+  position: absolute;
+  left: 80%;
+  top: 51%;
+  color: blue;
+}
+.num_post {
+  position: absolute;
+  left: 80%;
+  top: 61%;
+  color: blue;
+}
+.plus {
+  cursor: pointer;
+  position: absolute;
+  top: 75%;
+  left: 90%;
+  font-size: 22px;
+}
+.Showmore {
+  color: gray;
+  font-size: 11px;
+  position: absolute;
+  top: 73%;
+  left: 40%;
+}
+.Showless {
+  color: gray;
+  font-size: 11px;
+  position: absolute;
+  top: 78%;
+  left: 40%;
+}
+.rightsideicon {
+  font-size: 12px;
+}
+
+/* home Side Footer */
+.text-second {
+  margin: auto;
+  color: gray;
+  font-size: 12px;
+}
+.footerParagh {
+  font-size: 11px;
+  padding-left: 8px;
+}
+.atags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#span {
+  font-weight: bold;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: none;
 }
