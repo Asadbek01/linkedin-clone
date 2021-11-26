@@ -31,7 +31,7 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
   const [post, setPost] = useState("");
   const [selectedFile, setSelectedFile] = useState(null)
   const [imageSrc, setImageSrc] = useState(null)
-  const [show, setShow] = useState(true)
+ 
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
@@ -59,7 +59,7 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
         if(selectedFile !==null){
             addImage(data._id)
         }
-        // setPost(data);
+        
       } else {
         console.error("fetch failed");
       }
@@ -217,37 +217,7 @@ const addImage = async (id)=>{
               />
             </Form.Group>
             { selectedFile &&  <img src={imageSrc} className='w-100' /> }
-            {/* 
-            {!show && (
-              <input
-                type="file"
-                onChange={(e) => setSelectedFile(e.target.files[0])}
-              />
-            )}
-            {show && (
-              <OverlayTrigger
-                key={"top"}
-                placement={"top"}
-                overlay={
-                  <Tooltip id={`tooltip-${"top"}`}>add a picture</Tooltip>
-                }
-              >
-                <Button variant="light" style={{ padding: "0" }}>
-                  <AiOutlinePicture
-                    onClick={(e) => {
-                      setShow(!show);
-                      console.log(show);
-                    }}
-                    style={{
-                      marginRight: "15",
-                      color: "gray",
-                      fontWeight: "bold",
-                      fontSize: "20",
-                    }}
-                  />
-                </Button>
-              </OverlayTrigger>
-            )} */}
+            
 
             {/* ========== add a picture */}
             {/* ================================= */}
@@ -258,10 +228,9 @@ const addImage = async (id)=>{
             >
               <label>
                 <AiOutlinePicture
-                  onClick={(e) => {
-                    setShow(!show);
-                    console.log(show);
-                  }}
+                  // onClick={(e) => {
+                  //   setShow(!show);
+                  //            }}
                   style={{
                     marginRight: "15",
                     color: "gray",
