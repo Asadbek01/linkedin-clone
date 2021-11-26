@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import ProfileJumbo from "../Components/ProfileJumbo"
-import Sidebar2 from "../Components/Sidebar"
+import Sidebar from "../Components/Sidebar"
 import { useParams } from "react-router-dom"
 import ProfileSubSection from "../Components/ProfileSubSection"
 import Experience from "../Components/Experience"
@@ -46,10 +46,9 @@ const ProfileDetails = ({ myInfo }) => {
           <ProfileJumbo data={data} />
           <div className="dashboard"></div>
           <ProfileSubSection heading="Activity" myInfo={myInfo} />
-          <Experience heading="Experience" />
         </Col>
         <Col xs="12" md="3">
-          <Sidebar2 />
+          <Sidebar />
         </Col>
       </Row>
     </Container>

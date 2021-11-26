@@ -82,7 +82,7 @@ const Profile = ({ myInfo }) => {
     <Container>
       <Row>
         <Col xs="12" md="8">
-          <ProfileJumbo data={data} handleShowModal={handleShowModal} />
+          <ProfileJumbo data={data} handleShowModal={handleShowModal} setDetailsChanged={setDetailsChanged}/>
           <Dashboard />
           <ProfileSubSection heading="Activity" myInfo={myInfo} />
           <Experience heading="Experience" />

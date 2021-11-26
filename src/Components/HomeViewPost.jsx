@@ -10,7 +10,7 @@ const HomeViewPost = ({ postsAdded }) => {
     const [posts, setPosts] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [randomNumber, setRandomNumber] = useState(0)
-    const [numOfPosts, setNumOfPosts] = useState(25)
+    const [numOfPosts, setNumOfPosts] = useState(20)
 
     const [postsChanged, setPostsChanged] = useState(0)
     const [selectedPost, setSelectedPost] = useState(null)
@@ -122,7 +122,7 @@ const HomeViewPost = ({ postsAdded }) => {
             posts &&
                 posts.slice(posts.length - numOfPosts, posts.length).reverse().map(post => <SinglePost post={post} handleEdit={handleEdit}/> )
         }
-        { posts && <div className="d-flex justify-content-center mt-3"><button className='button main-btn-outline' onClick={() => setNumOfPosts(count => count + 25)} >Show More </button></div> }
+        { posts && <div className="d-flex justify-content-center mt-3"><button className='button main-btn-outline' onClick={() => setNumOfPosts(count => count + 20)} >Show More </button></div> }
 
         <Modal show={showModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>

@@ -102,7 +102,7 @@ const ProfileSubSection = ({ heading, myInfo }) => {
                  pathname === '/profile' ? 
                  (<>
                     { posts && 
-                      posts.filter(post => post?.user?._id === myInfo?._id).slice(0, 4).map(post => (
+                      posts.filter(post => post?.user?._id === myInfo?._id).reverse().map(post => (
                         <Col xs='12' md='6' className='mb-2'>
                           <Link to={`/post/${post._id}`}><p className='reduced-text mb-0'>{post.text}</p></Link>
                           <p className='text-muted mb-2'>{myInfo.name} posted this</p>
@@ -113,7 +113,7 @@ const ProfileSubSection = ({ heading, myInfo }) => {
                   (
                    <>
                    { posts && 
-                      posts.filter(post => post?.user?._id === me?._id).slice(0, 4).map(post => (
+                      posts.filter(post => post?.user?._id === me?._id).reverse().map(post => (
                         <Col xs='12' md='6' className='mb-2'>
                           <Link to={`/post/${post._id}`}><p className='reduced-text mb-0'>{post.text}</p></Link>
                           <p className='text-muted mb-2'>{me.name} posted this</p>

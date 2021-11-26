@@ -7,7 +7,7 @@ import MyButton from "./MyButton"
 import { BsLinkedin } from "react-icons/bs"
 import Form from "react-bootstrap/Form"
 
-const ProfileJumbo = ({ data, handleShowModal }) => {
+const ProfileJumbo = ({ data, handleShowModal, setDetailsChanged }) => {
   const location = useLocation()
   const path = location.pathname
 
@@ -37,7 +37,7 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
         }
       )
       if (response.ok) {
-        alert("success")
+        setDetailsChanged(count => count + 1)
       } else {
         console.error("something went wrong")
       }
@@ -49,6 +49,7 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
   useEffect(() => {
     if (profileImage !== null) {
       updateProfilePic()
+      closeImageModal()
     }
   }, [profileImage])
 
@@ -128,12 +129,14 @@ const ProfileJumbo = ({ data, handleShowModal }) => {
             </Modal.Body>
             <Modal.Footer>
               <Form>
-                <Form.Group className="mb-3">
-                  <Form.Label>Profile Picture</Form.Label>
+                <Form.Group className="mb-3 text-center">
+                  <Form.Label>Profile Picture
                   <Form.Control
                     type="file"
                     onChange={(e) => setProfileImage(e.target.files[0])}
+                    style={ { display: 'none' } }
                   />
+                  </Form.Label>
                 </Form.Group>
               </Form>
             </Modal.Footer>
