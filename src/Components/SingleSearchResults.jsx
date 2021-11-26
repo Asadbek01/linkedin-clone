@@ -13,7 +13,7 @@ const SingleSearchResult = ({ data, type }) => {
     const diffInMo = differenceInMonths(new Date(), parseISO(data.createdAt))
 
     return (
-        <Row className='single-search-result my-1 py-3'>
+        <Row className='single-list-item my-1 py-3'>
             <Col xs='1'>
                 <img src={type === 'profile' ? data.image : data.user.image} className='profile-image-posts' alt="" />
             </Col>

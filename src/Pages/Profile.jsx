@@ -8,7 +8,7 @@ import SkillDropDown from "../Components/SkillDropDown"
 import Experience from "../Components/Experience"
 import Licence from "../Components/Licence"
 
-const Profile = () => {
+const Profile = ({ myInfo }) => {
   const [data, setData] = useState(null)
   const [name, setName] = useState(null)
   const [surname, setSurname] = useState(null)
@@ -84,11 +84,9 @@ const Profile = () => {
         <Col xs="12" md="8">
           <ProfileJumbo data={data} handleShowModal={handleShowModal} />
           <Dashboard />
-          <ProfileSubSection heading="Activity" />
+          <ProfileSubSection heading="Activity" myInfo={myInfo} />
           <Experience heading="Experience" />
-          {/* <SkillEndorsemnt /> */}
           <SkillDropDown />
-
           <Licence />
           <ProfileSubSection heading="Interests" />
         </Col>

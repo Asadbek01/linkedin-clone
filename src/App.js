@@ -50,7 +50,7 @@ function App() {
         <Route path="/messages" element={<Messages />} />
         <Route path="/network" element={<Network />} />
         <Route path="/notifications" element={<Notifications data={data} />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile myInfo={data} />} />
         <Route path="/profile/:profileId" element={<ProfileDetails />} />
         <Route path="/search/:searchQuery" element={<Search />} />
         <Route path="/post/:postId" element={<Post />} />

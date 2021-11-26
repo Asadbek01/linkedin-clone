@@ -132,7 +132,7 @@ const HomeViewPost = ({ postsAdded }) => {
                 <Form>
                     <Form.Control as="textarea" className='border-0' rows={3} value={selectedPostDetails?.text} onChange={e => setSelectedPostDetails({...selectedPostDetails, text: e.target.value})}/>
                 </Form>
-                {selectedPostDetails.image && <img src={selectedPostDetails.image} className='w-100' />}
+                {selectedPostDetails?.image && <img src={selectedPostDetails.image} className='w-100' />}
             </Modal.Body>
             <Modal.Footer>
             <Button variant="success" onClick={handleUpdatePost}>
