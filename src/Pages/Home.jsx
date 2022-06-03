@@ -9,7 +9,6 @@ import { useState } from 'react'
 import HomeSideBarFooter from '../Components/HomeSideBarFooter'
 
 const Home = ({ data }) => {
-
     const [postsAdded, setPostsAdded] = useState(0)
 
     return (
