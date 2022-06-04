@@ -31,7 +31,7 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
   const [post, setPost] = useState("");
   const [selectedFile, setSelectedFile] = useState(null)
   const [imageSrc, setImageSrc] = useState(null)
- 
+
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
@@ -50,16 +50,16 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
           }),
           headers: {
             "Content-Type": "application/json",
-            Authorization: process.env.REACT_APP_TOKEN,
+            'Authorization': process.env.REACT_APP_TOKEN,
           },
         }
       );
       if (res.ok) {
         const data = await res.json();
-        if(selectedFile !==null){
-            addImage(data._id)
+        if (selectedFile !== null) {
+          addImage(data._id)
         }
-        
+
       } else {
         console.error("fetch failed");
       }
@@ -69,10 +69,10 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
   };
 
 
-const addImage = async (id)=>{
-   
-     let fd = new FormData();
-     fd.append("post", selectedFile);
+  const addImage = async (id) => {
+
+    let fd = new FormData();
+    fd.append("post", selectedFile);
     try {
       const res = await fetch(
         `https://striveschool-api.herokuapp.com/api/posts/${id}`,
@@ -80,21 +80,21 @@ const addImage = async (id)=>{
           method: "POST",
           body: fd,
           headers: {
-          Authorization: process.env.REACT_APP_TOKEN,
+            Authorization: process.env.REACT_APP_TOKEN,
           },
         }
       );
       if (res.ok) {
         const data = await res.json();
         setPostsAdded(count => count + 1)
-        
+
       } else {
         console.error("fetch failed");
       }
     } catch (error) {
       console.error(error);
     }
-}
+  }
 
   return (
     <Container>
@@ -106,10 +106,11 @@ const addImage = async (id)=>{
           />
         </Col>
         <Col xs={10} className=''>
-            <Button
-              onClick={showAddPost}
-              className="button second-btn-outline w-100"
-              style={{   marginTop: "10px",
+          <Button
+            onClick={showAddPost}
+            className="button second-btn-outline w-100"
+            style={{
+              marginTop: "10px",
               paddingLeft: "10px",
               paddingRight: "270px",
               paddingTop: "10px",
@@ -118,9 +119,9 @@ const addImage = async (id)=>{
               color: "darkgrey",
               fontWeight: "normal"
             }}
-            >
-              Start a post
-            </Button>
+          >
+            Start a post
+          </Button>
         </Col>
 
         <Col>
@@ -216,8 +217,8 @@ const addImage = async (id)=>{
                 onChange={(e) => setPost(e.target.value)}
               />
             </Form.Group>
-            { selectedFile &&  <img src={imageSrc} className='w-100' /> }
-            
+            {selectedFile && <img src={imageSrc} className='w-100' />}
+
 
             {/* ========== add a picture */}
             {/* ================================= */}
@@ -244,9 +245,9 @@ const addImage = async (id)=>{
                     setSelectedFile(e.target.files[0]);
                     setImageSrc(URL.createObjectURL(e.target.files[0]))
                     console.log(selectedFile)
-                }
-                
-                }
+                  }
+
+                  }
                   style={{ display: "none" }}
                 />
               </label>

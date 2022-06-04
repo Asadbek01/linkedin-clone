@@ -15,18 +15,17 @@ const Profile = ({ myInfo }) => {
   const [bio, setBio] = useState(null)
   const [area, setArea] = useState(null)
   const [detailsChanged, setDetailsChanged] = useState(0)
-  
+
   const [showModal, setShowModal] = useState(false)
   const handleCloseModal = () => setShowModal(false)
   const handleShowModal = () => setShowModal(true)
-
   const fetchMyDetails = async () => {
     try {
       const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/me",
         {
           headers: {
-            Authorization: process.env.REACT_APP_TOKEN,
+            'Authorization': process.env.REACT_APP_TOKEN,
           },
         }
       )
@@ -82,7 +81,7 @@ const Profile = ({ myInfo }) => {
     <Container>
       <Row>
         <Col xs="12" md="8">
-          <ProfileJumbo data={data} handleShowModal={handleShowModal} setDetailsChanged={setDetailsChanged}/>
+          <ProfileJumbo data={data} handleShowModal={handleShowModal} setDetailsChanged={setDetailsChanged} />
           <Dashboard />
           <ProfileSubSection heading="Activity" myInfo={myInfo} />
           <Experience heading="Experience" />
@@ -144,8 +143,8 @@ const Profile = ({ myInfo }) => {
           </Form>
         </Modal.Body>
       </Modal>
-      </Container>
-)
+    </Container>
+  )
 }
 
 export default Profile

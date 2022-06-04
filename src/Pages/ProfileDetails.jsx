@@ -19,7 +19,7 @@ const ProfileDetails = ({ myInfo }) => {
         `https://striveschool-api.herokuapp.com/api/profile/${profileId}`,
         {
           headers: {
-            Authorization: process.env.REACT_APP_TOKEN,
+            'Authorization': process.env.REACT_APP_TOKEN,
           },
         }
       )
@@ -32,12 +32,12 @@ const ProfileDetails = ({ myInfo }) => {
     } catch (error) {
       console.error(error)
     }
-}
-    
-    useEffect(() => {
-        fetchMyDetails()
-        // eslint-disable-next-line
-    }, [profileId])
+  }
+
+  useEffect(() => {
+    fetchMyDetails()
+    // eslint-disable-next-line
+  }, [profileId])
 
   return (
     <Container>

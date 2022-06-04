@@ -23,10 +23,10 @@ const HomeViewPost = ({ postsAdded }) => {
         try {
             const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${selectedPost}`, {
                 headers: {
-                    'Authorization': process.env.REACT_APP_TOKEN
+                    "Authorization": process.env.REACT_APP_TOKEN
                 }
             })
-            if (response.ok) {  
+            if (response.ok) {
                 const data = await response.json()
                 setSelectedPostDetails(data)
             } else {
@@ -99,7 +99,7 @@ const HomeViewPost = ({ postsAdded }) => {
                 setRandomNumber(Math.floor(Math.random() * (data.length - 100)))
                 setIsLoading(false)
                 console.log(data)
-            } else {    
+            } else {
                 console.error('Fetch Failed')
             }
         } catch (error) {
@@ -114,35 +114,35 @@ const HomeViewPost = ({ postsAdded }) => {
 
     return (
         <>
-        {
-            isLoading && 
-            [1, 2, 3, 4].map(number => <SkeletonPost key={number}/> )
-        }
-        {
-            posts &&
-                posts.slice(posts.length - numOfPosts, posts.length).reverse().map(post => <SinglePost post={post} handleEdit={handleEdit}/> )
-        }
-        { posts && <div className="d-flex justify-content-center mt-3"><button className='button main-btn-outline' onClick={() => setNumOfPosts(count => count + 20)} >Show More </button></div> }
+            {
+                isLoading &&
+                [1, 2, 3, 4].map(number => <SkeletonPost key={number} />)
+            }
+            {
+                posts &&
+                posts.slice(posts.length - numOfPosts, posts.length).reverse().map(post => <SinglePost post={post} handleEdit={handleEdit} />)
+            }
+            {posts && <div className="d-flex justify-content-center mt-3"><button className='button main-btn-outline' onClick={() => setNumOfPosts(count => count + 20)} >Show More </button></div>}
 
-        <Modal show={showModal} onHide={handleCloseModal}>
-            <Modal.Header closeButton>
-            <Modal.Title>{selectedPostDetails?.username}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Form>
-                    <Form.Control as="textarea" className='border-0' rows={3} value={selectedPostDetails?.text} onChange={e => setSelectedPostDetails({...selectedPostDetails, text: e.target.value})}/>
-                </Form>
-                {selectedPostDetails?.image && <img src={selectedPostDetails.image} className='w-100' />}
-            </Modal.Body>
-            <Modal.Footer>
-            <Button variant="success" onClick={handleUpdatePost}>
-                Update
-            </Button>
-            <Button variant="danger" onClick={handleDeletePost}>
-                Delete
-            </Button>
-            </Modal.Footer>
-        </Modal>
+            <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{selectedPostDetails?.username}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Control as="textarea" className='border-0' rows={3} value={selectedPostDetails?.text} onChange={e => setSelectedPostDetails({ ...selectedPostDetails, text: e.target.value })} />
+                    </Form>
+                    {selectedPostDetails?.image && <img src={selectedPostDetails.image} className='w-100' />}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleUpdatePost}>
+                        Update
+                    </Button>
+                    <Button variant="danger" onClick={handleDeletePost}>
+                        Delete
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
         </>
     )
