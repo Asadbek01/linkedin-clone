@@ -39,7 +39,7 @@ const Experience = ({ heading }) => {
                 body: JSON.stringify(experience),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': process.env.REACT_APP_TOKEN
+                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOWI0NmFhY2FhMjAwMTU1MmEzYWQiLCJpYXQiOjE2NTQyNzg4MDIsImV4cCI6MTY1NTQ4ODQwMn0.0YKFB7YP5H1tqH_-UOhnuHDBqMeJ3Jdlnyf0TCRXEiY",
                 }
             })
             if (response.ok) {
@@ -81,58 +81,58 @@ const Experience = ({ heading }) => {
         <div className='profile-sub-section mt-4 single-list-item'>
             <Row className='justify-content-between px-3'>
                 <h4 className='pt-4 pl-3'>{heading}</h4>
-                <i 
+                <i
                     className='bi bi-plus mt-3 mr-4'
                     onClick={showAddExperience}
                 ></i>
             </Row>
-            
+
             <Row className='p-3'>
-                { experiences && 
-                    experiences.map(({company, _id: id, role, area, startDate, endDate}) => (
-                        <ExperienceRow key={id} company={company} id={id} role={role} area={area} description={description} startDate={startDate} endDate={endDate} experienceChanged={experienceChanged} setExperienceChanged={() => setExperienceChanged(count => count + 1)}/>
+                {experiences &&
+                    experiences.map(({ company, _id: id, role, area, startDate, endDate }) => (
+                        <ExperienceRow key={id} company={company} id={id} role={role} area={area} description={description} startDate={startDate} endDate={endDate} experienceChanged={experienceChanged} setExperienceChanged={() => setExperienceChanged(count => count + 1)} />
                     ))
                 }
             </Row>
 
             <Modal show={addExperience} onHide={closeAddExperience}>
-            <Modal.Header closeButton>
-                <Modal.Title>Add Experience</Modal.Title>
+                <Modal.Header closeButton>
+                    <Modal.Title>Add Experience</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group>
-                        <Form.Label>Company</Form.Label>
-                        <Form.Control type="text" placeholder="Company" value={company} onChange={e => setCompany(e.target.value)} required />
-                    </Form.Group>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group>
+                            <Form.Label>Company</Form.Label>
+                            <Form.Control type="text" placeholder="Company" value={company} onChange={e => setCompany(e.target.value)} required />
+                        </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>Role</Form.Label>
-                        <Form.Control type="text" placeholder="Role" value={role} onChange={e => setRole(e.target.value)} required />
-                    </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Role</Form.Label>
+                            <Form.Control type="text" placeholder="Role" value={role} onChange={e => setRole(e.target.value)} required />
+                        </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} required />
-                    </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Description</Form.Label>
+                            <Form.Control type="text" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} required />
+                        </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>Location</Form.Label>
-                        <Form.Control type="text" placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} required />
-                    </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Location</Form.Label>
+                            <Form.Control type="text" placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} required />
+                        </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>Start Date</Form.Label>
-                        <Form.Control type="date" value={startDate} onChange={e => setStartDate(e.target.value)} required />
-                    </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Start Date</Form.Label>
+                            <Form.Control type="date" value={startDate} onChange={e => setStartDate(e.target.value)} required />
+                        </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>End Date</Form.Label>
-                        <Form.Control type="date" value={endDate} onChange={e => setEndDate(e.target.value)} />
-                    </Form.Group>
+                        <Form.Group>
+                            <Form.Label>End Date</Form.Label>
+                            <Form.Control type="date" value={endDate} onChange={e => setEndDate(e.target.value)} />
+                        </Form.Group>
 
-                    <Button variant="success" type="submit">Add</Button>
-                </Form>
+                        <Button variant="success" type="submit">Add</Button>
+                    </Form>
                 </Modal.Body>
             </Modal>
         </div>

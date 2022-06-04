@@ -13,7 +13,7 @@ const Post = () => {
         try {
             const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
                 headers: {
-                    'Authorization': process.env.REACT_APP_TOKEN
+                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOWI0NmFhY2FhMjAwMTU1MmEzYWQiLCJpYXQiOjE2NTQyNzg4MDIsImV4cCI6MTY1NTQ4ODQwMn0.0YKFB7YP5H1tqH_-UOhnuHDBqMeJ3Jdlnyf0TCRXEiY",
                 }
             })
             if (response.ok) {
@@ -32,7 +32,7 @@ const Post = () => {
         try {
             const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}`, {
                 headers: {
-                    'Authorization': process.env.REACT_APP_TOKEN
+                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOWI0NmFhY2FhMjAwMTU1MmEzYWQiLCJpYXQiOjE2NTQyNzg4MDIsImV4cCI6MTY1NTQ4ODQwMn0.0YKFB7YP5H1tqH_-UOhnuHDBqMeJ3Jdlnyf0TCRXEiY",
                 }
             })
             if (response.ok) {
@@ -55,7 +55,7 @@ const Post = () => {
         <Container>
             <Row className='justify-content-center'>
                 <Col xs='8'>
-                    {(post && profile) && <SinglePost post={post} profile={profile}/> }
+                    {(post && profile) && <SinglePost post={post} profile={profile} />}
                 </Col>
             </Row>
         </Container>
