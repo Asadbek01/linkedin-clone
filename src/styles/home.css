@@ -73,18 +73,14 @@
 .num_prof {
   position: absolute;
   left: 80%;
-  top: 51%;
+  top: 47%;
   color: blue;
 }
 .num_post {
   position: absolute;
   left: 80%;
-  top: 61%;
+  top: 56%;
   color: blue;
-  background-color: lightgray;
-  margin: 0.25rem 0;
-  height: 12px;
-  border-radius: 0.25rem;
 }
 
 .skeleton-bio {
@@ -141,13 +137,13 @@
 .num_prof {
   position: absolute;
   left: 80%;
-  top: 51%;
+  top: 47%;
   color: blue;
 }
 .num_post {
   position: absolute;
   left: 80%;
-  top: 61%;
+  top: 56%;
   color: blue;
 }
 .plus {
@@ -226,13 +222,13 @@ input[type="color"]:focus,
 .num_prof {
   position: absolute;
   left: 80%;
-  top: 51%;
+  top: 47%;
   color: blue;
 }
 .num_post {
   position: absolute;
   left: 80%;
-  top: 61%;
+  top: 56%;
   color: blue;
 }
 .plus {
