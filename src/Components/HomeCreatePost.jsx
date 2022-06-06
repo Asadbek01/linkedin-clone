@@ -108,11 +108,11 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
         <Col xs={10} className=''>
           <Button
             onClick={showAddPost}
-            className="button second-btn-outline w-100"
+            className="button second-btn-outline"
             style={{
-              marginTop: "10px",
+              marginTop: "5px",
               paddingLeft: "10px",
-              paddingRight: "270px",
+              paddingRight: "200px",
               paddingTop: "10px",
               paddingBottom: "10px",
               textAlign: "left",
@@ -171,7 +171,7 @@ const HomeCreatePost = ({ setPostsAdded, data }) => {
                         fontSize: "23",
                       }}
                     />
-                    <p>Write article</p>
+                    <p>Article</p>
                   </div>
                 </div>
               </Card.Text>
