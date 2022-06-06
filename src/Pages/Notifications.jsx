@@ -37,13 +37,12 @@ const Notifications = ({ data }) => {
         <Row>
           <Col xs={"3"} >
             <Card
-
               className="mt-3"
             >
-              <Card.Body className=''>
+              <Card.Body className='mb-n3'>
                 <Card.Title className='text-center'> Notifications </Card.Title>
                 <Card.Text className='text-secondary text-center'>
-                  <p >You have new notifications</p>
+                  <p style={{ fontWeight: "bolder", fontSize: "15px" }}>You have new notifications</p>
                 </Card.Text>
               </Card.Body>
               <Card.Header className='text-center'>Improve your notifications <br />
@@ -65,7 +64,6 @@ const Notifications = ({ data }) => {
                 <Card.Title className='text-center second_title '>All about Intellectual Property for SMEs</Card.Title>
                 <Button className='outline-primary' variant="outline-primary">Follow</Button>{' '}
               </Card.Body>
-
             </Card>
             <HomeSideBarFooter />
           </Col>
