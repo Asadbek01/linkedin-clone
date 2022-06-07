@@ -5,13 +5,13 @@ import DashboardRowItem from './DashboardRowItem'
 const Dashboard = () => {
 
     return (
-        <div className="dashboard p-4">
+        <div className="dashboard p-4 mt-n0">
             <h5 className='dashboard-heading'>Your Dashboard</h5>
             <p className='text-muted'>Private To You</p>
             <ListGroup horizontal className='w-100 rounded'>
-                <DashboardRowItem number='18' text='Who viewed your profile'/>
-                <DashboardRowItem number='30' text='Post Views'/>
-                <DashboardRowItem number='22' text='Search Appearances'/>
+                <DashboardRowItem number='18' text='Who viewed your profile' />
+                <DashboardRowItem number='30' text='Post Views' />
+                <DashboardRowItem number='22' text='Search Appearances' />
             </ListGroup>
 
             <ListGroup className='w-100 mt-4 rounded'>
