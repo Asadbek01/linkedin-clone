@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 # Photos
- <img src="https://postimg.cc/hfFgPQx7" alt="photo"/>
+ <img src="https://postimg.cc/hfFgPQx7" alt="photo" >
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
