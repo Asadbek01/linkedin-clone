@@ -7,10 +7,12 @@ import {
   Modal,
   Container,
   Input,
+  ListGroup,
+  ListGroupItem,
 } from "react-bootstrap"
-import MyButton from "./MyButton"
+import BsCheckAll from 'react-icons'
 
-const NetworkFirstPart = () => {
+const SideBarChat = () => {
   return (
     <Container className="profile-sub-section pt-0 pb-0">
       <Row className=" px-2  mt-3">
@@ -23,6 +25,9 @@ const NetworkFirstPart = () => {
       </Row>
       <hr className="mt-0 " />
       <Row>
+        <ListGroup>
+          <ListGroupItem>
+
         <div className="d-flex align-items-center ml-3 mb-2 mt-0 px-2">
           <img
             src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
@@ -35,11 +40,12 @@ const NetworkFirstPart = () => {
               <strong> Fearlessly Puplic</strong>
             </p>
           </div>
-          <MyButton type=" outline button  " text="Ignore" />
-          <MyButton type="outline button third-btn-outline " text="Accept" />
+          
         </div>
+          </ListGroupItem>
+        </ListGroup>
       </Row>
     </Container>
   )
 }
-export default NetworkFirstPart
+export default SideBarChat
