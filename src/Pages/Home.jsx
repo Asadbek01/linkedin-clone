@@ -9,7 +9,6 @@ import { useState } from 'react'
 import HomeSideBarFooter from '../Components/HomeSideBarFooter'
 
 const Home = ({ data }) => {
-
     const [postsAdded, setPostsAdded] = useState(0)
 
     return (
@@ -18,11 +17,11 @@ const Home = ({ data }) => {
                 <Col xs='3'>
                     <HomeLeftSidebar data={data} />
                 </Col>
-                <Col xs='6'>
+                <Col xs='5'>
                     <HomeCreatePost setPostsAdded={setPostsAdded} data={data} />
                     <HomeViewPost postsAdded={postsAdded} />
                 </Col>
-                <Col xs='3'>
+                <Col xs='4'>
                     <HomeRightSidebar />
                     <HomeSideBarFooter />
                 </Col>

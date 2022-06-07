@@ -14,7 +14,7 @@ const MessageMain = () => {
         "https://striveschool-api.herokuapp.com/api/profile/",
         {
           headers: {
-            Authorization: process.env.REACT_APP_TOKEN,
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOWI0NmFhY2FhMjAwMTU1MmEzYWQiLCJpYXQiOjE2NTQyNzg4MDIsImV4cCI6MTY1NTQ4ODQwMn0.0YKFB7YP5H1tqH_-UOhnuHDBqMeJ3Jdlnyf0TCRXEiY",
           },
         }
       )
@@ -52,7 +52,6 @@ const MessageMain = () => {
             className="w-25"
             type="search"
             placeholder="Search Nessage here"
-            className=" w-100  "
           />
         </Col>
       </Row>

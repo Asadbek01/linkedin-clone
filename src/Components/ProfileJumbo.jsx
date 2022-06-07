@@ -32,7 +32,7 @@ const ProfileJumbo = ({ data, handleShowModal, setDetailsChanged }) => {
           method: "POST",
           body: formData,
           headers: {
-            Authorization: process.env.REACT_APP_TOKEN,
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOWI0NmFhY2FhMjAwMTU1MmEzYWQiLCJpYXQiOjE2NTQyNzg4MDIsImV4cCI6MTY1NTQ4ODQwMn0.0YKFB7YP5H1tqH_-UOhnuHDBqMeJ3Jdlnyf0TCRXEiY",
           },
         }
       )
@@ -62,7 +62,7 @@ const ProfileJumbo = ({ data, handleShowModal, setDetailsChanged }) => {
               src={data.image}
               alt=""
               className="profile-image ml-4 mt-5"
-              onClick={path === '/profile' && showImageModal }
+              onClick={path === '/profile' && showImageModal}
             />
             <i className="bi bi-camera-fill bg-white mr-3 mt-4 pl-1"></i>
           </div>
@@ -80,16 +80,16 @@ const ProfileJumbo = ({ data, handleShowModal, setDetailsChanged }) => {
                   </span>{" "}
                 </p>
                 <p className="text-link mb-2">500+ connections</p>
-                { path === '/' ? (
+                {path === '/' ? (
                   <>
                     <MyButton type="button main-btn mr-2" text="Open to" />
                     <MyButton type="button second-btn-outline mr-2" text="Add Section" />
                     <MyButton type="button second-btn-outline mr-2" text="More" />
                   </>
                 ) : <MyButton type="button main-btn-outline mr-2" text="Follow" />
-              }
+                }
               </Col>
-              { path === '/profile' && <i className="bi bi-pencil p-2" onClick={handleShowModal}></i> }
+              {path === '/profile' && <i className="bi bi-pencil p-2" onClick={handleShowModal}></i>}
             </Row>
           </div>
           <Modal show={contactModal} onHide={closeContactModal}>
@@ -131,11 +131,11 @@ const ProfileJumbo = ({ data, handleShowModal, setDetailsChanged }) => {
               <Form>
                 <Form.Group className="mb-3 text-center">
                   <Form.Label>Profile Picture
-                  <Form.Control
-                    type="file"
-                    onChange={(e) => setProfileImage(e.target.files[0])}
-                    style={ { display: 'none' } }
-                  />
+                    <Form.Control
+                      type="file"
+                      onChange={(e) => setProfileImage(e.target.files[0])}
+                      style={{ display: 'none' }}
+                    />
                   </Form.Label>
                 </Form.Group>
               </Form>

@@ -114,14 +114,11 @@ const HomeRightSidebar = () => {
                   </p>
                 </>
               )}
-              {/*  */}
             </Col>
           </Row>
 
-          {/* </div> */}
         </Card.Body>
       </Card>
-      {/*  */}
       <Card className="mb-3 mt-2 " style={{ width: "25rem" }}>
         <div className="d-flex align-items-center">
           <h6 className="ml-2 mt-2  mb-4">
@@ -132,7 +129,7 @@ const HomeRightSidebar = () => {
         <div className="d-flex align-items-center">
           <Card.Img
             src={Image}
-            className="sidebar-Home2-images ml-2 mt-0 d-flex align-items-baseline"
+            className="sidebar--images ml-2 mt-0 d-flex align-items-baseline"
           />
           <Card.Body className="p-2 card-profile-title test3 p-0">
             <p className="mb-1 text-dark">Remote Developer Job</p>
@@ -141,9 +138,6 @@ const HomeRightSidebar = () => {
             </small>
           </Card.Body>
         </div>
-
-        {/*  */}
-
         <div className="d-flex align-items-center">
           <Card.Img
             src="https://image.similarpng.com/very-thumbnail/2021/08/Travel-agency-logo-design-template-on-transparent-background-PNG.png"
