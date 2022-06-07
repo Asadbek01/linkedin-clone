@@ -46,7 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <MyNavbar data={data} />{" "}
+      <MyNavbar data={data} />
       <Routes>
         <Route path="/" element={<Home data={data} />} />
         <Route path="/feed/post/:postId" element={<Home />} />{" "}

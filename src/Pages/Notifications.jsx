@@ -60,7 +60,7 @@ const Notifications = ({ data }) => {
             >
               <Card.Body className=''>
                 <Card.Title className='text-center h6'>EU Funds, free business courses, stories and <br /> curiosities about IP.</Card.Title>
-                <img className='notif_img' src={data?.image} />
+                <img className='notif_img' src={data?.image} alt="notif" />
                 <Card.Title className='text-center second_title '>All about Intellectual Property for SMEs</Card.Title>
                 <Button className='outline-primary' variant="outline-primary">Follow</Button>{' '}
               </Card.Body>
