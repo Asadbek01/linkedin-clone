@@ -46,16 +46,16 @@ const MyNavbar = ({ data }) => {
                     <Form onSubmit={handleSubmit} className='w-25'>
                         <FormControl type="search" placeholder="Search" className="mr-sm-2 w-100 d-none d-md-block" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
                     </Form>
-                    <Nav className="ml-auto icons">
-                        <NavIconLink path='/' icon={pathname === '/' ? 'bi bi-house-door-fill text-center active' : 'bi bi-house-door-fill text-center'} text='Home' />
-                        <NavIconLink path='/network' icon={pathname === '/network' ? 'bi bi-people-fill text-center active' : 'bi bi-people-fill text-center'} text='Network' />
-                        <NavIconLink path='/jobs' icon={pathname.includes('/jobs') ? 'bi bi-briefcase-fill text-center active' : 'bi bi-briefcase-fill text-center'} text='Jobs' />
-                        <NavIconLink path='/messages' icon={pathname.includes('/messages') ? 'bi bi-chat-dots-fill text-center active' : 'bi bi-chat-dots-fill text-center'} text='Messages' />
-                        <NavIconLink path='/notifications' icon={pathname === '/notifications' ? 'bi bi-bell-fill text-center active' : 'bi bi-bell-fill text-center'} text='Notifications' />
+                    <Nav className="ml-auto icons" >
+                        <NavIconLink path='/' icon={pathname === '/' ? 'bi bi-house-door-fill text-center active ' : 'bi bi-house-door text-center '} text='Home' />
+                        <NavIconLink path='/network' icon={pathname === '/network' ? 'bi bi-people-fill text-center active  ' : 'bi bi-people text-center  '} text='Network' />
+                        <NavIconLink path='/jobs' icon={pathname.includes('/jobs') ? 'bi bi-briefcase-fill text-center active  ' : 'bi bi-briefcase   text-center'} text='Jobs' />
+                        <NavIconLink path='/messages' icon={pathname.includes('/messages') ? 'bi bi-chat-dots-fill text-center active' : 'bi bi-chat-dots   text-center'} text='Messages' />
+                        <NavIconLink path='/notifications' icon={pathname === '/notifications' ? 'bi bi-bell-fill text-center active' : 'bi bi-bell   text-center'} text='Notifications' />
 
-                        <div className="d-flex flex-column mt-2 align-items-center">
-                            <img src={data?.image} className='nav-image pl-0 ml-0' alt="" />
-                            <NavDropdown title='Me' id="basic-nav-dropdown" className=''>
+                        <div className="d-flex align-items-center">
+                            <img src={data?.image} className='nav-image ml-2 pl-0 ml-0' alt="" />
+                            <NavDropdown className='ml-2 color-white'>
                                 <Container>
                                     <div className="d-flex mb-2 align-items-center">
                                         <img src={data?.image} alt="" className='dropdown-image' />
@@ -90,7 +90,7 @@ const MyNavbar = ({ data }) => {
                         </ThemeProvider>
                     </Nav>
                 </Container>
-            </Navbar>
+            </Navbar >
         ) : (
 
             <Navbar bg="light" className='mb-3 p-0'>
